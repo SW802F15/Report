@@ -1,0 +1,77 @@
+\input{preamble}
+
+\begin{document}
+
+% Forindhold - nummereres med romertal
+\frontmatter 
+\input{Content/FrontPage/frontpage}
+\cleardoublepage
+\input{Content/TitlePage/titlepage}
+\cleardoublepage
+\input{Content/Preface/preface}
+\cleardoublepage
+
+% Indholdsfortegnelse (TOC)
+\setlength\parskip{0ex} % Fjerner den vertikale afstand mellem hver linie i indholdsfortegnelse
+\tableofcontents* % Indholdsfortegnelsen 
+\setlength{\parskip}{3mm} % Aktiverer afstanden igen for resten af rapporten (afstem med preamble!)
+%\addtocontents{toc}{\protect\newpage} % Fremtvinger sideskift i indholdsfortegnelsen hvis nødvendig
+
+
+ % Hovedindhold - nummereres fra side 1
+\mainmatter
+\makeevenfoot{custom}{Page \thepage~of \pageref{LastPage}}{}{Aalborg University} % Definerer lige siders sidefod efter modellen \makeevenfoot{Navn}{Venstre}{Center}{Højre}
+\makeoddfoot{custom}{Aalborg University}{}{Page \thepage~of \pageref{LastPage}} % Definerer ulige siders sidefod efter modellen \makeoddfoot{Navn}{Venstre}{Center}{Højre}		
+\pagestyle{custom}
+
+% Rapportindhold
+\chapter{Introduction}
+\label{chap:intro}
+\input{Content/Introduction/introduction}
+
+\chapter{Analysis}
+\label{chap:analysis}
+\input{Content/Analysis/analysis}
+
+
+
+
+\chapter{Test}
+\label{chap:test}
+\input{Content/Test/test}
+
+\chapter{Conclusion}
+\label{chap:conclusion}
+\input{Content/Conclusion/discussion}
+\input{Content/Conclusion/futureWork}
+\input{Content/Conclusion/conclusion}
+
+%\clearforchapter
+\appendix	% Appendiks/bilag start - giver chapter bogstaver i stedet for talf
+\addtocontents{toc}{\protect\cftpagenumbersoff{chapter}} % Fjernelse af nummerering af bilag i TOC
+\settocdepth{chapter}	% Sætter dybden af indholdsfortegnelsen til chapter for bilagene
+
+%%%% Appendiks %%%%
+\clearforchapter
+\begin{vplace}[0.7]
+\begin{center}
+\Huge \textbf{Appendix}
+\end{center}
+\end{vplace}
+\input{Content/Appendix/appendix}
+
+
+\bibliography{Bibliography/bibliography}
+
+
+
+
+
+
+
+%%% DELETE BEFORE FINAL %%%
+\chapter{Examples \& ToDo}
+\input{PreamblePreview/preamblePreview}
+\clearpage
+\listoftodos
+\end{document}

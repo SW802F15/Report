@@ -132,10 +132,11 @@ morekeywords={}
 \usepackage{url}	% Til at sætte urler op med. Virker sammen med ref
 %\usepackage[danish]{varioref} % Giver flere bedre mulighed for at lave krydshenvisninger
 \usepackage[english]{varioref} % Giver flere bedre mulighed for at lave krydshenvisninger
-\usepackage{natbib}	% Litteraturliste med forfatter-år og nummerede referencer
+\usepackage[square,numbers]{natbib}	% Litteraturliste med forfatter-år og nummerede referencer
 \usepackage{xr}		% Referencer til eksternt dokument med \externaldocument{<NAVN>}
 \usepackage{nomencl}	% Pakke til at danne nomenklaturliste
 \makenomenclature		% Nomenklaturliste
+\bibliographystyle{unsrtnat}
 
 %  Floats  %
 \let\newfloat\relax 	% Memoir har allerede defineret denne, men det gør float pakken også
@@ -217,8 +218,8 @@ morekeywords={}
 \def\chaptermark##1{\markboth{\itshape\thechapter. ##1}{}} % Henter kapitlet den pågældende side hører under med kommandoen \leftmark. \itshape gør teksten kursiv
 \def\sectionmark##1{\markright{\thesection. ##1}{}}	% Henter afsnittet den pågældende side hører under med kommandoen \rightmark
 } % Sidetallet skrives med kommandoen \thepage	
-\makeevenhead{custom}{\leftmark}{}{Group SW615F14} % Definerer lige siders sidehoved efter modellen \makeevenhead{Navn}{Venstre}{Center}{Højre}
-\makeoddhead{custom}{Group SW615F14}{}{\leftmark} % Definerer ulige siders sidehoved efter modellen \makeoddhead{Navn}{Venstre}{Center}{Højre}
+\makeevenhead{custom}{\leftmark}{}{Group SW802F15} % Definerer lige siders sidehoved efter modellen \makeevenhead{Navn}{Venstre}{Center}{Højre}
+\makeoddhead{custom}{Group SW802F15}{}{\leftmark} % Definerer ulige siders sidehoved efter modellen \makeoddhead{Navn}{Venstre}{Center}{Højre}
 
 \usepackage{lastpage}
 \usepackage{ifthen}
@@ -231,8 +232,8 @@ morekeywords={}
 \makefootrule{custom}{\textwidth}{0.5pt}{1mm}	% Tilføjer en streg under sidefodens indhold
 
 \copypagestyle{nychapter}{custom} % Følgende linier sørger for, at sidefoden bibeholdes på kapitlets første side
-\makeoddhead{nychapter}{Group SW615F14}{}{\leftmark}
-\makeevenhead{nychapter}{Group SW615F14}{}{\leftmark}
+\makeoddhead{nychapter}{Group SW802F15}{}{\leftmark}
+\makeevenhead{nychapter}{Group SW802F15}{}{\leftmark}
 \makeheadrule{nychapter}{\textwidth}{0pt}
 \aliaspagestyle{chapter}{nychapter}	% <--
 \aliaspagestyle{cleared}{custom}
