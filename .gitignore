@@ -94,3 +94,4 @@ sympy-plots-for-*.tex/
 *.xdy
 graphics/Thumbs.db
 Images/Thumbs.db
+*.bak
