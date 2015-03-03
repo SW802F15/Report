@@ -16,11 +16,12 @@ test
 % improved communication in the group
 % 	better tracking of issues
 \subsection{Approach}
-\subsubsection{The 12 Practices}
+\Christoffer{intro??}
+\subsubsection{The 12 Core Practices}
 %which of the 12 practices do we implement?
 % 	test-driven development	
 %   which do we actually use?
-Extreme programming has 12 core practices, as stated in \citep{xp:explained}. The practices are as follows
+Extreme Programming has 12 core practices, as stated in \citep{xp:explained}. The practices are as follows
 
 \begin{itemize}
 \item The Planning Game
@@ -29,29 +30,39 @@ Extreme programming has 12 core practices, as stated in \citep{xp:explained}. Th
 \item Simple Design
 \item Testing
 \item Refactoring
-\item Pair Progrmaming
+\item Pair Programming
 \item Collective Ownership
-\item Continous integration
+\item Continuous integration
 \item 40-hour Work Week
 \item On-site Costumers
 \item Coding Standards
 \end{itemize}
 
-The idea behind having these practices is that while one practice in itself is weak, the others can cover that weakness. This creates a synergy effect between the practices. This, howeve, also means that if one or more of the practices are chosen to be discontinued, careful consideration should be made when deciding which to discontinue.
+According to \citep[p. 53]{xp:explained}, the idea behind these practices is that while one practice in itself is weak, the others can cover that weakness. This creates a synergy effect between the practices. This also means that if one or more of the practices are chosen to be discontinued or modified, careful consideration should be made when deciding which to discontinue or modify, as stated by\Christoffer{find source in xp explained}.
 
-Selected practices\citep{xp:explained}. Numbered for practical purposes
+Not all of the 12 practices were completely adopted\Christoffer{Nutid? Datid?}. The adopted practices in this project are\\
 
-\begin{enumerate}
-\item The Planning Game
+\begin{itemize}
+%\item The Planning Game - used planning poker instead. collective estimation (make sure same perception of task), no business/dev, whole team talk about task, lack of experience (hard to estimate) vs. experienced devs planning game
 \item Small Releases
-\item Metaphor
+% \item Metaphor - Media player is just media player. No metaphors
 \item Simple Design
 \item Testing
 \item Refactoring
-\item Pair Progrmaming
+\item Pair Programming
 \item Collective Ownership
-\item Continous integration
+\item Continuous integration
 \item 40-hour Work Week
-\item On-site Costumers
+%\item On-site Costumers - use ourselves
 \item Coding Standards
-\end{enumerate}
+\end{itemize}
+
+A number of core practices are expected to be modified to fit the purpose of the project better. These are the Planning Game, Metaphor and On-site Customers.\\\\
+
+Instead of the Planning Game, Planning Poker as described by \citep{xp:planningPoker} \Christoffer{do we follow this completely?}, are expected to be used instead. The main difference between the two is that the act of establishing an estimate of a task in the iteration back log is done collectively. In the Planning Game collective estimation of a task is done, but as stated in \citep[p. 58]{xp:planning} optimism wins. This means that if, after discussion there is still disagreements about the estimate for a given task, the lowest estimation is chosen. In planning poker, everybody agrees on an estimate before it is assigned to a task. We suspect that it would not be irresponsible to replace the Planning Game with Planning Poker, because planning poker ensures that all team members have the same understanding of a task. If a team member makes a very low estimate and the rest of the team make high estimates, chances are they have a very different understanding of the work that needs to be done. Another advantage is that since we are relatively inexperienced software developers, everyone agreeing on an estimate will likely decrease the odds of the estimate being wrong.\Christoffer{How inexperienced are we?}.\\\\
+
+The core practice Small Releases will be implemented by releasing new, working features with small increments, every iteration consisting of around two weeks.\\\\
+
+Metaphors are not implemented since we are not able find a suitable one for our system.\Christoffer{uddybende begrundelse?}.\\\\
+
+Simple Design 
