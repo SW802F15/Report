@@ -136,7 +136,8 @@ morekeywords={}
 \usepackage{xr}		% Referencer til eksternt dokument med \externaldocument{<NAVN>}
 \usepackage{nomencl}	% Pakke til at danne nomenklaturliste
 \makenomenclature		% Nomenklaturliste
-\bibliographystyle{unsrtnat}
+\bibliographystyle{plainnat}
+
 
 %  Floats  %
 \let\newfloat\relax 	% Memoir har allerede defineret denne, men det gør float pakken også
@@ -153,8 +154,8 @@ morekeywords={}
 \checkandfixthelayout 
 
 %  Litteraturlisten  %
-\bibpunct[,]{[}{]}{;}{a}{,}{,} 	% Definerer de 6 parametre ved Harvard henvisning (bl.a. parantestype og seperatortegn)
-\bibliographystyle{bibtex/harvard}	% Udseende af litteraturlisten. Ligner dk-apali - mvh Klein
+%\bibpunct[,]{[}{]}{;}{a}{,}{,} 	% Definerer de 6 parametre ved Harvard henvisning (bl.a. parantestype og seperatortegn)
+%\bibliographystyle{bibtex/harvard}	% Udseende af litteraturlisten. Ligner dk-apali - mvh Klein
 
 %  Indholdsfortegnelse  %
 \setsecnumdepth{subsubsection}	% Dybden af nummerede overkrifter (part/chapter/section/subsection)
