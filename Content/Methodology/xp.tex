@@ -1,107 +1,77 @@
-% intro
-% %
+\Alexander{Check and Correct used time - past-tense vs. future-tense vs. etc}
 \section{Extreme Programming}
-There is a lot of interest development methodologies in recent years \Kristian{find kilde, etv. omskriv}. One such methodology is XP (Extreme Programming) which we have chosen as a focus of the project, in this section we will look at our motivation for choosing XP, what we hope to accomplice and how we plan to do it.
-	
+XP (Extreme Programming) is an agile development methodology. This project will be developed while using the principles of XP.
+
 \subsection{Motivation}
-%Why agile
-What characterises a student project is generally loosely specified objectives, no strict requirements exists, requirements may change doing the project, a small and a project group size of three to six members. These characteristics fit well with the agile development methods. 
+XP follow 12 principles.\Alexander{Source to Beck Book+}
 
-Though not every characteristics fit well such the experience of programmers.
+These 12 principles should ease the development of high quality software.
+This is partly done by ensuring thorough testing, continuously refactoring, and efficient knowledge sharing.
+XP further encourages improving oneself and the teams as a whole.
+This is partly done by pair programming, sprint reviews, and collaborative ownership.
 
-%Why XP
-Some aspect of XP appeal to us such as short iterations and self management. Additionally we hope the high requirement of an XP programmer will allow us to improve our own programming style and practices and in turn allow to develop better products.
-
-%  to learn to program in another way (the extreme way)
-% keep track of progress
-% create a better product (higher quality)
-% be able to respond to change in requirements faster
-% * why XP and not another agile method?
-% 	XP adv: group size fits, iteration length, self-management
-\subsection{Goals}
-By using XP for this project we hope to achieve a number of goals:
+For these principles to work there are some criteria there needs to be met, some of those criteria are:
 \begin{itemize}
-\item Achieving high test coverage.
-\item Produce robust, high quality code.
-\item Improve communication.
-\item Acquire new skills in agile development.
+\item The size of an XP team should not exceed ten members.
+\item Iterations should not exceed four weeks, but two-three weeks are preferable.
+\item The team should be self-organising and should not be controlled by a boss.
+\item The team members must be able to embrace change.
+\item The team should have their workstations placed in the same room.
 \end{itemize}
-% better code/product quality
-% 	* thorough testing
-% 	* robustness (compare to earlier projects)
-% improved communication in the group
-% 	better tracking of issues
 
-When setting goals for the project it is also important to measure how well we achieve these goals. 
-\paragraph{Testing Metrics}
-When evaluating how well tested a software there is a number of methods available such as line coverage, branch coverage and ...
-\Kristian{Vi skal baser dette på Test og Verification kurset}
-
-\paragraph{High Quality Code}
-There are many ways to define high quality code, such as lack of bad smells, good readability and simplicity etc...
-
-
-%Resten er svært at vurdere... 
-
-%\paragraph{Communication}
-%How to evaluate improvements in communication is going to be subjective evaluation.
-
-%
+All the listed criteria is fulfilled by this project.
 
 \subsection{Approach}
-\Christoffer{intro??}
-\subsubsection{The 12 Core Practices}
-%which of the 12 practices do we implement?
-% 	test-driven development	
-%   which do we actually use?
-Extreme Programming has 12 core practices, as stated by \citet{xp:explained}. The practices are as follows
+According to \citet[p. 53]{xp:explained}, the idea behind these practices is that while one practice in itself is weak, the others can cover that weakness. This creates a synergy effect between the practices. This also means that if one or more of the practices are chosen to be discontinued or modified, careful consideration should be made.
 
+%Continued practices
+We have chosen to adopt 8 of the 12 practices. 
+The adopted practices in this project are:
+\begin{itemize}
+\item Small Releases
+\item Simple Design
+\item Testing
+\item Refactoring
+\item Pair Programming
+\item Collective Ownership
+\item Continuous integration
+\item 40-hour Work Week
+\end{itemize}
+
+\paragraph{Testing} will be implemented by writing unit tests and acceptance tests before writing any production code. After the tests and production code is written, they will be run frequently to ensure that everything is working as it is specified, especially after adding new features to the system.
+
+\paragraph{Refactoring} will be implemented by team members making changes where they are needed. Also, code standards will be discussed and adhered to. Pair Programing also aids refactoring since two people programming together will be more likely to have the courage to refactor difficult pieces of code. The Testing practice also aids in this since tests can be run after refactoring which lessens the possibility of the code breaking.
+
+%\paragraph{Small Releases} have been implemented by releasing new, working features with small increments, every iteration consisting of around two weeks.
+
+%\paragraph{Simple Design}\Christoffer{What should we do about this?}
+
+%Discontinued practices
+The practices that have been discontinued are:
 \begin{itemize}
 \item The Planning Game
-\item Small Releases
 \item Metaphor
-\item Simple Design
-\item Testing
-\item Refactoring
-\item Pair Programming
-\item Collective Ownership
-\item Continuous integration
-\item 40-hour Work Week
-\item On-site Costumers
+\item On-site Costumer
 \item Coding Standards
 \end{itemize}
 
-According to \citet[p. 53]{xp:explained}, the idea behind these practices is that while one practice in itself is weak, the others can cover that weakness. This creates a synergy effect between the practices. This also means that if one or more of the practices are chosen to be discontinued or modified, careful consideration should be made when deciding which to discontinue or modify, as stated by\Christoffer{find source in xp explained}.
+\paragraph{Planning Game} has been discontinued in favour of Planning Poker as described by \citet{xp:planningPoker}.\Christoffer{do we follow this completely?}
+The main difference is how conflicting estimations are resolved.
+Planning Poker starts with the team discussing the task. This ensures everybody understand the scope and task at hand. This will in-turn reduce disparity of the individual estimates, and make it easier to agree on an estimate. Each member then considers his estimate and keeps it to himself. When all are ready, everybody reveals their estimate at the same time. If there is great disparity between estimates, a discussion is organised. When this discussion is over, everybody estimates the task again. If the conflict still exists, the estimate is decided by ``Optimism wins''.
+\Alexander{Find where the source concludes this.}
 
-Not all of the 12 practices were completely adopted\Christoffer{Nutid? Datid?}. The adopted practices in this project are\\
+The Planning Game starts with the team discussing the task. Then each member considers his estimate and reports this to the team. If a conflict have aroused, estimation are chosen by ``Optimism wins'' as stated by \citet[p. 58]{xp:planning}.
+This way of reporting individual estimates may influence the estimation of other team member. 
+ \Alexander{Explained p.153 description of individual version of planning game (should be used?).
+			Planning p.58 description of collaborative version of planning game (used in report).
+			We originally chose Poker Planning because we only knew the individual version of Planning Game.}
+ \Alexander{Explained p.157, Planning game not necessary four teams of 3-4 developers.}
+ 
 
-\begin{itemize}
-%\item The Planning Game - used planning poker instead. collective estimation (make sure same perception of task), no business/dev, whole team talk about task, lack of experience (hard to estimate) vs. experienced devs planning game
-\item Small Releases
-% \item Metaphor - Media player is just media player. No metaphors
-\item Simple Design
-\item Testing
-\item Refactoring
-\item Pair Programming
-\item Collective Ownership
-\item Continuous integration
-\item 40-hour Work Week
-%\item On-site Costumers - use ourselves
-\item Coding Standards
-\end{itemize}
+\paragraph{Metaphors} have not been implemented, since we find the product simple enough to understand without any metaphors. 
 
-A number of core practices are expected to be modified to fit the purpose of the project better. These are the Planning Game, Metaphor and On-site Customers.
+\paragraph{On-site Costumer} have not been possible to implement, since we do not have a costumer. We have therefore decided to act as our own on-site costumer.
+\Alexander{Should be re-written!}
 
-Instead of the Planning Game, Planning Poker as described by \citet{xp:planningPoker}\Alexander{I don't believe this is a credible source, can't we find it explained in a book?} \Christoffer{do we follow this completely?}, are expected to be used instead. The main difference between the two is that the act of establishing an estimate of a task in the iteration back log is done collectively. In the Planning Game collective estimation of a task is done, but as stated by \citet[p. 58]{xp:planning} optimism wins. This means that if, after discussion there is still disagreements about the estimate for a given task, the lowest estimation is chosen. In planning poker, everybody agrees on an estimate before it is assigned to a task. We suspect that it would not be irresponsible to replace the Planning Game with Planning Poker, because Planning Poker ensures that all team members have the same understanding of a task. If a team member makes a very low estimate and the rest of the team make high estimates, chances are they have a very different understanding of the work that needs to be done. Another advantage is that since we are relatively inexperienced software developers, everyone agreeing on an estimate will likely decrease the odds of the estimate being wrong.\Christoffer{How inexperienced are we?}.
-
-The core practice Small Releases will be implemented by releasing new, working features with small increments, every iteration consisting of around two weeks.
-
-Metaphors are not implemented since we are not able find a suitable one for our system.\Christoffer{uddybende begrundelse?}.
-
-Simple Design\Christoffer{What should we do about this?}
-
-Testing will be implemented by writing tests before writing any production code. After the tests and production code is written, they will be run frequently to ensure that everything is working as it should, also after adding new features to the system.
-
-The Refactoring practice will be implemented by team members making changes where they are needed. Also, code standards will be discussed and adhered to. Pair Programing also aids refactoring since two people programming together will be more likely to have the courage to refactor difficult pieces of code. The Testing practice also aids in this since tests can be run after refactoring which lessens the possibility of the code breaking.
-
-
+\paragraph{Coding Standards} have not been implemented. Although general guidelines are adhered to.
+\Alexander{Should be elaborated upon.}
