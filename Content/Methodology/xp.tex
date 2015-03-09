@@ -3,7 +3,7 @@
 XP (Extreme Programming) is an agile development methodology. This project will be developed while using the principles of XP.
 
 \subsection{Motivation}
-XP follow 12 principles.\Alexander{Source to Beck Book}
+XP follows 12 core principles as decribed by \citet[p. 54]{xp:explained}.
 
 These 12 principles should ease the development of high quality software.
 This is partly done by ensuring thorough testing, continuously refactoring, and efficient knowledge sharing.
@@ -19,29 +19,15 @@ For these principles to work there are some criteria there needs to be met, some
 \item The team should have their workstations placed in the same room.
 \end{itemize}
 
-All the listed criteria is fulfilled by this project.
+The listed criteria are fulfilled by this project.
 
 \subsection{Approach}
-According to \citet[p. 53]{xp:explained}, the idea behind these practices is that while one practice in itself is weak, the others can cover that weakness. This creates a synergy effect between the practices. This also means that if one or more of the practices are chosen to be discontinued or modified, careful consideration should be made.
+According to \citet[p. 53]{xp:explained}, the idea behind these practices is that while one practice in itself is weak, the others can cover that weakness. This creates a synergy effect between the practices. %This also means that if one or more of the practices are chosen to be discontinued or modified, careful consideration should be made.
 
 %Continued practices
-We have chosen to adopt 8 of the 12 practices. 
-The adopted practices in this project are:
-\begin{itemize}
-\item Small Releases
-\item Simple Design
-\item Testing
-\item Refactoring
-\item Pair Programming
-\item Collective Ownership
-\item Continuous integration
-\item 40-hour Work Week
-\end{itemize}
-\Ivan{Not sure it is a good idea to cut practices. Its free to use them all.}
-\Ivan{We are so close to using all of XP, why not go all the way.}
+We have chosen to adopt all of the 12 practices from XP. 
 
-\paragraph{Testing} will be implemented by writing unit tests and acceptance tests before writing any production code. After the tests and production code is written, they will be run frequently to ensure that everything is working as it is specified, especially after adding new features to the system.
-\Ivan{Acceptance test not a part of coding process.}
+\paragraph{Testing} will be implemented by writing unit tests before writing any production code. After the tests and production code are written, they will be run frequently to ensure that everything is working as it is specified, especially after adding new features to the system.
 
 \paragraph{Refactoring} will be implemented by team members making changes where they are needed. Also, code standards will be discussed and adhered to. Pair Programing also aids refactoring since two people programming together will be more likely to have the courage to refactor difficult pieces of code. The Testing practice also aids in this since tests can be run after refactoring which lessens the possibility of the code breaking.
 
@@ -50,20 +36,21 @@ The adopted practices in this project are:
 \paragraph{Simple Design}%\Christoffer{What should we do about this?}
 
 %Discontinued practices
-The practices that have been discontinued are:
-\begin{itemize}
-\item The Planning Game
-\item Metaphor
-\item On-site Costumer
-\item Coding Standards
-\end{itemize}
+%The practices that have been discontinued are:
+%\begin{itemize}
+%\item The Planning Game
+%\item Metaphor
+%\item On-site Costumer
+%\item Coding Standards
+%\end{itemize}
 
-\paragraph{Planning Game} has been discontinued in favour of Planning Poker as described by \citet{xp:planningPoker}.\Christoffer{do we follow this completely?}
-The main difference is how conflicting estimations are resolved.
-Planning Poker starts with the team discussing the task. This ensures everybody understand the scope and task at hand. This will in-turn reduce disparity of the individual estimates, and make it easier to agree on an estimate. Each member then considers his estimate and keeps it to himself. When all are ready, everybody reveals their estimate at the same time. If there is great disparity between estimates, a discussion is organised. When this discussion is over, everybody estimates the task again. If the conflict still exists, the estimate is decided by ``Optimism wins''.
-\Alexander{Find where the source concludes this.}
+\paragraph{Planning Game} has been in favour of Planning Poker as described by \citet{xp:planningPoker}.\Christoffer{do we follow this completely?}
+\Christoffer{skal omskrives til at have en beskrivelse og rationale bag brug af collaborative estimation i stedet for det traditionelle planning game}
+The main difference is how conflicting estimations are resolved. 
 
-The Planning Game starts with the team discussing the task. Then each member considers his estimate and reports this to the team. If a conflict have aroused, estimation are chosen by ``Optimism wins'' as stated by \citet[p. 58]{xp:planning}.
+Planning Poker starts with the team discussing the task. This ensures everybody understand the scope and task at hand. This will in-turn reduce disparity of the individual estimates, and make it easier to agree on an estimate. Each member then considers his estimate and keeps it to himself. When all are ready, everybody reveals their estimate at the same time. If there is great disparity between estimates, a discussion is organised. When this discussion is over, everybody estimates the task again. If the conflict still exists, estimation of the task is postponed, the task is split or the lowest estimation is taken according to \citet[p. 1]{xp:planningPoker}.
+
+The Planning Game starts with the team discussing the task. Then each member considers his estimate and reports this to the team. If a conflict arises, the lowest estimate is chosen, as stated by \citet[p. 58]{xp:planning}.
 This way of reporting individual estimates may influence the estimation of other team member. 
  \Alexander{Explained p.153 description of individual version of planning game (should be used?).
 			Planning p.58 description of collaborative version of planning game (used in report).
@@ -71,16 +58,15 @@ This way of reporting individual estimates may influence the estimation of other
  \Alexander{Explained p.157, Planning game not necessary four teams of 3-4 developers.}
  
 
-\paragraph{Metaphors} have not been implemented, since we find the product simple enough to understand without any metaphors.
-\Ivan{Not an argument!}
-\Ivan{Our goals written in problem statement is very close to a metaphor.}
+\paragraph{Metaphors} \textit{``guide all development with a simple shared story of how the whole system works''} according to \cite[p.54]{xp:planning}. A metaphor for how the system works could be a pacer which helps the user keep a certain pace while running.
+\Ivan{Our goals written in problem statement is very close to a metaphor. How can this be written in this paragraph?}
 \Ivan{Etc. the word `pace' is used as a metaphor in both problem statement and code.}
 \Ivan{To have a clear definition of the product would greatly benefit the product.}
 
-\paragraph{On-site Costumer} have not been possible to implement, since we do not have a costumer. We have therefore decided to act as our own on-site costumer.
+\paragraph{On-site Costumer} has not been possible to implement, since we do not have a costumer. We have therefore decided to modify the practice and act as our own on-site costumer.\Christoffer{Burde dette bliver uddybet?}
 \Alexander{Should be re-written!}
 \Ivan{We should follow extreme programming in an extreme way - we use it all, but modify single practices to fit our project.}
 
-\paragraph{Coding Standards} have not been implemented. Although general guidelines are adhered to.
+\paragraph{Coding Standards} used are in an informal form. The group has worked together multiple times and as a result have adapted and write code in a similar way. Differences between team members' code occurs, but overall the code produced looks similar. The informal coding standards improve collective ownership since no one can necessarily say ``He wrote this code, I can tell. It's his problem!'' because the code looks alike. It also aids refactoring because the refactorer is used to the code conforming to a code standard and thus is easier to read and rewrite.\Christoffer{Yderligere tilføjelser? Holder det vand?}
 \Alexander{Should be elaborated upon.}
 \Ivan{Is used to improve collective ownership, refactoring. Formal code standard vs. informal code standard build from experience working together. So in short we use it.}
