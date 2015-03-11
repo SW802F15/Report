@@ -1,50 +1,27 @@
-\Alexander{Check and Correct used time - past-tense vs. future-tense vs. etc}
 \section{Extreme Programming}
-XP (Extreme Programming) is an agile development methodology. This project will be developed while using the principles of XP.
+XP (Extreme Programming) is an agile development methodology and this project is developed using the principles of XP. XP follows 12 core practices as decribed by \citet[p. 54]{xp:explained}.
 
-\subsection{Motivation}
-XP follows 12 core principles as decribed by \citet[p. 54]{xp:explained}.
+The purpose of the 12 practices is to ease the development of high quality software. This is partly done by ensuring thorough testing, continuous refactoring, and efficient knowledge sharing. XP further encourages improving oneself and the team as a whole.
 
-These 12 principles should ease the development of high quality software.
-This is partly done by ensuring thorough testing, continuously refactoring, and efficient knowledge sharing.
-XP further encourages improving oneself and the teams as a whole.
-This is partly done by pair programming, sprint reviews, and collective ownership.
-
-For these principles to work there are some criteria there needs to be met, some of those criteria are:
+For the practices to work there are some criteria that need to be met, some of those criteria are:
 \begin{itemize}
 \item The size of an XP team should not exceed ten members.
 \item Iterations should not exceed four weeks, but two-three weeks are preferable.
 \item The team should be self-organising and should not be controlled by a boss.
 \item The team members must be able to embrace change.
 \item The team should have their workstations placed in the same room.
+\item All the practices must be followed to utilise the full potential of XP.
 \end{itemize}
 
 The listed criteria are fulfilled by this project.
 
 \subsection{Approach}
-According to \citet[p. 53]{xp:explained}, the idea behind these practices is that while one practice in itself is weak, the others can cover that weakness. This creates a synergy effect between the practices. %This also means that if one or more of the practices are chosen to be discontinued or modified, careful consideration should be made.
+According to \citet[p. 53]{xp:explained}, the idea behind these practices is that while one practice in itself can be weak, the other practices cover that weakness, creating a synergy effect between the practices.
 
 %Continued practices
-We have chosen to adopt all of the 12 practices from XP. 
+While all the practices are followed in this project, some need more thought than others. In the following we will explain we use each practice. It is important to note that these descriptions are for ideal scenarios, and some alterations may be made when applying them.
 
-\paragraph{Testing} will be implemented by writing unit tests before writing any production code. After the tests and production code are written, they will be run frequently to ensure that everything is working as it is specified, especially after adding new features to the system.
-
-\paragraph{Refactoring} will be implemented by team members making changes where they are needed. Also, code standards will be discussed and adhered to. Pair Programing also aids refactoring since two people programming together will be more likely to have the courage to refactor difficult pieces of code. The Testing practice also aids in this since tests can be run after refactoring which lessens the possibility of the code breaking.
-
-\paragraph{Small Releases} %have been implemented by releasing new, working features with small increments, every iteration consisting of around two weeks.
-
-\paragraph{Simple Design}%\Christoffer{What should we do about this?}
-
-%Discontinued practices
-%The practices that have been discontinued are:
-%\begin{itemize}
-%\item The Planning Game
-%\item Metaphor
-%\item On-site Costumer
-%\item Coding Standards
-%\end{itemize}
-
-\paragraph{Planning Game} has been in favour of Planning Poker as described by \citet{xp:planningPoker}.\Christoffer{do we follow this completely?}
+\paragraph{The Planning Game} has been in favour of Planning Poker as described by \citet{xp:planningPoker}.\Christoffer{do we follow this completely?}
 \Christoffer{skal omskrives til at have en beskrivelse og rationale bag brug af collaborative estimation i stedet for det traditionelle planning game}
 The main difference is how conflicting estimations are resolved. 
 
@@ -56,17 +33,34 @@ This way of reporting individual estimates may influence the estimation of other
 			Planning p.58 description of collaborative version of planning game (used in report).
 			We originally chose Poker Planning because we only knew the individual version of Planning Game.}
  \Alexander{Explained p.157, Planning game not necessary four teams of 3-4 developers.}
- 
+
+\paragraph{Small releases} are ensured by prioritising important tasks and making sure to have a working product for each release. A release should not take more than a few iterations, because the short time frame makes it critical that we discover problems as early as possible, allowing us to discard a less important feature to have time to fix these problems.
 
 \paragraph{Metaphors} \textit{``guide all development with a simple shared story of how the whole system works''} according to \cite[p.54]{xp:planning}. A metaphor for how the system works could be a pacer which helps the user keep a certain pace while running.
 \Ivan{Our goals written in problem statement is very close to a metaphor. How can this be written in this paragraph?}
 \Ivan{Etc. the word `pace' is used as a metaphor in both problem statement and code.}
 \Ivan{To have a clear definition of the product would greatly benefit the product.}
 
-\paragraph{On-site Costumer} has not been possible to implement, since we do not have a costumer. We have therefore decided to modify the practice and act as our own on-site costumer.\Christoffer{Burde dette bliver uddybet?}
+\paragraph{Simple design}
+
+\paragraph{Testing} is implemented by writing unit tests before writing any production code. After the tests and production code are written, they are run frequently to ensure that everything is working as it is specified, especially after adding new features to the system.
+
+\paragraph{Refactoring} is done by team members making changes where they are needed. Pair Programing also aids refactoring since two people programming together will be more likely to have the courage to refactor difficult pieces of code. The Testing practice also aids in this since tests can be run after refactoring which lessens the possibility of the code breaking.
+
+This is a relatively short lived project, where some parts of the code may not need to change. Therefore, if a piece of code, that is outside the scope of the current issue a pair is working on, is discovered the pair should add a new issue which can later be estimated, prioritised, and included in a later iteration. This way, if the code is not refactored as part of another issue, it will eventually be anyway.This comes at the cost of spending time that could otherwise have been spent on developing other features, but ensures an overall higher quality code. 
+
+\paragraph{Pair programming}
+
+\paragraph{Collective ownership}
+
+\paragraph{Continuous integration}
+
+\paragraph{40-hour week}
+ 
+\paragraph{On-site costumer} has not been possible to implement, since we do not have a costumer. We have therefore decided to modify the practice and act as our own on-site costumer.\Christoffer{Burde dette bliver uddybet?}
 \Alexander{Should be re-written!}
 \Ivan{We should follow extreme programming in an extreme way - we use it all, but modify single practices to fit our project.}
 
-\paragraph{Coding Standards} used are in an informal form. The group has worked together multiple times and as a result have adapted and write code in a similar way. Differences between team members' code occurs, but overall the code produced looks similar. The informal coding standards improve collective ownership since no one can necessarily say ``He wrote this code, I can tell. It's his problem!'' because the code looks alike. It also aids refactoring because the refactorer is used to the code conforming to a code standard and thus is easier to read and rewrite.\Christoffer{Yderligere tilføjelser? Holder det vand?}
+\paragraph{Coding standards} used are in an informal form. The group has worked together multiple times and as a result have adapted and write code in a similar way. Differences between team members' code occurs, but overall the code produced looks similar. The informal coding standards improve collective ownership since no one can necessarily say ``He wrote this code, I can tell. It's his problem!'' because the code looks alike. It also aids refactoring because the refactorer is used to the code conforming to a code standard and thus is easier to read and rewrite.\Christoffer{Yderligere tilføjelser? Holder det vand?}
 \Alexander{Should be elaborated upon.}
 \Ivan{Is used to improve collective ownership, refactoring. Formal code standard vs. informal code standard build from experience working together. So in short we use it.}
