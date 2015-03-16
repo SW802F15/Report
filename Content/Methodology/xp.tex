@@ -34,32 +34,28 @@ This way of reporting individual estimates may influence the estimation of other
 			We originally chose Poker Planning because we only knew the individual version of Planning Game.}
  \Alexander{Explained p.157, Planning game not necessary four teams of 3-4 developers.}
 
-\paragraph{Small releases} are ensured by prioritising important tasks and making sure to have a working product for each release. A release should not take more than a few iterations, because the short time frame makes it critical that we discover problems as early as possible, allowing us to discard a less important feature to have time to fix these problems.
+\paragraph{Small releases} are ensured by prioritising important tasks and making sure to have a working product for each release. A release should not take more than a few iterations, because the short time frame of the project makes it critical that we discover problems as early as possible, allowing us to discard less important features to have time to fix these problems.
 
-\paragraph{Metaphors} \textit{``guide all development with a simple shared story of how the whole system works''} according to \cite[p.54]{xp:planning}. A metaphor for how the system works could be a pacer which helps the user keep a certain pace while running.
-\Ivan{Our goals written in problem statement is very close to a metaphor. How can this be written in this paragraph?}
-\Ivan{Etc. the word `pace' is used as a metaphor in both problem statement and code.}
-\Ivan{To have a clear definition of the product would greatly benefit the product.}
+\paragraph{Metaphors} \textit{``guide all development with a simple shared story of how the whole system works''} according to \cite[p.54]{xp:planning}. For example a metaphor for this system could be a pacer or a personal trainer. The problem analysis in \Cref{chap:analysis} describes the metaphor for this system.
 
-\paragraph{Simple design}
+\paragraph{Simple design} means that all the code in the program must serve a purpose. This is achieved by always focussing on solving the problem at hand, rather than adding code that might solve a future problem. To make sure the design stays simple constant refactoring and testing is done.
 
-\paragraph{Testing} is implemented by writing unit tests before writing any production code. After the tests and production code are written, they are run frequently to ensure that everything is working as it is specified, especially after adding new features to the system.
+\paragraph{Testing} is implemented by writing unit tests before writing any production code. After the tests and production code are written, they are run frequently to ensure that everything is working as it is specified, especially after adding new features or refactoring a piece of code.
 
-\paragraph{Refactoring} is done by team members making changes where they are needed. Pair Programing also aids refactoring since two people programming together will be more likely to have the courage to refactor difficult pieces of code. The Testing practice also aids in this since tests can be run after refactoring which lessens the possibility of the code breaking.
+\paragraph{Refactoring} is done whenever a pair discoveres a piece of code, relevant to the issue they are working on, that could be implemented in a simpler way. Pair programing aids refactoring since two people programming together will be more likely to have the courage to refactor complicated pieces of code. The Testing practice also aids in this since tests can be run after refactoring which lessens the possibility of the code breaking.
 
 This is a relatively short lived project, where some parts of the code may not need to change. Therefore, if a piece of code, that is outside the scope of the current issue a pair is working on, is discovered the pair should add a new issue which can later be estimated, prioritised, and included in a later iteration. This way, if the code is not refactored as part of another issue, it will eventually be anyway.This comes at the cost of spending time that could otherwise have been spent on developing other features, but ensures an overall higher quality code. 
 
-\paragraph{Pair programming}
+\paragraph{Pair programming} provides an instant code review, and while it has some drawbacks, it encourages each team member to produce better quality code. With some trivial issues pair programming can seem like a waste of time, but it still strengthens some of the other practices making the extra time investment worth it. \Dan{I guess this ipretty much just a claim. Should it be removed/changed?}{Pair programming makes it easier to remember writing tests first and do refactoring when needed, and it strengthens the feeling of collective ownership.} 
 
-\paragraph{Collective ownership}
+\paragraph{Collective ownership} means that the whole team owns all the code. This means that if a bug appears, it is the team's problem, and if refactoring is needed, it should be done by the pair who discovers it rather than the pair who implemented it.
 
-\paragraph{Continuous integration}
+\paragraph{Continuous integration} is achieved by manually running all tests and running the application every time a branch is merged into the master branch. Each issue is solved on its own branch and merged into the master when the issue is solved. It is important that the master branch always works, i.e., tests must pass and the application should run without any significant issues.
 
-\paragraph{40-hour week}
+\paragraph{40-hour week} is a practice that emphasises not working overtime. If there is not enough time to solve all issues this should be taken into account when planning for the next iteration instead of working late. People are less productive when they are tired, and while it some times will be necessary to work more than other, it is important to notice when productivity goes down and react to this accordingly. The use of this practice is complicated by having to take the time spent on lectures into account, and instead of setting a specific amount of hours, we focus on regularly evaluating our productivity and adjusting according to that.
+\Dan{$\uparrow$  This paragraph needs some rewriting.} %B-be gentle, senpai.
  
-\paragraph{On-site costumer} has not been possible to implement, since we do not have a costumer. We have therefore decided to modify the practice and act as our own on-site costumer.\Christoffer{Burde dette bliver uddybet?}
-\Alexander{Should be re-written!}
-\Ivan{We should follow extreme programming in an extreme way - we use it all, but modify single practices to fit our project.}
+\paragraph{On-site costumer} is adapted a bit, as we serve as our own customer. This does not mean that each person can simple make up a requirement, but rather that the team as a whole should be asked whenever there is a question that would otherwise be directed at the customer. Additionally the team must fulfil the other tasks done by the customer, such as writing user stories and acceptance tests.
 
 \paragraph{Coding standards} used are in an informal form. The group has worked together multiple times and as a result have adapted and write code in a similar way. Differences between team members' code occurs, but overall the code produced looks similar. The informal coding standards improve collective ownership since no one can necessarily say ``He wrote this code, I can tell. It's his problem!'' because the code looks alike. It also aids refactoring because the refactorer is used to the code conforming to a code standard and thus is easier to read and rewrite.\Christoffer{Yderligere tilføjelser? Holder det vand?}
 \Alexander{Should be elaborated upon.}
