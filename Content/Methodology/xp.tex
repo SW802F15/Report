@@ -21,7 +21,7 @@ According to \citet[p. 53]{xp:explained}, the idea behind these practices is tha
 %Continued practices
 While all the practices are followed in this project, some need more thought than others. In the following we will explain we use each practice. It is important to note that these descriptions are for ideal scenarios, and some alterations may be made when applying them.
 
-\paragraph{The Planning Game} has been in favour of Planning Poker as described by \citet{xp:planningPoker}.\Christoffer{do we follow this completely?}
+\paragraph{The Planning Game} has been discarded in favour of Planning Poker as described by \citet{xp:planningPoker}.\Christoffer{do we follow this completely?}
 \Christoffer{skal omskrives til at have en beskrivelse og rationale bag brug af collaborative estimation i stedet for det traditionelle planning game}
 The main difference is how conflicting estimations are resolved. 
 
@@ -46,8 +46,7 @@ This way of reporting individual estimates may influence the estimation of other
 
 This is a relatively short lived project, where some parts of the code may not need to change. Therefore, if a piece of code, that is outside the scope of the current issue a pair is working on, is discovered the pair should add a new issue which can later be estimated, prioritised, and included in a later iteration. This way, if the code is not refactored as part of another issue, it will eventually be anyway.This comes at the cost of spending time that could otherwise have been spent on developing other features, but ensures an overall higher quality code. 
 
-\paragraph{Pair programming} provides an instant code review, and while it has some drawbacks, it encourages each team member to produce better quality code. With some trivial issues pair programming can seem like a waste of time, but it still strengthens some of the other practices making the extra time investment worth it. \Dan{I guess this ipretty much just a claim. Should it be removed/changed?}{Pair programming makes it easier to remember writing tests first and do refactoring when needed, and it strengthens the feeling of collective ownership.} 
-
+\paragraph{Pair programming} provides an instant code review, and while it has some drawbacks, it encourages each team member to produce better quality code. With some trivial issues pair programming can seem like a waste of time, but it still strengthens some of the other practices, such as test writing and refactoring according to \citet[p. 102]{xp:explained}, making the extra time investment worth it.
 \paragraph{Collective ownership} means that the whole team owns all the code. This means that if a bug appears, it is the team's problem, and if refactoring is needed, it should be done by the pair who discovers it rather than the pair who implemented it.
 
 \paragraph{Continuous integration} is achieved by manually running all tests and running the application every time a branch is merged into the master branch. Each issue is solved on its own branch and merged into the master when the issue is solved. It is important that the master branch always works, i.e., tests must pass and the application should run without any significant issues.
@@ -59,4 +58,3 @@ This is a relatively short lived project, where some parts of the code may not n
 
 \paragraph{Coding standards} used are in an informal form. The group has worked together multiple times and as a result have adapted and write code in a similar way. Differences between team members' code occurs, but overall the code produced looks similar. The informal coding standards improve collective ownership since no one can necessarily say ``He wrote this code, I can tell. It's his problem!'' because the code looks alike. It also aids refactoring because the refactorer is used to the code conforming to a code standard and thus is easier to read and rewrite.\Christoffer{Yderligere tilføjelser? Holder det vand?}
 \Alexander{Should be elaborated upon.}
-\Ivan{Is used to improve collective ownership, refactoring. Formal code standard vs. informal code standard build from experience working together. So in short we use it.}
