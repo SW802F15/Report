@@ -1,7 +1,9 @@
 \section{Extreme Programming}
+\Ivan{hvorfor er det extreme?}
 XP (Extreme Programming) is an agile development methodology and this project is developed using the principles of XP. XP follows 12 core practices as decribed by \citet[p. 54]{xp:explained}.
+\Ivan{lidt tyndt}
 
-The purpose of the 12 practices is to ease the development of high quality software. This is partly done by ensuring thorough testing, continuous refactoring, and efficient knowledge sharing. XP further encourages improving oneself and the team as a whole.
+The purpose of the 12 practices is to ease the development of high quality software. This is partly done by ensuring thorough testing, continuous refactoring, and efficient knowledge sharing. XP further encourages improving oneself and the team as a whole.\Ivan{hvorfor?}
 
 For the practices to work there are some criteria that need to be met, some of those criteria are:
 \begin{itemize}
@@ -10,16 +12,19 @@ For the practices to work there are some criteria that need to be met, some of t
 \item The team should be self-organising and should not be controlled by a boss.
 \item The team members must be able to embrace change.
 \item The team should have their workstations placed in the same room.
-\item All the practices must be followed to utilise the full potential of XP.
+\item All \Ivan{Er det helt rigtigt}the practices must be followed to utilise the full potential of XP.
+
 \end{itemize}
 
-The listed criteria are fulfilled by this project.
+The listed criteria are fulfilled by this project. \Ivan{flyt til sidst}
 
+
+\Ivan{$\updownarrow$ konsistens?}
 \subsection{Approach}
 According to \citet[p. 53]{xp:explained}, the idea behind these practices is that while one practice in itself can be weak, the other practices cover that weakness, creating a synergy effect between the practices.
 
 %Continued practices
-While all the practices are followed in this project, some need more thought than others. In the following we will explain we use each practice. It is important to note that these descriptions are for ideal scenarios, and some alterations may be made when applying them.
+While all the practices are followed in this project, some need more thought than others. In the following we will explain we use each practice. It is important to note that these descriptions are for ideal scenarios, and some alterations may be made when applying them. \Ivan{11-11}
 
 \paragraph{The Planning Game} has been discarded in favour of Planning Poker as described by \citet{xp:planningPoker}.\Christoffer{do we follow this completely?}
 \Christoffer{skal omskrives til at have en beskrivelse og rationale bag brug af collaborative estimation i stedet for det traditionelle planning game}
@@ -34,6 +39,7 @@ This way of reporting individual estimates may influence the estimation of other
 			We originally chose Poker Planning because we only knew the individual version of Planning Game.}
  \Alexander{Explained p.157, Planning game not necessary four teams of 3-4 developers.}
 
+\Ivan{$\downarrow$ Uddyb om formål, intuition og brug. (for alle paragrapher)}
 \paragraph{Small releases} are ensured by prioritising important tasks and making sure to have a working product for each release. A release should not take more than a few iterations, because the short time frame of the project makes it critical that we discover problems as early as possible, allowing us to discard less important features to have time to fix these problems.
 
 \paragraph{Metaphors} \textit{``guide all development with a simple shared story of how the whole system works''} according to \cite[p.54]{xp:planning}. For example a metaphor for this system could be a pacer or a personal trainer. The problem analysis in \Cref{chap:analysis} describes the metaphor for this system.
@@ -44,17 +50,20 @@ This way of reporting individual estimates may influence the estimation of other
 
 \paragraph{Refactoring} is done whenever a pair discoveres a piece of code, relevant to the issue they are working on, that could be implemented in a simpler way. Pair programing aids refactoring since two people programming together will be more likely to have the courage to refactor complicated pieces of code. The Testing practice also aids in this since tests can be run after refactoring which lessens the possibility of the code breaking.
 
-This is a relatively short lived project, where some parts of the code may not need to change. Therefore, if a piece of code, that is outside the scope of the current issue a pair is working on, is discovered the pair should add a new issue which can later be estimated, prioritised, and included in a later iteration. This way, if the code is not refactored as part of another issue, it will eventually be anyway.This comes at the cost of spending time that could otherwise have been spent on developing other features, but ensures an overall higher quality code. 
+This is a relatively short lived project, where some parts of the code may not need to change. Therefore, if a piece of code, that is outside the scope of the current issue a pair is working on, is discovered the pair should add a new issue which can later be estimated, prioritised, and included in a later iteration. This way, if the code is not refactored as part of another issue, it will eventually be anyway.This comes at the cost of spending time that could otherwise have been spent on developing other features, but ensures an overall higher quality code. \Ivan{kriterier?}
 
-\paragraph{Pair programming} provides an instant code review, and while it has some drawbacks, it encourages each team member to produce better quality code. With some trivial issues pair programming can seem like a waste of time, but it still strengthens some of the other practices, such as test writing and refactoring according to \citet[p. 102]{xp:explained}, making the extra time investment worth it.
-\paragraph{Collective ownership} means that the whole team owns all the code. This means that if a bug appears, it is the team's problem, and if refactoring is needed, it should be done by the pair who discovers it rather than the pair who implemented it.
+\paragraph{Pair programming} provides an instant code review, and while it has some drawbacks, it encourages each team member to produce better quality code. With some trivial issues pair programming can seem like a waste of time, but it still strengthens some of the other practices, such as test writing and refactoring according to \citet[p. 102]{xp:explained}, making the extra time investment worth it. \Ivan{Hvornår bruges pr?}
 
-\paragraph{Continuous integration} is achieved by manually running all tests and running the application every time a branch is merged into the master branch. Each issue is solved on its own branch and merged into the master when the issue is solved. It is important that the master branch always works, i.e., tests must pass and the application should run without any significant issues.
+\paragraph{Collective ownership} means that the whole team owns all the code. This means that if a bug appears, it is the team's problem, and if refactoring is needed, it should be done by the pair who discovers it rather than the pair who implemented it.\Ivan{hvordan i praksis?}
+
+\paragraph{Continuous integration} is achieved by manually running all tests and running the application every time a branch is merged into the master branch. Each issue is solved on its own branch and merged into the master when the issue is solved. It is important that the master branch always works, i.e., tests must pass and the application should run without any significant issues.\Ivan{hvordan i praksis?}
 
 \paragraph{40-hour week} is a practice that emphasises not working overtime. If there is not enough time to solve all issues this should be taken into account when planning for the next iteration instead of working late. People are less productive when they are tired, and while it will sometimes be necessary to work more than other, it is important to notice when productivity goes down and react to this accordingly. For us, the use of this practice is complicated by having to take the time spent on lectures into account, and instead working a specific amount of hours each week, we focus on regularly evaluating our productivity and adjusting according to that.
 \Christoffer{$\uparrow$  This paragraph needs more rewriting???} %B-be gentle, senpai.
  
-\paragraph{On-site costumer} is adapted a bit, as we serve as our own customer. This does not mean that each person can simple make up a requirement, but rather that the team as a whole should be asked whenever there is a question that would otherwise be directed at the customer. Additionally the team must fulfil the other tasks done by the customer, such as writing user stories and acceptance tests.
+\paragraph{On-site costumer} is adapted a bit, as we serve as our own customer. This does not mean that each person can simple make up a requirement, but rather that the team as a whole should be asked whenever there is a question that would otherwise be directed at the customer. Additionally the team must fulfill the other tasks done by the customer, such as writing user stories and acceptance tests.\Ivan{hvordan i praksis?}
 
 \paragraph{Coding standards} used are in an informal form. The group has worked together multiple times and as a result have adapted to writing code in a similar way. Differences between team members' code occur, but overall the code produced looks similar. The informal coding standards improve collective ownership since no one can necessarily say ``He wrote this code, I can tell. It's his problem!'' because the code looks alike. It also aids refactoring because the refactorer is used to the code conforming to a code standard and thus is easier to read and rewrite.\Christoffer{Yderligere tilføjelser? Holder det vand?}
 \Alexander{Should be elaborated upon.}
+
+\Ivan{xp as applied in this project, forvented brug. Jeres brug af xp practises}
