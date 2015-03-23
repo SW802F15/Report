@@ -1,0 +1,65 @@
+\subsection*{Retrospective 2}
+\paragraph{23rd February - 6th March}
+
+\subsubsection{Coding Standard}
+If we have any conflicts we will write it down in a coding standard document. We agreed with Ivan that we basically have a ``de facto'' (informal) coding standard by working together so long.
+
+\subsubsection{Metaphor}
+Ivan argued that our problem statement was a sort of metaphor, and we should not discard this practise entirely (as we suggested).
+The system could also be seen as a pacekeeper and/or a personal trainer.
+
+``pace'' might be ambiguous, as it can represent both velocity and SPM.
+
+\subsubsection{40-hour Work Week}
+About halfway in the iteration we found that we would not be able to finish all tasks and we decided to take a few late days (to get just a little bit more done - we did not expect to finish all tasks either way).
+We found that the productivity was relatively low after hours and the quality of work was so low it was redone the next day. Further we found that the day after was less productive as we were tired. The fact that the next day was lecture and we worked on report (which is very boring) could have influenced to process to the worse.
+We found that working until dinner was of average productivity, but the productivity and quality seriously dropped after dinner.
+
+\textbf{Breaks:}\\
+We have experienced that some are too intrigued by the problems at hand that they ‘forget' to take a break and stretch their legs. This have led to people ‘burning out' before the end of the work day.
+Another reason to improve breaks is that sometimes people easily gets distracted while researching. It is then important that we 
+We should regard each other, so we do not interrupt a member which are in the zone.
+
+\subsubsection{Small Releases}
+We use it, so no comments..
+
+\subsubsection{On-site Customer}
+After consideration about the responsibilities of a customer, we decided that Niels (Dan’s friend) would not have enough time to fulfill the role.
+We have therefore decided that we will completely use a simulated costumer.
+
+\subsubsection{Planning}
+We have experienced that we have an informal prioritising system, but this can cause problems when choosing new tasks, as these are chosen based on the developers curiosity and interest. The priorities of the tasks should therefore be defined by implementing a stack-like structure in order to ensure the most important tasks are done first.
+
+We had problems with timing our productive work. To solve this we found the time tool Everhour.
+This will then help us be more precise about estimations.
+We decided to discard the old estimations and measurements due to their imprecision and to avoid `muddying' our future estimations and measurements. (Note: we now use the combined time of two developers for estimation and measurement.)
+
+In this iteration we mainly worked on one large task (GUI), which should have been decomposed into many smaller tasks. Further we should be better to create new tasks instead of just added found issues and development to a todo list.
+
+XP makes use of the planning game for estimation of use cases. We first new the game as an individual exercise (explained), but later found, in the planning XP book, a collaborative version was described. We made/make use of planning poker as it has some advantages over the individual version of planning game. We later found that planning poker was very similar to the collaborative version of the planning game. (REMEMBER TO CHECK SOURCES) 
+
+\subsubsection{Refactoring}
+We found that our quality is not good enough, so we will in the future (against XP recommendations) have explicit tasks for refactoring.
+
+For now we will assign a number of hours for next iteration, but after that we will write a new issue for refactoring when we discover code smells in areas that are not part of the current issue and these will be estimated and prioritised for the following iteration (maybe they will be fixed as parts of other issues). Code smells in methods relevant to the current issue will be fixed on sight.
+
+\subsubsection{Simple Design}
+Same situation as iteration 1. We should look into this maybe probably...
+
+\subsubsection{Pair Programming}
+We are no longer using teamviewer. We are working on getting monitors.
+We should remember the dialogue when working - looking at the driver is not always enough.
+
+Pair programming expects people to know what they are doing - trying out new/unknown code can be difficult. In the future, when in need of research, we will accept breaking with pair programming, whereafter each developer will try things on his own. When a solution is found, the pair will form again and continue from where they left off.
+
+\subsubsection{Collective Ownership}
+We are still in the mindset of `I wrote it, it’s my code'. This has resulted in some methods not being refactored because `It was [name]’s code, I better not touch it'. We will of course try to break this mindset by enforcing refactoring.
+
+\subsubsection{Testing}
+We have mainly developed GUI in this iteration, so we have not created many tests, as we have no idea to automatically test GUI. We also already decided to not focus alot on GUI, so we argue that GUI tests are less important.
+
+There were of course made tests for the changes in dynamic queue and database.
+
+\subsubsection{Continuous Integration}
+As mentioned, we have mainly worked on GUI this iteration. This means that we have used the ``\#20 GUI…'' branch as a surrogate master branch. We have done this because the GUI was not ready to be pushed to master. By assuming the GUI branch was master, we have used continuous integration daily, as we merge and build it multiple times a day.
+Further we find this practice to be beneficial in larger projects with multiple teams, as we are only one team of 4, we almost never work on more than two branches at the same time. 

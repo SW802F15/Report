@@ -1,34 +1,93 @@
-\subsection{Review 2}
-\paragraph{23rd February - 6th March}
+\subsection{Review 3}
+\paragraph{9th March - 20th March}
 
-The first day was spent on reading up on XP.
-We did not label our issues on github with iterations. We should do that (we have the paper issues).
 
+Summary of extended meeting at the bottom of this document.
 
 \textbf{Estimations:}
 \begin{itemize}
-\item We had trouble properly timing our tasks, so we started using everhour on the last day.
-\item All work related time is tracked.
-\item We will start counting work hours per person rather than per task.
-\item We will not use estimations/time trackings from this iteration in our estimation of the next.
+\item We started using Everhour to track hours
+\item We recorded 50 hours (45+5) but counted there would be 168 hours in the iteration. After subtracting time used for stand-up meetings, supervisor meetings, lunch breaks, and small breaks we have about 1 hour per person per day that is not used for anything productive. The time is most likely spent on a combination of general project discussions, switching tasks, and procrastination/not starting when a break ends.
+\item Some days we did not do anything project related - either because of lack of motivation, illness, or course related stuff (that should have been done at home).
+\item Our estimation of trivial tasks were approximately twice as long as the actual time.
+\item We had some tasks take much longer time than estimated, given that we ran into problems with a library.
+\item In the future we will talk about possible solutions for each task in order to estimate risks to according to possible problems.
 \end{itemize}
 
 \textbf{What Did We Accomplish?}
 \begin{itemize}
-\item We got stuck for a while on GUI - there were many unpredicted problems.
-	\begin{itemize}
-	\item The basic GUI almost works for now, and effort should be greatly reduced, so we can focus on other parts.
-	\item We should have split this issue up in several subtasks.
-	\end{itemize}
-\item Overall we have a functioning (though unstable) music player.
-\item About half of the tasks for this iteration were not done.
+\item We made a music library and a working test suite, further we made it possible to test private methods.
+\item Made a configuration table  
+\item Wrote report.
 \end{itemize}
 
 
 \textbf{Status on Master}
 \begin{itemize}
-\item It is possible to get the coverflow out of sync.
-\item App can crash if next/prev keys are spammed.
-\item Overall functioning well enough for demonstration purposes.
+\item Some song scanner capabilities are added.
+\item App can crash (it always could, but it needs to stop.)
 \end{itemize}
 
+
+\subsubsection{Extended Meeting}
+
+\paragraph{Minimum Viable Product}
+Antagelser:
+\begin{itemize}
+\item 70 timers arbejde per iteration. Dette svarer til ca. 20 units.
+\item Der skal skrives en rapport.
+\item Der skal laves en app.
+\end{itemize}
+MVP:
+\begin{itemize}
+\item Appen skulle kunne tælle skridt.
+\item Appen skulle kunne tilføje sange til sangbiblioteket fra en brugervalgt mappe eller standard mappen (Music).
+\item Appen skulle kunne matche en sang til et tempo.
+\item Appen skulle kunne kontrolleres til at kunne: Play, Stop, Pause, Next, Previous. Uden brug af en tændt skærm.
+\item Appen skulle kunne afspille musik og hvad der dertil tilhører (skift til næste efter slut, etc.).
+\item Det er antaget at MVP er funktionel fra armen.
+\item Appen skal være gennemtestet!
+\item Appen skal kunne automatisk hente BPM data om en sang fra internettet.
+\end{itemize}
+
+\paragraph{Protocols: New Issues, Switching Issues, Changing Issues During an Iteration}
+Snak og undersøg om det er ‘lovlig' at skifte opgave uden den igangværende er færdig.
+Snak og undersøg om det er ‘lovlig'  at ændre på issues der er aftalt (samt hvordan dette kommunikeres effektivt).
+
+If an issue (without any relation to existing issues) is discovered:
+\begin{itemize}
+\item If it is very important, discuss it amongst the group and decide whether it should replace an existing issue.
+\item If it is not important, the issue is added to the next iteration planning.
+\end{itemize}
+
+When choosing a new task to work on, it is important to select tasks in progress, if any. This can be understood as issues in progress are prioritised highest. Remember it is okay to ‘take’ tasks from other members if they do not work on the task assigned to them.
+
+If (part of) an issue is deemed not important to the project, it should be discussed and agreed between ALL members of the team. If not all members are present, the missing members are contacted to set of a meeting. If no response, then pause the issue and discuss it when response.
+
+\paragraph{Pushing to Master and Fixing Crashes}
+How do we make sure the maser is in a good place.
+
+Fix master (crash without test files).
+It is very important that we test more comprehensive tests, e.g. input null, “”, -1, file exists. 
+Further it is important we check to see if the tests are comprehensive before we push to master.
+
+ps. read about practise of deleting branches.
+
+\paragraph{Releases}
+Aftal dato for næste release.
+
+Release should contain:
+\begin{itemize}
+\item See Software Innovation 3 - Configuration Table
+\item Step Counter + Music Player + Song Scanner
+\item 10 April. (next iteration end)
+\end{itemize}
+
+\paragraph{Report}
+Tilpas konfigurationstabel.
+Lav toc. 
+
+\paragraph{Architecture}
+Modularisering af projektet (med interfaces?)
+
+We will refactor and create an architecture after release.

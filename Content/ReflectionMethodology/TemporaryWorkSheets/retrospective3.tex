@@ -1,0 +1,76 @@
+\subsection*{Retrospective 3}
+\paragraph{9th March - 20th March}
+
+\subsubsection{Coding Standard}
+In methods it is done as:
+
+\begin{code}{lst:codingstd1}{Coding standard for statements and loops.}
+\begin{lstlisting}
+if (statement) {
+    //Do stuff
+}
+else {
+    //Do stuff
+}
+\end{lstlisting}
+\end{code}
+
+
+Trivial getters and setters (or other methods that simply do a return) should be on one line.
+
+Use long variable names please. So no ‘am' for AudioManager, use ‘audioManager' as variable name.
+
+\subsubsection{Metaphor}
+Nothing in particular for this.
+
+\subsubsection{40-hour Work Week}
+We have encountered sickness, so we have not even reached the 40 hours.
+
+\subsubsection{Small Releases}
+We have decided to ignore our earlier “release” in order to plan a real release at the end of the next iteration (10. april).
+
+
+\subsubsection{On-site Customer}
+We have made preparations for us to handle the On-site Customer role by simulation.
+
+\subsubsection{Planning}
+We don’t see the point of individual estimations as individuals rarely finish issues alone.
+
+If an issue (without any relation to existing issues) is discovered:
+\begin{itemize}
+\item If it is very important, discuss it amongst the group and decide whether it should replace an existing issue. The issue is then estimated by the pair handling it.
+\item If it is not important, the issue is added to the next iteration planning.
+\end{itemize}
+If an issue (with relation to existing issues) is discovered:
+\begin{itemize}
+\item It should be estimated by the pair which handles it.
+\end{itemize}
+
+\subsubsection{Refactoring}
+Given that we will be examined in the code, we have decided to refactor more than suggested by XP.
+Further we have decided to refactor and make a new architecture after the release. This architecture should be of a simple design. See simple design.
+
+\subsubsection{Simple Design}
+We have found that the individual ‘modules’ in our code are not strongly defined. We plan on solving this by implementing each module through interfaces - thereby giving a clear overview of the public methods for each class and the inputs and outputs for each class and method. This will improve the independence of each module making it possible to change an entire module without affecting the overall program.
+
+\subsubsection{Pair Programming}
+We found that the forced timed pair programming switch didn’t sit right with us. We experience multiple times that we should switch just before the current issue was done. This created a lot of overhead.
+We therefore decided to use a task-based approach where switches only are made between issues or between issues estimated to take more than 3 hours.
+
+We have used the practice of, when in problems, splitting the pair, where each partner then makes some prototypes to solve the problems. Then the pair reunites and solves the problem together.
+
+We have had some sickness this iteration. This meant that we have not been pair programming when the members were working from home. This was not a problem since the tasks solved by individuals were sufficiently trivial. This gives rise to the question of when a task is trivial enough to not pair program.
+
+\subsubsection{Collective Ownership}
+We are still stuck of the old method of blaming others and being defensive of own work.
+We will once again try to better ourselves.
+
+\subsubsection{Testing}
+We found our previous testing method was insufficient in regards to private methods and we changed the method so private methods are now tested. Also we need to be more aware of testing first, as we use TDD.
+We need to be more comprehensive when testing, and not only sticking to a specification approach. e.g. input null, “”, -1, file exists. 
+
+
+For boundary tests as input it is okay to test them by creating an array with all the desired values, whereafter an loop iterates over and calling the method with all the values.
+
+\subsubsection{Continuous Integration}
+We have had some problems making sure the master branch is stable. See the extended meeting from Iteration Review 3 (Pushing to Master and Fixing Crashes). This has been a problem all the time, but the issue was not caught until now.
