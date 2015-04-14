@@ -1,0 +1,57 @@
+\subsection*{Retrospective 4}
+\paragraph{23rd March - 10th April}
+
+\subsubsection{Coding Standard}
+In this iteration we decided to postpone the decisions and documentation of the coding standards to next iteration, because we intend to allocate time for refactoring next iteration. 
+\subsubsection{Metaphor}
+Given the size of the project and the fact we all have worked together before, we are generally on track with the unspoken metaphor, which is essentially just what the program is. i.e. the music player is called music player.
+Besides the small team makes it easy to communicate if and when conflicts of understanding occur.
+All this makes the metaphor an implicit understanding between the team members.
+
+\subsubsection{40-hour Work Week}
+Besides single and uncorrelated episodes, we have not had any problems with energy.
+Some of this energy can also be attributed to the fact we have mostly coded and not written much report this iteration. 
+
+We suspect this situation can change in the coming iteration, due to the fact we are going to write a lot of report, which is boring and tiring. We will reflect upon the results in the next iteration retrospective.
+
+\subsubsection{Small Releases}
+The end of this iteration is our first real release. It is not a small release, but the app was not in a “releasable” state previously. We plan on making smaller releases from this point on.\\\\
+We do not have any actual customers to show the release to. This have been a factor in the slow release.\\\\
+Although we have no customer to test and evaluate our releases, we still benefit from doing them.
+First off, the small release forces us to merge and keep up the master with\\\\
+Every merge to master is accompanied with making all test pass. The requirement of small release forces frequents merges to master, resulting in up to date (all the new features)  version of the app.\\\\
+Further, using small releases gives greater incentive for the team to develop and complete concrete, delimited functionality %afgrænset færdig og brugbar programfunktionalitet,
+as requested or agreed with the customer.\\\\ 
+i.e. If the customer wants a feature (pacer), this feature (pacer) is developed as a separate module to be changed/improved later without corrupting other modules. The feature is also completed, if possible, before release, so it is not going to dangle as otherwise could happen.
+
+\subsubsection{On-site Customer}
+Our on-site customer becomes relevant when we start thinking about acceptance tests, which we did not really do yet.
+
+\paragraph{What has the absence of a customer meant for our project?}
+Because we have not properly used a surrogate customer, we have not discussed the project as much as we could have (feedback), and we have not gotten any acceptance tests done. Overall this has not been a big issue, because we have been on track - moving towards finishing our MVP.
+
+\subsubsection{Planning}
+We estimated 70 hours of work for this iteration, which is a bit more than we spent last iteration, but since we had some problems with people being ill last iteration, we decided to assume we would spend more time, which turned out to be very accurate, as we used 71 hours. We made some notes on planning in iteration review 4 and 5.
+
+\subsubsection{Refactoring}
+Not much energy was spent on refactoring - most things were spent on new functionality - because next iteration is going to be dedicated to refactoring.
+Minor bad smells were corrected.\\\\
+We plan on making a thorough refactoring plan, for the next iteration, based on \citep{fowler:refac}.
+
+\subsubsection{Simple Design}
+Simple design has been followed fairly well in this iteration, but because of the lack of refactoring some parts of the program are a little more messy than they should be - the plan is to fix this in the next iteration.
+
+\subsubsection{Pair Programming}
+After setting up monitors and keyboards our pair programming has improved. Sometimes trivial/small tasks were solved by single persons, but most of the time pair programming is used.
+Some of us have a tendency to forget changing drivers often, and while we could change partners more often we have done so fairly regularly. We changed partners when it felt natural rather than on set times.
+
+\subsubsection{Collective Ownership}
+Collective ownership has not influenced our project a lot in this iteration, but we have gotten a stronger feeling of the code actually being collectively owned - there is not much feeling of something being someone’s code.
+
+\subsubsection{Testing}
+As always we have not been testing the GUI. Our tests have gotten fairly big, and therefore they are beginning to take a while to run (could be solved by using an integration server, see Continuous Integration).
+
+We have had some trouble remembering to do test first - especially when our methods get complicated. In those cases we have sometimes written the tests after finishing the functional code. This has especially been the case when we were unsure what we needed to test (i.e., when we did not know how the method was supposed to work). Basically we ended up using spikes, but instead of throwing out the code we ended up using it and writing tests. 
+
+\subsubsection{Continuous Integration}
+We are still doing as we did to begin with: Merge with master and run tests. But the tests are starting to take a long time to run. Ideally we want a dedicated integration server, but it is not realistic for us to set one up at this point. In the end we will have to be more selective with when we run our tests.

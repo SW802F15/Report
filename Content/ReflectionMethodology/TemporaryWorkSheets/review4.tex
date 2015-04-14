@@ -1,0 +1,73 @@
+\subsection{Review 4}
+\paragraph{23rd March - 10th April}
+
+
+Summary of extended meeting at the bottom of this document.
+
+\textbf{Estimations:}
+\begin{itemize}
+\item We expected to work 70 hours, 67 hours on code and 3 hours on report. It turned out we worked 71 hours in total, 68 hours on code and 3 hours on report. This estimation is concluded to be spot on, as the measurements have small variations, which can make up for the extra hour.
+\item We have solved issues for 82 estimated hours in this iteration (non report only, nor extra bug fixed (4 hours)).
+\item Based on estimations of the issues of the iteration, we can conclude that when an issue is estimated between 8 (10) and 20 hours, the time actually used is approximately 60\% of the estimated time. However when we estimate non-trivial short issues (2-4 hours) we estimate fairly low in comparison to the actual used time. i.e. two issues estimated to 2 hours took 8 hours and 3,5 hours respectively.
+\item The small deviation in time between estimated and actual used time, can be traced to the granularity of our estimations. We have a granularity where we estime in actual hours in up to 2 hours. More than 2 hours are estimated in units of half a day. 4 hours are half a day, 8 hours are an entire day, 10 hours are a day and a half … We used these numbers because of the restrictions of the online planning poker tool used.
+This actually works okay, as it gives the opportunity to estimate trivial issues to less than half a day, which obviously will give a lot of overhead.
+
+\end{itemize}
+
+\textbf{What Did We Accomplish?}
+\begin{itemize}
+\item We finished the step counter
+\item We fixed the out-of-memory issue with the album covers.
+\item We created the GUI for settings and SongScanner.
+\item We fixed a number of small bugs.
+\begin{itemize}
+\item Next song after completion.
+\item Handle missing songs.
+\item Stop button skipped to next song.
+\item Set filename as song title if no other title is available from the MP3 file itself 
+\end{itemize}
+\item We now only need the following to finish our MVP
+\begin{itemize}
+\item Acceptance tests
+\item Control without looking at screen
+\item Finish BPM online tests
+\item General unit tests
+\item Settings for the step counter, i.e. sensitivity
+\item Refactoring. Modulation, and correct encapsulation.
+\end{itemize}
+\end{itemize}
+
+\textbf{Status on Master}
+\begin{itemize}
+\item Working and tested
+\begin{itemize}
+\item Step Counter
+\item Music Player
+\item Song Scanner
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item Issues still on master
+	\begin{itemize}
+	\item Step Counter
+		\begin{itemize}
+		\item Works as intended
+		\end{itemize}
+	\end{itemize}
+	\begin{itemize}
+	\item Music Player
+		\begin{itemize}
+		\item Invalid state exceptions still happen on master (warnings in log)
+		\item prev and next pauses song when playing, it should continue playing the new song.
+		\item Seekbar seekTo functions correctly, but have display issues jumps when dragging.
+		\end{itemize}
+	\end{itemize}
+	\begin{itemize}
+	\item Song Scanner
+		\begin{itemize}
+		\item Missing online BPM lookup in Song Scanner.
+		\item Song Scanner Settings not used in app.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
