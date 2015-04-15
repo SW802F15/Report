@@ -1,1 +1,5 @@
 \section{Implementation}
+In our implementation of the step counter we decided to split the task into a data collection task, testing of algorithm task and a implementation on android task. The reason for doing so is that our approach writing tests then code then run the test is unsuited for implementing a step counter as the running of tests can't be automated as it require a person to move around with the smartphones.
+
+As there is no built-in library available for the Android API version 16, we had a range of algorithms to choose from. We found the precision could vary greatly from algorithm to algorithm so we had to test algorithms against each other. In order to do so we first had to generate some sample data collected from the smartphones.
+\input{Content/StepCounter/dataCollection}
