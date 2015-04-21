@@ -1,20 +1,20 @@
 \subsection{Data Collection}
-The first step of data collection is to figure out what data to collect, to do this we take a look at the available sensors on a android smartphones see \citet{android:sensor} for description. We decided to gather data from three sensors accelerometer, gravity and gyroscope we also measured the time delay between each sensor reading.
+The first step of data collection is to figure out what data to collect, to do this we take a look at the available sensors on a android smartphones see \citet{android:sensor} for description. We decided to gather data from three sensors: accelerometer, gravity and gyroscope. We also measured the time delay between each sensor reading.
 
 \subsubsection{Collection Procedure}
-To generate the sample data we a person perform the follow tasks while carrying the smartphone in a specific position (in hand, in pocket or strapped to arm). 
+To generate the sample data we a person perform the following tasks while carrying the smartphone in a specific position (in hand, in pocket or strapped to arm). 
 \begin{enumerate}
 \item Walk 100 steps. \textit{Walk: to advance on foot at a moderate speed; proceed by steps; move by advancing the feet alternately so that there is always one foot on the ground.} %http://dictionary.reference.com/browse/walk?s=t
 \item Jog 100 steps. \textit{Jog: to run at a leisurely, slow pace.} %http://dictionary.reference.com/browse/jog?s=t
 \item Run 100 steps. \textit{Run: to go quickly by moving the legs more rapidly than at a walk and in such a manner that for an instant in each step both feet are off the ground.} %http://dictionary.reference.com/browse/run?s=t
 \item Sprint 100 steps. \textit{Sprint: to run at full speed.} %http://dictionary.reference.com/browse/sprint?s=t
-\item Alternating. Walk 20 steps followed by jogging 20 steps, running 20 steps, sprinting 20 steps, and walking 20 steps.
+\item Alternating. Walk 20 steps followed by jogging 20 steps, running 20 steps, sprinting 20 steps, and walking 20 steps.2
 \item Standing still with the phone for 2 minutes.
 \end{enumerate}
 %TODO sort out refs
 
 The Purpose of task one to five is generate data the algorithms should analyse and correctly calculate the 100 steps taken. The data from task six should calculated to zero steps taken.
 
-These tasks can then be repeated with for all carrying positions, different smartphones and multiple persons. In practice the tasks where carried out with two people, the smartphone Samsung Galaxy S III and in one carrying position \textit{strapped to arm}.
+These tasks can then be repeated for all carrying positions, different smartphones and multiple persons. In practice the tasks were carried out with two people, the smartphone Samsung Galaxy S III and in one carrying position, strapped to the arm.
 
-After data collection we are now ready to test algorithms against each other.
+After the data collection, we are now ready to test algorithms against each other.
