@@ -3,12 +3,14 @@
 
 \subsubsection{Coding Standard}
 In this iteration we decided to postpone the decisions and documentation of the coding standards to next iteration, because we intend to allocate time for refactoring next iteration. 
+
 \subsubsection{Metaphor}
 Given the size of the project and the fact we all have worked together before, we are generally on track with the unspoken metaphor, which is essentially just what the program is. i.e. the music player is called music player.
 Besides the small team makes it easy to communicate if and when conflicts of understanding occur.
 All this makes the metaphor an implicit understanding between the team members.
 \Ivan{Title is a type of metaphor - reflect upon this. Maybe even change the title.}
 \Ivan{Icons are types of metaphors - reflect upon this. Maybe even change the icons.}
+
 \subsubsection{40-hour Work Week}
 Besides single and uncorrelated episodes, we have not had any problems with energy.
 Some of this energy can also be attributed to the fact we have mostly coded and not written much report this iteration. 
@@ -16,28 +18,52 @@ Some of this energy can also be attributed to the fact we have mostly coded and 
 We suspect this situation can change in the coming iteration, due to the fact we are going to write a lot of report, which is boring and tiring. We will reflect upon the results in the next iteration retrospective.
 
 \subsubsection{Small Releases}
-The end of this iteration is our first real release. It is not a small release, but the app was not in a “releasable” state previously. We plan on making smaller releases from this point on.\\\\
-We do not have any actual customers to show the release to. This have been a factor in the slow release.\\\\
+The end of this iteration is our first real release. It is not a small release, but the app was not in a “releasable” state previously. We plan on making smaller releases from this point on.
+
+We do not have any actual customers to show the release to. This have been a factor in the slow release.
+
 Although we have no customer to test and evaluate our releases, we still benefit from doing them.
-First off, the small release forces us to merge and keep up the master with\\\\
-Every merge to master is accompanied with making all test pass. The requirement of small release forces frequents merges to master, resulting in up to date (all the new features)  version of the app.\\\\
+First off, the small release forces us to merge and keep the master up-to-date.
+
+Every merge to master is accompanied with making all test pass. The requirement of small release forces frequents merges to master, resulting in up to date (all the new features) version of the app.
+
 Further, using small releases gives greater incentive for the team to develop and complete concrete, delimited functionality %afgrænset færdig og brugbar programfunktionalitet,
-as requested or agreed with the customer.\\\\ 
+as requested or agreed with the customer.
 i.e. If the customer wants a feature (pacer), this feature (pacer) is developed as a separate module to be changed/improved later without corrupting other modules. The feature is also completed, if possible, before release, so it is not going to dangle as otherwise could happen.
 
 \subsubsection{On-site Customer}
-Our on-site customer becomes relevant when we start thinking about acceptance tests, which we did not really do yet.
 \Ivan{Haven't we used a surrogate customer?}
 
 \paragraph{What has the absence of a customer meant for our project?}
 Because we have not properly used a surrogate customer, we have not discussed the project as much as we could have (feedback), and we have not gotten any acceptance tests done. Overall this has not been a big issue, because we have been on track - moving towards finishing our MVP.
+
+\paragraph{How have we dealt with the assignments normally dedicated to the customer?}
+\textbf{Prioritising:}\\
+We have prioritised use cases sorted by new interesting non-trivial features (novelty), whereas a customer might sort use cases by price, usability, and value (cost/value).
+This is because we do not gain much from implementing trivial features or nearly identical to existing features.
+
+\textbf{Acceptance Tests:}\\
+We have yet to make any acceptance tests, so this assignment has not been filled.
+
+\textbf{User stories / Use Cases:}\\
+We have not used user stories, instead we have used issues with a small explanation of the functionality. This is a bit like user stories, but not entirely. This has worked fine, as we only have ourselves to answer to.
+
+\textbf{Minimum Viable Product:}\\
+We decided on the MVP based on requirements from the study regulations and our own interests based on novelty.
+
+\paragraph{Have we made decisions or changes which could not have been done by a customer in real life?}
+We decided not to include the interval trainer because it would be trivial to implement, given its similarity to the already existing pacer.
+A real customer would might have wanted this interval trainer features, because of its high value and low cost. As explained, we prioritised based on novelty and not cost/value, hence this decision.
+
+
 
 \subsubsection{Planning}
 We estimated 70 hours of work for this iteration, which is a bit more than we spent last iteration, but since we had some problems with people being ill last iteration, we decided to assume we would spend more time, which turned out to be very accurate, as we used 71 hours. We made some notes on planning in iteration review 4 and 5.
 
 \subsubsection{Refactoring}
 Not much energy was spent on refactoring - most things were spent on new functionality - because next iteration is going to be dedicated to refactoring.
-Minor bad smells were corrected.\\\\
+Minor bad smells were corrected.
+
 We plan on making a thorough refactoring plan, for the next iteration, based on \citep{fowler:refac}.
 
 \subsubsection{Simple Design}
@@ -47,8 +73,35 @@ Simple design has been followed fairly well in this iteration, but because of th
 After setting up monitors and keyboards our pair programming has improved. Sometimes trivial/small tasks were solved by single persons, but most of the time pair programming is used.
 Some of us have a tendency to forget changing drivers often, and while we could change partners more often we have done so fairly regularly. We changed partners when it felt natural rather than on set times.
 
+\paragraph{Why do we change pairs with each issue?}
+We experienced that changing from one issue to the next before completing the first, was awkward.
+This can however decrease the feeling of collective ownership, hence the developer will come in less contact with each implementation.
+
+\paragraph{Why did the other way not work?}
+We experienced that when changing issues, the developers flow could be broken, which would result in wasted (overhead) time.
+
+\paragraph{Is there an overhead when using Pair Programming as much as we do? When should we use Pair Programming? How do we minimise the overhead?}
+Both Beck (find source) and our experience agree Pair Programming results in overhead.
+However this overhead should be minimised as much as possible. We have therefore decided to not pair program when implementing trivial issues. The triviality of issues is determined by the individual or pair in the process of programming.
+
+\paragraph{Should we change drivers often?}
+We do not think we need a fixed time frame one can be driver, sometimes it makes sense to drive for a long period of time if one possesses a relatively better understanding of the issue. 
+i.e. As Becks example where a experienced person is paired with a inexperienced person. First the inexperienced person observes and learns what is going on, later the inexperienced person becomes experienced and can contribute and drive. This scenario can occur when changing partners between issues.
+
+In turn, it also makes sense to switch often when there is a similar level of understanding in the pair since it ensures ideas from both programmers will be heard.
+
+
+\paragraph{What impact has it had not doing so?}
+The idea behind changing drivers is that it enforces collective code ownership (really?). This, however, requires that partner switch is done appropriately so that one person does not remain on the issue all the time.
+
 \subsubsection{Collective Ownership}
 Collective ownership has not influenced our project a lot in this iteration, but we have gotten a stronger feeling of the code actually being collectively owned - there is not much feeling of something being someone’s code.
+
+\paragraph{We still assign issues based on who have done what - e.g. Kristian writes settings GUI, it is his GUI.}
+\Alexander{Discuss this!}
+
+\paragraph{We are still tethered to the old way of thinking - e.g. Error in settings GUI == mistake by Kristian.}
+\Alexander{Discuss this!}
 
 \subsubsection{Testing}
 As always we have not been testing the GUI. Our tests have gotten fairly big, and therefore they are beginning to take a while to run (could be solved by using an integration server, see Continuous Integration).
@@ -57,3 +110,14 @@ We have had some trouble remembering to do test first - especially when our meth
 
 \subsubsection{Continuous Integration}
 We are still doing as we did to begin with: Merge with master and run tests. But the tests are starting to take a long time to run. Ideally we want a dedicated integration server, but it is not realistic for us to set one up at this point. In the end we will have to be more selective with when we run our tests.
+
+\paragraph{Is this way of doing it viable? How long is it viable? Why?}
+\Alexander{Discuss this!}
+
+\paragraph{What impact has this way of doing it had?}
+\Alexander{Discuss this!}
+
+\paragraph{What would doing it correctly improve? Why is it (not) worth setting up?}
+\Alexander{Discuss this!}
+
+\pagebreak
