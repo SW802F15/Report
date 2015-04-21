@@ -98,10 +98,8 @@ The idea behind changing drivers is that it enforces collective code ownership (
 Collective ownership has not influenced our project a lot in this iteration, but we have gotten a stronger feeling of the code actually being collectively owned - there is not much feeling of something being someone’s code.
 
 \paragraph{We still assign issues based on who have done what - e.g. Kristian writes settings GUI, it is his GUI.}
-\Alexander{Discuss this!}
-
-\paragraph{We are still tethered to the old way of thinking - e.g. Error in settings GUI == mistake by Kristian.}
-\Alexander{Discuss this!}
+By letting an experienced person work with a less experienced person does not require overhead, we reduce the amount of overhead related to having to learn the new worker. It also prevents some errors/misunderstandings associated with having to “learn” the code.
+We have a tendency to have one person always stuck on the issue, and alternating the partners, instead of letting the first “partner” team up with a different person. This allows the person to follow his idea for a solution to the end, but also makes it feel more like “his” code.
 
 \subsubsection{Testing}
 As always we have not been testing the GUI. Our tests have gotten fairly big, and therefore they are beginning to take a while to run (could be solved by using an integration server, see Continuous Integration).
@@ -112,10 +110,9 @@ We have had some trouble remembering to do test first - especially when our meth
 We are still doing as we did to begin with: Merge with master and run tests. But the tests are starting to take a long time to run. Ideally we want a dedicated integration server, but it is not realistic for us to set one up at this point. In the end we will have to be more selective with when we run our tests.
 
 \paragraph{Is this way of doing it viable? How long is it viable? Why?}
-\Alexander{Discuss this!}
+This way of doing it would not be viable for a larger project, but the cost of setting up an automated build server for a project of this size would most likely be bigger than sticking to the manual approach.
 
 \paragraph{What impact has this way of doing it had?}
-\Alexander{Discuss this!}
+We get very frustrated when shit doesn't work, because it takes forever to do over. 
 
-\paragraph{What would doing it correctly improve? Why is it (not) worth setting up?}
-\Alexander{Discuss this!}
+We are experiencing some intermittent exception from an unknown source. This would have been caught by an automated test tool, at least given us a log of when and where it first appeared. Instead we are now using time debugging everything, this had of course not been acceptable in a larger project.
