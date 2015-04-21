@@ -1,0 +1,10 @@
+\subsection{Selecting an Algorithm}
+To compare algorithms against each other we looked at the precision a algorithm could predict the number of steps taken in a data set from a particular task. The algorithm we found to work best was an adaptation of the pedometer in \citet{zhao:pedometer} refereed to as Zhao from this point on.
+
+\subsubsection{Modification to Zhao}
+Zhao is an algorithm for a pedometer working directly with the ADXL345 chip, where we rely on a sensor listener on the android platform. This means a few difference our data:
+\begin{itemize}
+\item Our data frequency being significantly lower. 
+\item Our data is filtered from noise.
+\end{itemize} 
+
