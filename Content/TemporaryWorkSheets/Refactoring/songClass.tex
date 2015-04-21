@@ -1,1 +1,31 @@
 \subsection*{Song - Class}
+We refactored the song class and we found these bad smells.
+\begin{enumerate}
+	\item Constants was written without `_' as whitespace. Was fixed by inserting `_' as whitespace. \\ e.g. MS_PER_SEC
+
+	\item We have restructured the class into five sections. This is done because we had much trouble determining which methods were public accessible and which was wrongly made public. Due to this we named the five sections:
+	\begin{enumerate}
+		\item Private Shared Resources
+		\item Accessors
+		\item Constructors
+		\item Private Functionality
+		\item Public Functionality - Interface
+	\end{enumerate}
+	Other classes may still have a section called `Stubs and Drivers' in the top of the class.
+	Each section is encapsulated with a `//region' and `//endregion' making it collapsible. e.g.
+	\begin{code}{lst:codestructureexample}{Example of code section.}
+	\begin{lstlisting}
+	////////////////////////////////////////////////////////////
+	//                  Private Shared Resources              //
+	////////////////////////////////////////////////////////////
+	//region
+		Code...
+	//endregion
+	\end{lstlisting}
+	\end{code}
+	
+	\item Refactored the method \texttt{getDurationInMinAndSec} to use ternary operators. This reduced 6 lines of nearly identical if-statements to to lines using ternary operators.
+	
+	 \item In \texttt{getDurationInMinAndSec} we found that the method used the class' own getter to access the variable \texttt{_durationInSec}. This has been fixed by accessing the variable directly.
+
+\end{enumerate}
