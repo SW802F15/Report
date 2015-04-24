@@ -1,0 +1,129 @@
+\subsection*{Retrospective 5}
+\paragraph{13th April - 24th April}
+
+\subsubsection{Coding Standard}
+We have expanded our coding standard by writing down the general structure and bad smells. Otherwise we have used verbally agreed upon standards.
+
+It has become clear this would have benefited us much earlier in the project, essentially saving much of the time spend this iteration on refactoring. Though some of the considerations done to reach this structure, was not possible to consider before encountering the problem.
+However, we now this is a good structure, hence it can be used from the get-go in future projects. 
+
+
+\subsubsection{Metaphor}
+We discussed metaphor at the supervisor meeting. It was noted that both the program title and program icon can be seen as metaphors. This is due to the fact the title and icon should illustrate the purpose and functionality of the program.
+
+We have not made any changes to our previous title or icon, but upon reflection it is likely we change the title in the future.
+
+We have encountered several issues when writing the report. Many of these issues, and the difficulty getting started, can be contributed to the missing metaphor or vision for the report. Contrary to the program, we do not share, or have discussed, any common metaphor of the report
+
+\subsubsection{40-hour Work Week}
+The 40-hour work week practice is used to combat burnout.
+In this iteration we clearly worked much less than 40 hours a week, however, we have still experienced burnout.
+
+One major culprit is when one is not sure about what to write (typically report) or what to do.
+Last retrospective we assumed the lack of energy when writing report was solely due to lack of interest. Now we believe it is both because of the lack of interest, lack of shared vision, and bit because of our pre-assumed idea of the report writing being boring.
+
+Another reason for our burnout is the lack of shared vision as explained in metaphor last paragraph.
+
+Further we did not plan thoroughly, hence a lot of work needed to be done before actually starting on an issue. The has caused many to be less enthusiastic and just not start working on any issues.
+
+This has also shown us how important planning and structure really is.
+
+\subsubsection{Small Releases}
+Although creating a release last iteration, we have not used it for anything at all since. This is due to the fact we have not gotten any external testers or customers to test it.
+
+The reason for us not taking the role as surrogate customer and testing it, is we have tested the shit out of it when creating it and every time we debugged and ran it, hence we did already know how and where it works.\linebreak
+This leads to a very low usability, given that novelty is prioritised higher. The scale is very much tipped in favor of novelty, given we have no user to complain.\linebreak
+This decision is not made actively, but because we are heading for an exam and not actually distributing the program, we have experienced that novelty is rated higher.\linebreak
+Furthermore, the only usages of the program is done by us at the demonstration, hence the low limit of usability.
+
+If we should have followed XP to the letter, we should have taken the time to (user) test it thoroughly as a customer.
+
+\subsubsection{On-site Customer}
+When taking the role as on-site customer, we have a tendency of polluting our decisions based on what is interesting to develop. We, as a surrogate customer, focus more on what is interesting for our exam than on things that may be interesting for an on-site customer.
+
+e.g. Usability issues are prioritised low.
+
+The acceptance tests, we should create as a surrogate customer, will be done as a mini project in TOV. The reason for us to focus on acceptance test in TOV, is because we cannot reflect upon it before trying it, and it is an important part of testing in XP.
+
+
+
+\subsubsection{Planning}
+\paragraph{Time Tracking:}
+We started tracking time for a couple of iterations ago.
+
+\textbf{Why time track?}
+The initial reasons for time tracking was estimation improvement and code velocity.
+Since then we have tried to use the metrics for measuring actual work hours and conclude and improve upon these, if possible.
+
+\textbf{What is relevant to time track?}
+We have discussed whether we should time track meetings and the likes. On one hand these meetings can be used to measure actual work hours, hence improving the general working speed. On the other hand it may cause more overhead without any insurance it actually can improve general working speed. 
+
+A thing worth noticing is each second is time tracked, but this can be misleading and lead to nitpicking instead of what is important. To counter this, Bech through XP, suggest to measure in units (of half a day). This is however only recommended to code issues. 
+
+\textbf{Big Brother vs. Anarchy}
+Since we started tracking time we have found more and more things we wanted to track. This can result in more overhead (actual “real time” and mental), and more importantly in having a work environment where Big Brother “Everhour” watches your every step if we do not set a line.
+
+The problem with logging everything is how conclusions are drawn. If one concludes that the best programmer is based on “Lines of code per minute” or similar, is that it can be very misleading. In this case there is no thought about quality, hence the real best programmer might be assessed to be a lousy programmer.
+
+Some members forget or didn’t bother to start the time tracking tool. This could be caused by laziness or because they felt it was not really necessary. This could also be due to the fact we are not used to tracking our time with a tool.
+
+The bottom line is that time tracking should improve our process.
+
+
+\paragraph{Planning:}
+We decided not to estimate or create issues for the refactoring and report process, due to not knowing what was to be done.\linebreak
+As explained above, this decision was cause for some problems with concentration and energy.
+In the future we will therefore create issues for all processes and estimate all code issues, to counter this problem.
+
+In summation: We should actually plan an iteration before doing it.
+
+
+\subsubsection{Refactoring}
+We refactored as an activity this iteration in spite of what XP tells us.
+
+We created a refactoring plan to ensure consistency across all classes and coders.
+
+We did this because of the reasons stated in retrospective 4.
+
+We did not refactor as much as planned, but we got a clear idea how to increase the quality of all our code.
+
+We ended up doing some things that could be considered functionality while refactoring, e.g. we removed stubs and connected some unconnected parts of the code (that should be connected). This made sense for us, however, as it clears up almost finished functionality without making big changes to functionality.
+
+\subsubsection{Simple Design}
+Since we have not really developed anything new, we have not used this a lot.
+
+We have removed a few things that were not “simple design” when refactoring, but it seems like we have not been fully aware of what “simple design” actually means.
+
+“Put in what you need when you need it.”
+
+\subsubsection{Pair Programming}
+We are not sure when we gain something from pair programming - some trivial code could be refactored by one person, but maybe doing it in pairs will give a better end result. We will experiment with different settings in the last few iterations.
+
+note: only relevant due to we refactor as an activity.
+
+\subsubsection{Collective Ownership}
+Refactoring as an activity has improved our collective ownership, as more people get to go over the code that has been written by others.
+
+Refactoring, while implementing, code written by other pairs would have the same effect, but we noticed that people often steer away from changing code that was not written by themselves.
+
+In conclusion: Collective ownership is hard, but gets better over time.
+
+\subsubsection{Testing}
+\textbf{Adding test case after finding a bug, why is this not done?}We did this to a small extent but we are not consistent with it and at this point we might as well not. Since the extra quality we get from writing a test for this does not justify the time it takes. We would gain experience with testing against bugs, but we do not learn much about process, increase the quality of the rest of our code nor benefit from it at the exam, since very few supervisors and censors read it.
+
+\textbf{We should evaluate the coverage of our test:}
+We should remember to compare our coverage with how many bugs we actually find.
+Find appropriate methods from test and verification course.
+
+\textbf{Needed tests were not made, discuss!}
+We found bugs that should have been caught by tests (such as does this feature even do anything) 
+
+Because we have problems writing a sufficient amount of tests, we should figure out a solution that could solve this. Because of time we will most likely not implement the solution. We could supply some test templates/specifications, telling us how to test certain types of methods, i.e., all methods with parameters should at least have a boundary test.
+
+We will not not specify test templates at this stage of the project, but we will review our current tests and discern if any is missing.
+
+The specific cases of missing test cases will be examined to determine if they actually are missing or if there is a test, which does not test correctly.
+
+
+\subsubsection{Continuous Integration}
+We still have the same issue of tests taking a long time, but after working around some trouble with the UI it is now significantly faster, and the lack of integration server is not as big an issue as before.
