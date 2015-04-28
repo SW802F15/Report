@@ -47,14 +47,17 @@ We have yet to make any acceptance tests, so this assignment has not been filled
 
 \textbf{User stories / Use Cases:}\\
 We have not used user stories, instead we have used issues with a small explanation of the functionality. This is a bit like user stories, but not entirely. This has worked fine, as we only have ourselves to answer to.
+\Ivan{Explain the difference between the issues we use and the use cases XP uses.}
 
 \textbf{Minimum Viable Product:}\\
 We decided on the MVP based on requirements from the study regulations and our own interests based on novelty.
+\Ivan{Present arguments}
+\Ivan{Define/Refer to definition of novelty.}
 
 \paragraph{Have we made decisions or changes which could not have been done by a customer in real life?}
 We decided not to include the interval trainer because it would be trivial to implement, given its similarity to the already existing pacer.
 A real customer would might have wanted this interval trainer features, because of its high value and low cost. As explained, we prioritised based on novelty and not cost/value, hence this decision.
-
+\Ivan{Come up with better argument, since user is not always about cost/value.}
 
 
 \subsubsection{Planning}
@@ -83,10 +86,11 @@ We experienced that when changing issues, the developers flow could be broken, w
 \paragraph{Is there an overhead when using Pair Programming as much as we do? When should we use Pair Programming? How do we minimise the overhead?}
 Both Beck (find source) and our experience agree Pair Programming results in overhead.
 However this overhead should be minimised as much as possible. We have therefore decided to not pair program when implementing trivial issues. The triviality of issues is determined by the individual or pair in the process of programming.
+\Ivan{Search for Laurie Williams sources.} 
 
 \paragraph{Should we change drivers often?}
 We do not think we need a fixed time frame one can be driver, sometimes it makes sense to drive for a long period of time if one possesses a relatively better understanding of the issue. 
-i.e. As Becks example where a experienced person is paired with a inexperienced person. First the inexperienced person observes and learns what is going on, later the inexperienced person becomes experienced and can contribute and drive. This scenario can occur when changing partners between issues.
+i.e. As Becks example where a experienced person is paired with a inexperienced person. First the inexperienced person observes and learns what is going on, later the inexperienced person becomes experienced and can contribute and drive. This scenario can occur when changing partners between issues. 
 
 In turn, it also makes sense to switch often when there is a similar level of understanding in the pair since it ensures ideas from both programmers will be heard.
 
@@ -100,11 +104,14 @@ Collective ownership has not influenced our project a lot in this iteration, but
 \paragraph{We still assign issues based on who have done what - e.g. Kristian writes settings GUI, it is his GUI.}
 By letting an experienced person work with a less experienced person does not require overhead, we reduce the amount of overhead related to having to learn the new worker. It also prevents some errors/misunderstandings associated with having to “learn” the code.
 We have a tendency to have one person always stuck on the issue, and alternating the partners, instead of letting the first “partner” team up with a different person. This allows the person to follow his idea for a solution to the end, but also makes it feel more like “his” code.
+\Ivan{One of the goals for `Code standard' is to create an environment where the code is similar and easy to ``learn''. It sound like we have trouble learning the code, suggesting we have very bad code standard. Explain.}
+
 
 \subsubsection{Testing}
 As always we have not been testing the GUI. Our tests have gotten fairly big, and therefore they are beginning to take a while to run (could be solved by using an integration server, see Continuous Integration).
 
 We have had some trouble remembering to do test first - especially when our methods get complicated. In those cases we have sometimes written the tests after finishing the functional code. This has especially been the case when we were unsure what we needed to test (i.e., when we did not know how the method was supposed to work). Basically we ended up using spikes, but instead of throwing out the code we ended up using it and writing tests. 
+\Ivan{It is really that time consuming to setup?}
 
 \subsubsection{Continuous Integration}
 We are still doing as we did to begin with: Merge with master and run tests. But the tests are starting to take a long time to run. Ideally we want a dedicated integration server, but it is not realistic for us to set one up at this point. In the end we will have to be more selective with when we run our tests.
