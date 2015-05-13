@@ -1,5 +1,5 @@
 \section{Implementation}
-\subsection{Step Detection}
+\subsection{Step Detection}\label{sec:stepCnt}
 To determine whether a step is taken, the approach taken by \citet{zhao:pedometer} is implemented. Our implementation first calculates a threshold, which corresponds to the threshold line in \Cref{fig:zhaoGraph}. The threshold is calculated by subtracting the minimum accelerometer measurement from maximum measurement, from the array where the measurements are stored.\\
 
 According to \citet[p. 2]{zhao:pedometer} a step has occurred if there is a negative slope in the acceleration graph and the acceleration curve crosses the threshold. It is determined whether a negative slope has occurred, by comparing the latest accelerometer measurement with the previous one. If the last measurement was above the threshold, and the current is below the threshold, a negative slope which crossed the threshold and thus, a step has occurred.\\
@@ -14,3 +14,12 @@ Our implementation utilises an sensitivity threshold so measurements which are v
   \label{fig:zhaoGraph}
 \end{figure}
 \subsection{Calculation of Steps Per Minute}
+The number of steps taken are used to calculate the number of steps the user takes per minute (SPM).\\
+
+First, a vector is calculated which represents the x, y, z values obtained from the accelerometer. The formula used for this is $$vector = \sqrt{x^{2} + y^{2} + z^{2}}$$\\
+
+The array containing accelerometer measurement data is then updated with the newly calculated value. The data in this array is used for determining whether a step is taken or not, the implementation of which is described in \Cref{sec:stepCnt}.\\
+
+The amount of seconds since the last step taken is then calculated, and the reciprocal value, $\frac{1}{time}$, of this value is then stored in the array containing the SPM measurements. Afterwards, the an average of the SPM array with the new value is calculated, and the GUI is updated with a new value through a GUI manager.\\
+
+If no step is taken and more than 2 seconds have passed, the implementation interprets this as if no steps are being taken and the SPM array and GUI is updated with the value 0.
