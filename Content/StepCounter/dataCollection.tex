@@ -1,4 +1,6 @@
 \subsection{Data Collection}
+As there is no built-in step counter library available for Android API version 16, we had to choose an algorithm. We found the precision could vary greatly from algorithm to algorithm, so we had to compare algorithms to each other. In order to do so we first had to generate some sample data collected from the smartphones' sensors. 
+
 The first step of data collection is to figure out what data to collect, to do this we take a look at the available sensors on an Android smartphone, see \citet{android:sensor} for a overview of these. We decided to gather data from three sensors: accelerometer, gravity and gyroscope. We also measured the time delay between each sensor reading.
 
 \subsubsection{Collection Procedure}
