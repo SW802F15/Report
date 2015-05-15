@@ -212,18 +212,23 @@ morekeywords={}
 %\renewcommand{\footrulewidth}{0.4pt}
 
 \usepackage{enumitem}
+\usepackage{ifthen}
 % Sidehoved %
-
 \makepagestyle{custom} % Definerer sidehoved og sidefod - kan modificeres efter ønske -->
 \makepsmarks{custom}{																						
-\def\chaptermark##1{\markboth{\itshape\thechapter. ##1}{}} % Henter kapitlet den pågældende side hører under med kommandoen \leftmark. \itshape gør teksten kursiv
+
+\def\chaptermark##1{
+			\ifthenelse{\equal{##1}{Preface}}
+				{\markboth{\itshape ##1}{}}
+				{\markboth{\itshape\thechapter. ##1}{}}
+			} % Henter kapitlet den pågældende side hører under med kommandoen \leftmark. \itshape gør teksten kursiv
+
 \def\sectionmark##1{\markright{\thesection. ##1}{}}	% Henter afsnittet den pågældende side hører under med kommandoen \rightmark
 } % Sidetallet skrives med kommandoen \thepage	
 \makeevenhead{custom}{\leftmark}{}{Group SW802F15} % Definerer lige siders sidehoved efter modellen \makeevenhead{Navn}{Venstre}{Center}{Højre}
 \makeoddhead{custom}{Group SW802F15}{}{\leftmark} % Definerer ulige siders sidehoved efter modellen \makeoddhead{Navn}{Venstre}{Center}{Højre}
 
 \usepackage{lastpage}
-\usepackage{ifthen}
 \usepackage{intcalc}
 \usepackage{nth}
 
