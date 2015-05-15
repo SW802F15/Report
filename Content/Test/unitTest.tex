@@ -1,7 +1,43 @@
 \section{Unit Test}
-This section should describe how we have used unit tests and what purpose, advantages, and disadvantages it has caused. Further it should include observation about unit tests and include a relevant example of a unit test.
+%This section should describe how we have used unit tests and what purpose, advantages, and disadvantages it has caused. Further it should include observation about unit tests and include a relevant example of a unit test.
 
+The project was developed using a test-driven approach (TDD). This means that unit tests were written \textit{before} any actual implementations were written. The purpose of writing tests before any actual code was written, was to ensure the quality of the code, and make sure that only the needed functionality was added. So when a new feature needed to be added, a test was written, run and it should then (as expected) fail. Then, just enough functional code was written to make the test pass. 
 
+Another purpose of using unit tests, is regression testing. When a change is made to the code base, things can easily break - especially in a complex system. When unit tests are in place, a change can be made and the unit tests can be run to check whether the system still passes all the tests, after then changes have been made. 
 
+\Cref{lst:testSnippet} shows a test helper from the source code of the project. The code checks whether the method \textit{getBPMfromJSON} extracts the expected value from the JSON. The JSON is contained in \textit{parameter}. It is in a helper method because it is used multiple places in the code. The test method shown in \Cref{lst:testSnipUsage} uses the helper to verify that the \textit{getBPMfromJSON} method returns -1 if given malformed JSON. The helper tests a private method and therefore uses \textit{invoke} as seen in line 14 in \Cref{lst:testSnippet}. Testing of private methods is further described in \Cref{sec:privTest}.
 
-\subsection{\texttt{Reflection} for private methods} 
+\begin{code}{lst:testSnippet}{Code which tests whether a correct beat per minute value is extracted from some JSON}
+\begin{lstlisting}
+ private void testGetBPMfromJSONHelper(int expectedValue, String parameter){
+        SongScanner songScannerClass = SongScanner.getInstance(getContext());
+        int actualValue;
+
+        Method privateMethod = TestHelper.testPrivateMethod(TestHelper.Classes.SongScanner,
+                "getBPMfromJSON",
+                getContext());
+
+        if (privateMethod == null) {
+            assertTrue(false);
+        }
+
+        try {
+            actualValue = (int) privateMethod.invoke(songScannerClass, parameter);
+            assertEquals(expectedValue, actualValue);
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+\end{lstlisting}
+\end{code}
+\begin{code}{lst:testSnipUsage}{Code which uses a helper method to test whether -1 is returned if a method is given malformed JSON.}
+\begin{lstlisting}
+@SmallTest
+public void testGetBPMfromJSONNotValid(){
+        testGetBPMfromJSONHelper(-1, "ø8å6æ68æ");
+}
+\end{lstlisting}
+\end{code}
+
+\subsection{\texttt{Reflection} for private methods}\label{sec:privTest}

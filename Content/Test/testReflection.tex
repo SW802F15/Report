@@ -1,4 +1,11 @@
-\section{Reflections about Test}
+\section{Implementation Observations}
 This section is where the reflections about the programmatic part of the test should be. Hence NO reflections about methodology here.
 
-i.e. Unit tests were a good way to allow for refactoring, since it was easy to ensure the functionality was not altered. However, that required extensive unit tests, which we in some cases did not have. This caused some trouble in form of periodic bugs. To solve this we could create a specification of test cases based on the structure of the method. We did not implement this due to lack of feasibility.
+\paragraph{Acceptance Tests}
+
+\paragraph{Unit Tests}
+Unit tests were a good way to allow refactoring, since it made it easy to ensure the software functionality was not altered. However, that required extensive unit tests, which we did not have in some cases. This caused some trouble in form of recurring bugs. To solve this we could create a kind of testing convention, so for example when a method takes parameters, its test always makes boundary, and null checks of the parameters. %why didnt we do this?
+
+We also found that even though unit tests enable regression testing to be performed, the degree of quality assurance provided by the tests, rely wholly on the quality of them. If the unit tests for a particular piece of code were not correct or written thoroughly, an alteration of the code which broke something in the system, might not cause the unit test to fail, even though the behavior of the system has changed.
+
+Even though the tests might take a while to write, we found that they were generally worth the time to write. The reason for this was that some of the time invested in writing them was regained later because the tests caught errors that we would otherwise have spent a lot of time debugging to find.
