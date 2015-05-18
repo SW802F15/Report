@@ -1,4 +1,33 @@
 \section{Acceptance Test}
-This section should describe the specification, process, implementation, and results of the acceptance test.
+As a way of making sure that a user story is fulfilled an acceptance test should be written. An acceptance test describes how the application should perform in a given situation for the user story to be complete, and the progress of the project can be measured by the amount of passing acceptance tests.
 
-Maybe mention that it is done in collaboration with the TOV course mini project.
+The acceptance tests should be written by the customers, possibly with some help from a dedicated tester, to make sure the program does exactly what they expect it to do. The acceptance tests should preferably be automated, and if necessary they can be implemented by a programmer. The idea of making them automated is to make it possible to use them as regression tests, making sure that refactoring and/or changes to other parts of the code do not break the functionality of features that have already been implemented.
+\Dan{Should maybe have some sources?}
+
+The important thing when writing a test is to make sure it is completely unambiguous and reproducable. An example of a user story and the associated acceptance test could be:
+
+\story{Keep playing when screen is off.}{High}
+{As a user, I, would like to save power by turning off the screen while the music is playing.}
+{\begin{itemize}
+\item The music keeps playing after the \texttt{Power} button is pressed.
+\end{itemize}}
+{\begin{itemize}
+\item Precondition: 
+\subitem $-$ The application must be launched in the MusicPlayer Activity.
+
+\item Procedure:
+\subitem $-$ Press \texttt{Play} button.
+\subitem $-$ Verify music is playing.
+\subitem $-$ Press \texttt{Power} button.
+\subitem $-$ Verify screen turns off.
+
+\item Postcondition:
+\subitem $-$ Verify the music is still playing.
+\end{itemize}}
+
+\Dan{Should we write more about how we wrote this test?}
+
+
+%This section should describe the specification, process, implementation, and results of the acceptance test.
+
+%Maybe mention that it is done in collaboration with the TOV course mini project.
