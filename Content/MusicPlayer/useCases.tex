@@ -1,8 +1,56 @@
 \section{User Stories}
+The following are some of the most interesting user stories used to develop the Music Player module. 
+
+\Dan{Should these be filtered a bit? Organised differently? Be described ``with words''?}
+
+\story{Play .mp3 files.}{High}
+{As a user, I, want to listen to the .mp3 files stored on my device.}
+{\begin{itemize}
+\item I am able to play a .mp3 file stored on the device.
+\item I am able to regulate the volume when listening to the song.
+\item I am not able to open other file types than .mp3.
+\end{itemize}}
+
+\story{Locate .mp3 files on device.}{High}
+{As a user, I, want the application to search the directories I specify for .mp3 files.}
+{\begin{itemize}
+\item When I start the application, it finds the .mp3 files stored in /sdcard/Music.
+\end{itemize}}
+
+\story{Obtain beats-per-minute for song.}{High}
+{As a user, I, want the application to automatically obtain the beats-per-minute (BPM) of the .mp3 files located.}
+{\begin{itemize}
+\item Obtain 113 as BPM for Rick Astley's Never Gonna Give You Up, when locating the 12 .mp3 files stored in /sdcard/Music.
+\item If no BPM is found for a song, it will not be playable.
+\item I am able to manually set BPM for a song.
+\end{itemize}}
+
+\story{Navigate songs.}{High}
+{As a user, I, want to be able to skip the current song, listen to the previously played song again. 
+Further I want to be able to stop and/or pause the playing song.
+It should also be possible to seek in the playing song.}
+{\begin{itemize}
+\item A \texttt{Next} button must exist, which skips to the next song.
+\item A \texttt{Previous} button must exist, which skips to the previously played song.
+\item A \texttt{Stop} button must exist, which stops the music.
+\item A \texttt{Pause} button must exist, which pauses the music, so it can be resumed from the paused position.
+\item A \texttt{SeekBar} must exist, which can seek in the playing song.
+\end{itemize}}
+
+\story{Keep playing when screen is off.}{High}
+{As a user, I, would like to save power by turning off the screen while the music is playing.}
+{\begin{itemize}
+\item The music keeps playing after the \texttt{Power} button is pressed.
+\end{itemize}}
+
+\story{Adjust music speed.}{Low}
+{As a user, I, want the music to match my pace even when the playing song's tempo is not exactly my pace.}
+{\begin{itemize}
+\item The application must be able to match my pace with appropriate songs, when the smartphone is held in either the hand, the pocket, or on the arm.
+\end{itemize}}
 
 
+%\story{Title}{Priority}{Story}{Acceptance Criteria}
+%This section should describe the use cases set up for the Music Player feature.
 
-\story{Title}{Priority}{Story}{Acceptance Criteria}
-This section should describe the use cases set up for the Music Player feature.
-
-i.e. The Music Player should play the next song after completion of the current playing song.
+%i.e. The Music Player should play the next song after completion of the current playing song.
