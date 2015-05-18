@@ -4,7 +4,7 @@ This section is where the reflections about the programmatic part of the test sh
 \paragraph{Acceptance Tests}
 
 \paragraph{Unit Tests}
-Unit tests were a good way to allow refactoring, since it made it easy to ensure the software functionality was not altered. However, that required extensive unit tests, which we did not have in some cases. This caused some trouble in form of recurring bugs. To solve this we could create a kind of testing convention, so for example when a method takes parameters, its test always makes boundary, and null checks of the parameters. %why didnt we do this?
+Unit tests were a good way to allow refactoring, since it made it easy to ensure the software functionality was not altered after a refactoring. However, that required extensive unit tests, which we did not have in some cases. This caused some trouble in form of recurring bugs. To solve this we could create a kind of testing convention, so for example when a method takes parameters, its test always makes boundary, and null checks of the parameters. %why didnt we do this?
 
 We also found that even though unit tests enable regression testing to be performed, the degree of quality assurance provided by the tests, rely wholly on the quality of them. If the unit tests for a particular piece of code were not correct or written thoroughly, an alteration of the code which broke something in the system, might not cause the unit test to fail, even though the behavior of the system has changed.
 
