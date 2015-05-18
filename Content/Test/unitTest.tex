@@ -5,15 +5,15 @@ The project was developed using a test-driven approach (TDD). This means that un
 
 Another purpose of using unit tests, is regression testing. When a change is made to the code base, things can easily break - especially in a complex system. When unit tests are in place, a change can be made and the unit tests can be run to check whether the system still passes all the tests, after then changes have been made. 
 
-An example of how a unit test was used, is when we wanted to make sure the code which loaded a song from the database functioned correctly. The test approach looked as such
+An example of how a unit test was used, is when we wanted to make sure the code, which loaded a song from the database, functioned correctly. The test approach looked as follows:
 
 \begin{itemize}
 \item Load valid song
-\subitem Verify whether valid song is loaded
+\subitem- Verify whether valid song is loaded
 \item Load invalid song
-\subitem Verify that invalid song is not loaded
+\subitem- Verify that invalid song is not loaded
 \item Load song with null value
-\subitem Verify that song is not loaded
+\subitem- Verify that song is not loaded
 \end{itemize} 
 
 So if, at some point, someone refactors the method which loads a song into the database and accidentally removes the part of the code handling a null check of the song, the unit test will fail. This is because the code no longer has the same functionality as the previous version of the code. Therefore, the code change needs to be rewritten allow the same functionality as before the change.
