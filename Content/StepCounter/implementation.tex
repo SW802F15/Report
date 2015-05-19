@@ -20,6 +20,6 @@ First, the amplitude is calculated which represents the change x, y, z values ob
 
 The array containing accelerometer measurement data is then updated with the newly calculated value. The data in this array is used for determining whether a step is taken or not, the implementation of which is described in \Cref{sec:stepCnt}.\\
 
-The amount of seconds\Ivan{"The amount of seconds..." giver ikke så meget mening som det burde.} since the last step taken is then calculated, and the reciprocal value, $\frac{1}{time}$\Ivan{Hvorfor?}, of this value is then stored in the array containing the SPM measurements. Afterwards, the average value of the SPM array with the new value is calculated, and the GUI is updated with a new value through a GUI manager.\\
+If we detect a step we look when the previous step was taken and calculate SPM from that, this value is then stored in the array containing the SPM measurements. Afterwards, the average value of the SPM array with the new value is calculated, and the GUI is updated with a new value through a GUI manager.\\
 
 If no step is taken and more than 2 seconds have passed, the implementation interprets this as if no steps are being taken and the SPM array and GUI is updated with the value 0.
