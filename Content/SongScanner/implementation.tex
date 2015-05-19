@@ -1,4 +1,21 @@
-\section{Implementation}
-This section should describe the programmatically interesting and relevant parts of the Music Player.
+\section{Implementation} %todo no music player
+The Song Scanner is part of the \texttt{DataAccessLayer} module which consists of three classes \texttt{Song}, \texttt{SongDatabase} and \texttt{SongScanner}. \texttt{Song} hold information regarding songs. \texttt{SongDatabase} is an abstraction to our sqlite database. \texttt{SongScanner} is responsible for keeping the database and MP3 file in selected folders synchronised.
 
-i.e. We found that trying to stop the music player while not loaded caused it to skip to next song. It was due to the fact this was an illegal action in that state, as seen in Figure (Android graph over mediaplayer states). We fixed this issue by implementing something, as seen in Listing (Code snipped of interesting code).
+\subsection{Song}
+An instance of \texttt{Song} represents a MP3 file loaded into memory. The \texttt{Song} class consists of relevant data fields such as \texttt{file path} and \texttt{BPM}, as well as constructors for the database and song scanner. 
+
+Most information used to populate the fields of \texttt{Song} is contained within the MP3 file itself in the form of \texttt{ID3 Tags}, an informal standard is specified by \citet{ID3:standard}. The constructor used by \texttt{SongScanner} takes a MP3 file and extracts data (title etc.) from the file.
+
+\subsection{SongDatabase}
+The \texttt{SongDatabase} is used to interact with our sqlite database. The database contains a single table for songs. This table is used to store all data for a song, in addition to the data extracted from the file we also store a path to a cover image and beat per minute.
+
+\texttt{DynamicQueue}, see \cref{sec:dynamicQueue}, relies on \texttt{SongDatabase} to handle queries for songs with a beat per minute in a specific range. In the event a row in the database does not have a corresponding MP3 file the row is deleted, this can happen if a user no longer wish to keep a file in his or her collection and removes it from the selected folders. 
+
+\subsection{SongScanner} 
+The \texttt{SongScanner} has two tasks to perform; scan for files and find beat per minute online.
+
+The first task involve a recursive search though selected folders for MP3 files, construct \texttt{Song} objects, then insert them into the database. After the \texttt{Song} object is constructed the \texttt{SongScanner} attempts to extract a cover image from the file and safes the cover in a separate file then adds the cover path to the object. This behaviour reflects the idea that the cover image where supposed to be downloaded online, but that feature failed to emerge as it is common to store album cover in the file. \Kristian{not quite simple design.}
+
+\Kristain{todo: skriv noget om hvordan vi finder BPM for songs}
+
+
