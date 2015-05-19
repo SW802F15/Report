@@ -4,9 +4,9 @@ To determine whether a step is taken, the approach taken by \citet{zhao:pedomete
 
 According to \citet[p. 2]{zhao:pedometer} a step has occurred if there is a negative slope in the acceleration graph and the acceleration curve crosses the threshold. It is determined whether a negative slope has occurred, by comparing the latest accelerometer measurement with the previous one. If the last measurement was above the threshold, and the current is below the threshold, a negative slope which crossed the threshold and thus, a step has occurred.
 
-As \citet[p. 2]{zhao:pedometer} we assume that a person can either run as fast as five steps per second or walk as slowly as one step every two seconds. This is handled in the implementation by checking the time since the last measurement. If less than 200 milliseconds have passed since the last step, a new step is not detected. If more than 2 seconds have passed the accelerometer measurement array is updated with a 0 to indicated that the person is not moving.
+As \citet[p. 2]{zhao:pedometer} we assume that a person can either run as fast as five steps per second or walk as slowly as one step every two seconds. This is handled in the implementation by checking the time since the last measurement. If less than 200 milliseconds have passed since the last step, a new step is not detected. If more than 2 seconds have passed the SPM array is updated with a 0 to indicate that the person is not moving (0 steps per minute).
 
-Our implementation utilises an sensitivity threshold so measurements which are very close to each other are not detected as a new step, even though they fulfill the requirements mentioned earlier. This is done to filter out small deviations in measurements which might falsely be identified as a new step.
+Our implementation utilises an sensitivity limit so measurements which are very close to each other are not detected as a new step, even though they fulfill the requirements mentioned earlier. This is done to filter out small deviations in measurements which might falsely be identified as a new step. The current limit value is 2, and was found experimentally.
 \begin{figure}[h!]
   \centering
     \includegraphics[scale=0.8]{Images/accPlot.png}
@@ -16,10 +16,10 @@ Our implementation utilises an sensitivity threshold so measurements which are v
 \subsection{Calculation of Steps Per Minute}
 The number of steps taken are used to calculate the number of steps the user takes per minute (SPM).\\
 
-First, a vector is calculated which represents the x, y, z values obtained from the accelerometer. The formula used for this is $$vector = \sqrt{x^{2} + y^{2} + z^{2}}$$\\
+First, the amplitude is calculated which represents the change x, y, z values obtained from the accelerometer. The formula used for this is $$amplitude = \sqrt{x^{2} + y^{2} + z^{2}}$$\\
 
 The array containing accelerometer measurement data is then updated with the newly calculated value. The data in this array is used for determining whether a step is taken or not, the implementation of which is described in \Cref{sec:stepCnt}.\\
 
-The amount of seconds since the last step taken is then calculated, and the reciprocal value, $\frac{1}{time}$, of this value is then stored in the array containing the SPM measurements. Afterwards, the an average of the SPM array with the new value is calculated, and the GUI is updated with a new value through a GUI manager.\\
+The amount of seconds\Ivan{"The amount of seconds..." giver ikke så meget mening som det burde.} since the last step taken is then calculated, and the reciprocal value, $\frac{1}{time}$\Ivan{Hvorfor?}, of this value is then stored in the array containing the SPM measurements. Afterwards, the average value of the SPM array with the new value is calculated, and the GUI is updated with a new value through a GUI manager.\\
 
 If no step is taken and more than 2 seconds have passed, the implementation interprets this as if no steps are being taken and the SPM array and GUI is updated with the value 0.

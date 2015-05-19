@@ -1,4 +1,5 @@
 \section{The Tour}
+\Ivan{Hvis vi vil starte med et overblik, bør vi medtage en brugskontekst - hvad er det egentlig man kan med det? Det kunne også give mening at give et overblik over programmet.}
 Tempo player is an application for the Android platform, which is able to play and select music from an already existing library of songs, which fits the user's running pace. It uses the accelerometer for calculating the user's running pace. The application's main screen can be seen in \Cref{fig:mainScreen}. 
 
 \begin{figure}[h!]
@@ -12,7 +13,9 @@ The \textit{BPM} represent the song's ``Beats Per Minute''. This information is 
 
 The Android device should be mounted on the user's arm and when the next button is pressed the BPM of the next songs played will match the user's SPM with an allowed deviation of 45 BPM.
 
-When the user stands still and the SPM is 0, all songs in the library will be available in a shuffled order.
+When the user stands still for more than 2 seconds, the SPM are set to 0, since no steps are taken. See \Cref{sec:stepCnt} for details. 
+
+We have chosen that all songs in the library will be  available to the user in a shuffled order.
 
 As shown in \Cref{fig:settings}, the user can adjust some settings of the application. Currently, the only adjustment the user can make is in which directory the application looks for songs. This settings screen is shown in \Cref{fig:settingsPath}. 
 
