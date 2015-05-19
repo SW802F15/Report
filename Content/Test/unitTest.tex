@@ -3,7 +3,7 @@
 
 The project was developed using a test-driven approach (TDD). This means that unit tests were written \textit{before} any actual implementations were written. The purpose of writing tests before any actual code was written, was to ensure the quality of the code, and make sure that only the needed functionality was added. So when a new feature needed to be added, a test was written, run and it should then (as expected) fail. Then, just enough functional code was written to make the test pass. 
 
-Another purpose of using unit tests, is regression testing. When a change is made to the code base, things can easily break - especially in a complex system. When unit tests are in place, a change can be made and the unit tests can be run to check whether the system still passes all the tests, after then changes have been made.\Ivan{Nævn hvilket test framework der er brugt. ``This of course requires a test framework to be in place. In the project ... was used''}
+Another purpose of using unit tests, is regression testing. When a change is made to the code base, things can easily break - especially in a complex system. When unit tests are in place, a change can be made and the unit tests can be run to check whether the system still passes all the tests, after then changes have been made. This of course requires a test framework to be in place. In the project, Android's JUnit extension \citet{android:test} was used.
 
 An example of how a unit test was used, is when we wanted to make sure the code, which loaded a song from the database, functioned correctly. The test approach looked as follows:
 
