@@ -1,4 +1,20 @@
 \section{Implementation}
-This section should describe the programmatically interesting and relevant parts of the Music Player.
+\subsection{Turning Off the Screen}
+% semi implementation - darkening only
+% why?
+% bound to options menu
 
-i.e. We found that trying to stop the music player while not loaded caused it to skip to next song. It was due to the fact this was an illegal action in that state, as seen in Figure (Android graph over mediaplayer states). We fixed this issue by implementing something, as seen in Listing (Code snipped of interesting code).
+\subsection{Handling of Taps}
+%tap listener
+%on click increment
+The detection of taps is done by listeners provided by the Android platform. Two types of taps are handled, others are ignored. The two types are: when a finger taps once and not a fling for example, and when a long tap is performed, for example holding one's finger on the screen for 200 ms. When a finger taps once, a method called \texttt{increment()} is called.
+
+%time counter - 500 ms - no standard - decided
+The method does two important things: it increments a global tap counter and it starts a timer. The timer runs in the background which enables new taps to occur. Every time within 500 ms a tap occurs, the global counter is incremented. After the time has passed, a method, \texttt{doTapAction()} is called with the accumulated number of taps as a parameter. The method then decides whether to play, pause etc. and performs the appropriate action. The 500 ms were determined experimentally since we could not find any standard regarding wait times on NGUIs.
+
+%reset counter
+%types captured - longpress = ??
+After an action has been performed, the global tap counter is reset and everything goes back to the state it was in at first. The application is ready for a new action.
+
+%long press exception
+The exception is the long press. When the long press is performed, the music is stopped immediately since there is no need to detect more than one successive long press.
