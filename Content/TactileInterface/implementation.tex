@@ -1,10 +1,12 @@
 \section{Implementation}
-\subsection{Turning Off the Screen}
-% semi implementation - darkening only
-% why?
-% bound to options menu
+\subsection{Turning off the Screen}
+The implementation of when the screen is turned of, is a pseudo-implementation. On stock Android we found that it is not possible to keep the Android listener running, when the screen is turned off by for example the power button. If this functionality should truly have been implemented, the phone would need to be rooted.
 
-\subsection{Handling of Taps}
+In the current implementation the screen is made to look dark by creating a completely opaque overlay. The NGUI can be activated by pressing the menu button on the Android device. After the overlay is activated, the screen turns dark, and the application starts handling taps in a custom manner as described in \Cref{subsec:handleTaps}.
+
+The overlay, and thus our custom handling of taps, can be deactivated by touching the home button again after which the opaque overlay is removed.
+
+\subsection{Handling of Taps}\label{subsec:handleTaps}
 %tap listener
 %on click increment
 The detection of taps is done by listeners provided by the Android platform. Two types of taps are handled, others are ignored. The two types are: when a finger taps once and not a fling for example, and when a long tap is performed, for example holding one's finger on the screen for 200 ms. When a finger taps once, a method called \texttt{increment()} is called.
