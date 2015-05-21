@@ -1,1 +1,4 @@
 \subsection{Continuous Integration}
+Instead of setting up a build server, we ran the entire test suite when pushing to the master branch. This worked well when the test suite was small. When it grew bigger and slower, it took too long to run the entire test suite. This meant that only the relevant test modules were run frequently which meant that the full test suite was run less frequently.
+
+Midway through the project we discovered a periodic bug which was not easy to trace because we needed the log a build server could have generated. This could have given information about which commit caused the bug to appear.
