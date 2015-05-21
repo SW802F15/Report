@@ -14,8 +14,16 @@ Extreme Programming is supposed to be a lightweight, efficient, and fun approach
 	Simple Design          		  & Small Releases   	& Testing             
 \end{tabularx}
 
-Some of these practices are more coherent than others. 
-While some enforces each other, others may be unrelated. (i.e. coding standards enforces collective ownership, but on-site customer and pair programming are unrelated.)
+Some of these practices are more engrained than others. 
+While some supports each other, others may be unrelated. (i.e. coding standards supports collective ownership, but on-site customer and pair programming are unrelated.) The complete map can be seen here:
+\begin{figure}[H]
+	\centering
+	\includegraphics[]{Images/xpPracticeSupport.png}
+		\caption{Map, from page 70 in \textit{Extreme Programming Explained (1999)} \citep{xp:explained}, of the practices and how they support each other. }
+	\label{fig:practiceSupport}
+\end{figure}
+
+
 
 \subsection{40-hour Week}
 %Why
@@ -103,64 +111,58 @@ Here the customer will have to answer questions from the developers and prioriti
 
 \subsection{Pair Programming}
 %Why
-
+Pair Programming is maybe the most controversial practice in Extreme Programming.
+When it works it generates high quality code, but when it doesn't it is counterproductive.
 
 %How/What
+Pair Programming works with two developers sitting at the same computer.
+Here they work together on the same code.
+One codes while the other thinks ahead and abstract.
 
 
 %Coherent
+This practice requires a lot of the developers as human beings.
+However, when it works it contributes to the Collective Ownership and Simple Design practices as well as general code quality.
 
-
-\subsection{Planning}
+\subsection{Planning Game}
 %Why
+The Planning Game practice is an attempt make the development schedule a collaboration between customer and developer.
 
 
 %How/What
-
+The Planning Game uses story cards, which are written by the customer.
+The story cards describe what the system needs to do and the purpose of the story.
+When a story card is written, the developers will estimate its time to implement.
+When the stories are estimated, the customer is tasked to decide in which order the stories should be implemented.\\
 
 %Coherent
-
+By planning this way, it enforces the Small Releases practice.
 
 \subsection{Refactoring}
 %Why
-
+One of Extreme Programmings core ideals is to \texttt{be brave}.
+This means one should not be afraid to refactor working code, if it is to improve the quality of the code.
 
 %How/What
-
+When a developer discovers a method to improve, he does so.
+When the refactoring is done, the tests are run and if all pass, the changes are committed to the project.
 
 %Coherent
 
 
-\subsection{Simple Design}
-%Why
-
-
-%How/What
-
-
-%Coherent
-
-
-\subsection{Small Releases}
-%Why
-
-
-%How/What
-
-
-%Coherent
-
-
-\subsection{Testing}
-%Why
-
-
-%How/What
-
-
-%Coherent
+\Alexander{Spørgsmål til Ivan: Hvilken struktur er bedst, den lange eller den korte?}
 
 
 
+\paragraph{Simple Design} is the practice that defines the best design as the easiest that work.
+For it to work, it must pass all unit tests and acceptance tests.
+Further the best design should be so simple it never has any duplicate code.
 
-When looking closer at these practices, it becomes clear that these practices all are based on the principles of \textit{Communication, Courage, Feedback, and Simplicity}.
+
+\paragraph{Small Releases} are small and frequently versions of the software, which are tested by the customer.
+These releases does incrementally complete the system.
+
+\paragraph{Testing} is a mindset, in which, unit tests are developed before the code (Test-First Development).
+Testing also refers to how the stories and releases are not complete before they pass their respective tests.
+
+
