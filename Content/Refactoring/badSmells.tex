@@ -1,0 +1,15 @@
+\section{Bad Smells}
+%what are bad smells?
+According to \citet{code:smell}, a bad smell is 
+\begin{center}
+\textit{.. a surface indication that usually corresponds to a deeper problem in the system}
+\end{center}
+\Christoffer{is quote relevant? or should it be removed?}
+
+Examples of bad smells are duplicated code, long method and inappropriate intimacy. Below each of them are explained. 
+
+\paragraph{Duplicated Code}
+Duplicated code occurs when a similar code structure occurs in multiple places in a program. Most of the time there is no reason to have nearly identical code in multiple places. Often, the code can be extracted, modified slightly and a new method can be created which is simply called from all methods with the similar code. The exception, of course, is if the code found in the various places is completely identical, in which case the method can be extracted and used as is.\Christoffer{should we also tell about it on a class level?}
+\paragraph{Long Method}
+The longer a method is, the harder it is to understand \citet[p. 64]{fowler:refac}, since readability also affects maintainability it is clearly an unwanted smell. Therefore it is usually desirable to break up a long method into multiple smaller ones. Usually all that is needed is to shorten a long method, is to extract the method and put the parts that seem to fit together in new methods.
+\paragraph{Inappropriate Intimacy}
