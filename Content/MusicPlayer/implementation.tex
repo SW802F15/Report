@@ -8,9 +8,16 @@ This class is named based on the fact that it will update dynamically, depending
 \subsection{MusicPlayerActivity}
 This is the central point of the application, responsible for managing the rest of the application and giving the user a way of interacting with it. Is starts the \texttt{MusicPlayerService}, calls the \texttt{DynamicQueue} for songs to play, attaches listeners to the buttons, making them clickable, and it checks that there are enough songs in the specified folder, sending the user to the settings menu if this is not the case.
 
-Because this class is responsible for managing so many things, that it was necessary to move some of its functionality to another class, \texttt{Initializers}, to prevent \texttt{MusicPlayerActivity} from becoming too confusing. \texttt{Initializers} is responsible for all the methods to set click listeners, and initialize the dynamic queue and the cover flow, which shows the album cover of each song in the queue.
-\Dan{Please rewrite this to make more sense.}
+In order to manage the responsibilities associated with the activity, general initialisation has its own class \texttt{Initializers}. \texttt{Initializers} is responsibility for setting \texttt{OnClickListeners} for the GUI and preparing the first song in the queue and coverflow. 
 
 \subsection{MusicPlayerService} 
+This service handles the playing of the music files, this is done with the \texttt{MediaPlayer} class which is part of the \citet{android:MediaPlayer} API. The service is responsible for setting up event listeners and act as an interface to the \texttt{MediaPlayer}.  
 
-\Dan{Fit this stuff in:} We found that trying to stop the music player while not loaded caused it to skip to next song. It was due to the fact this was an illegal action in that state, as seen in Figure (Android graph over mediaplayer states). We fixed this issue by implementing something, as seen in Listing (Code snipped of interesting code).
+We only used of one the two listeners available for the \texttt{MediaPlayer}, the \texttt{OnCompleteListener}. This listener is called when a files reaches its end. In this event the method attracted to the listener selects the next song in Queue, by a \texttt{nextSong} method. \texttt{OnCompleteListener} is also called when an error occur while the \texttt{MediaPlayer} is playing. In our application a illegal state error could happen if one would call \texttt{stop} while the \texttt{MediaPlayer} was not playing, triggering the \texttt{OnCompleteListener} and changing the song to the next in the queue. This was resolved in \texttt{MusicPlayerService} by ignoring \texttt{stop} or other calls if the \texttt{MediaPlayer} was in the wrong state. The \texttt{MediaPlayer}'s state diagram can be seen in \cref{fig:medaiPlayerState}.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=.33]{Images/mediaplayerStateDiagram.png}
+  \caption{A state diagram taken from \citet{android:MediaPlayer}.}
+  \label{fig:medaiPlayerState}
+\end{figure}
