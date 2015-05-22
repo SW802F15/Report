@@ -44,6 +44,7 @@ The method in \Cref{lst:dupBefore} shows a method which suffered from the duplic
 \end{code}
 
 % % % % % % % % % % % % % % % % % % % % %
+\Cref{lst:dup2After} shows the extracted method, which performs the same operation as the two identical for-each loops did.
 
 \begin{code}{lst:dup2After}{Example of extracted method from refactored code.}
 \begin{lstlisting}
@@ -57,12 +58,5 @@ private void removeDuplicateSongs(List<Song> songList, List<Song> songs){
 \end{lstlisting}
 \end{code}
 
- \Cref{lst:dup2After} shows the extracted method, which performs the same operation as the two identical for-each loops did.
- 
- As can be seen, the refactored method is both shorter, and more readable because it not has a method name which explains exactly what the for-each loop does. Thus, both readability and maintainability has been improved.
-\subsection{Refactoring of Long Method}
-%before 
-%after
+As can be seen, the refactored method is both shorter, and more readable because it not has a method name which explains exactly what the for-each loop does. Thus, both readability and maintainability has been improved.
 \subsection{Refactoring of Inappropriate Intimacy}
-%before 
-%after
