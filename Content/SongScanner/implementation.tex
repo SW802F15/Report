@@ -16,8 +16,7 @@ The \texttt{SongScanner} has two tasks to perform; scan for files and find beat 
 
 The first task involve a recursive search though selected folders for MP3 files, construct \texttt{Song} objects, then insert them into the database. After the \texttt{Song} object is constructed the \texttt{SongScanner} attempts to extract a cover image from the file and safes the cover in a separate file then adds the cover path to the object. This behaviour reflects the idea that the cover image where supposed to be downloaded online, but that feature failed to emerge as it is common to store album cover in the file.
 
-\Kristian{todo: skriv noget om hvordan vi finder BPM for songs}
-The second task is finding BPM for songs in the database. This is done by querying for all songs with unknown BPM then performing an online lockup for the BPM. We use a API from \citet{echonest:API} to perform lookup with artist name and song title
+The second task is finding BPM for songs in the database. This is done by querying for all songs with unknown BPM then performing an online lockup for the BPM. We use a API from \citet{echonest:API} to perform lookup with artist name and song title. This is repeated every application launch for song with no BPM. 
 
 
 
