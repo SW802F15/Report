@@ -1,4 +1,5 @@
 \section{Implementation of Refactoring}
+\Christoffer{Listing texts in the whole section should probably be less general}
 After a review of the project's source code, we created a list of the bad smells identified. Of these, the three most frequently occurring were
 \begin{itemize}
 \item Duplicated code
@@ -33,7 +34,7 @@ The method in \Cref{lst:dupBefore} shows a method which suffered from the duplic
 \Cref{lst:dup1After} shows the method after method extraction has been performed on it, and two method calls placed in place of the duplicated code.
 % % % % % % % % % % % % % % % % % % % % % %
 
-\begin{code}{lst:dup1After}{Example of code after refactoring.}
+\begin{code}{lst:dup1After}{Example of code after refactoring from \Cref{lst:dupBefore}.}
 \begin{lstlisting}
  public List<Song> getMatchingSongs(int num, int thresholdBMP){
     ..
@@ -44,6 +45,7 @@ The method in \Cref{lst:dupBefore} shows a method which suffered from the duplic
 \end{code}
 
 % % % % % % % % % % % % % % % % % % % % %
+\Cref{lst:dup2After} shows the extracted method, which performs the same operation as the two identical for-each loops did.
 
 \begin{code}{lst:dup2After}{Example of extracted method from refactored code.}
 \begin{lstlisting}
@@ -57,12 +59,111 @@ private void removeDuplicateSongs(List<Song> songList, List<Song> songs){
 \end{lstlisting}
 \end{code}
 
- \Cref{lst:dup2After} shows the extracted method, which performs the same operation as the two identical for-each loops did.
- 
- As can be seen, the refactored method is both shorter, and more readable because it not has a method name which explains exactly what the for-each loop does. Thus, both readability and maintainability has been improved.
+As can be seen, the refactored method is both shorter, and more readable because it not has a method name which explains exactly what the for-each loop does. Thus, both readability and maintainability has been improved.
 \subsection{Refactoring of Long Method}
-%before 
-%after
-\subsection{Refactoring of Inappropriate Intimacy}
-%before 
-%after
+The long method shown in \Cref{lst:longBefore} is an example from the project source code, which was refactored. It suffered from the long method bad smell. When this smell is found, it can indicate that a method is trying to handle too many responsibilities. This smell hurts readability and thus maintainability.\Christoffer{bedre formulering af this smell hurts?}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+Method extraction was performed on the method, and this resulted in three new methods. As can be seen in \Cref{lst:long1After} the code from lines 2 - 8 in 
+\Cref{lst:longBefore} were extracted, to a new method with minor a modification. 
+
+\begin{code}{lst:longBefore}{Example of a method which is too long, and suffers from the long method smell.}
+\begin{lstlisting}
+final public void selectNextSong() {
+       if (nextSongs == null || nextSongs.size() == 0) {
+           nextSongs = getMatchingSongs(_lookAheadSize, _BPMDeviation);
+       }
+       if (nextSongs.size() == 0 && prevSongs.size() > 0){
+           prevSongs.clear();
+           selectNextSong();
+       }
+       if (nextSongs.size() == 0){
+           return; 
+       }
+       if (currentSong != null){
+           prevSongsSizeBeforeAdd = prevSongs.size();
+           prevSongs.add(currentSong);
+           if (prevSongs.size() > _prevSize){
+               prevSongs.remove(0);
+           }
+       }
+
+       currentSong = nextSongs.get(0);
+       nextSongs.remove(0);
+
+       nextSongs.add(getMatchingSongs(1, _BPMDeviation).get(0));
+}
+\end{lstlisting}
+\end{code}
+
+% % % % % % % % % % % % % % % % %
+
+\begin{code}{lst:long1After}{Example of extracted method from refactored code \Cref{lst:longBefore}.}
+\begin{lstlisting}
+private boolean refillQueueWhenEmpty() {
+    if (_nextSongs == null || _nextSongs.size() == 0) {
+        _nextSongs = getMatchingSongs(_lookAheadSize, _BPMDeviation);
+    }
+    
+    if (_nextSongs.size() == 0 && _prevSongs.size() > 0){
+        _prevSongs.clear();
+        _nextSongs = getMatchingSongs(_lookAheadSize, _BPMDeviation);
+    }
+    
+    return _nextSongs.size() != 0;
+}
+\end{lstlisting}
+\end{code}
+
+% % % % % % % % % % % % % 
+
+The same was done to lines 12 - 18, which were extracted to the method shown in \Cref{lst:long2After}, and again in lines 20 - 23 which can be seen in \Cref{lst:long3After}
+
+% % % % % % % % % % % % %
+
+\begin{code}{lst:long2After}{Example of extracted method from refactored code \Cref{lst:longBefore}.}
+\begin{lstlisting}
+private void moveCurrentSongToPrevious() {
+    if (_currentSong != null){
+        _prevSongsSizeBeforeAdd = _prevSongs.size();
+        _prevSongs.add(_currentSong);
+
+        if (_prevSongs.size() > _prevSize){
+            _prevSongs.remove(0);
+        }
+    }
+}
+\end{lstlisting}
+\end{code}
+
+% % % % % % % % % % % % % %
+
+\begin{code}{lst:long3After}{Example of extracted method from refactored code \Cref{lst:longBefore}.}
+\begin{lstlisting}
+private void updateCurrentSongFromNextSongs() {
+    _currentSong = _nextSongs.get(0);
+    _nextSongs.remove(0);
+    _nextSongs.add(getMatchingSongs(1, _BPMDeviation).get(0));
+}
+\end{lstlisting}
+\end{code}
+
+% % % % % % % % % % % % % % % % % % % %
+
+The result of the method refactoring is can be seen in \Cref{lst:longRefactored}. The methods it has been refactored into now only handle one responsibility each, and the method in the code sample looks clean, because it mostly contains method calls. It is therefore more readable than the original, unrefactored code, from \Cref{lst:longBefore}
+
+\begin{code}{lst:longRefactored}{Example of extracted method from refactored code in \Cref{lst:longBefore}.}
+\begin{lstlisting}
+final public boolean selectNextSong() {
+    if (!refillQueueWhenEmpty()){
+        return false;
+    }
+
+    moveCurrentSongToPrevious();
+    updateCurrentSongFromNextSongs();
+
+    return true;
+}
+\end{lstlisting}
+\end{code}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
