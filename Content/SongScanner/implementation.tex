@@ -12,11 +12,12 @@ The \texttt{SongDatabase} is used to interact with our sqlite database. The data
 \texttt{DynamicQueue}, see \cref{sec:dynamicQueue}, relies on \texttt{SongDatabase} to handle queries for songs with a beat per minute in a specific range. In the event a row in the database does not have a corresponding MP3 file the row is deleted, this can happen if a user no longer wish to keep a file in his or her collection and removes it from the selected folders. 
 
 \subsection{SongScanner} 
-The \texttt{SongScanner} has two tasks to perform; scan for files and find beat per minute online.
+The \texttt{SongScanner} has two tasks to perform; scan for files and find beat per minute online (BPM).
 
 The first task involve a recursive search though selected folders for MP3 files, construct \texttt{Song} objects, then insert them into the database. After the \texttt{Song} object is constructed the \texttt{SongScanner} attempts to extract a cover image from the file and safes the cover in a separate file then adds the cover path to the object. This behaviour reflects the idea that the cover image where supposed to be downloaded online, but that feature failed to emerge as it is common to store album cover in the file.
 
 \Kristian{todo: skriv noget om hvordan vi finder BPM for songs}
+The second task is finding BPM for songs in the database. This is done by querying for all songs with unknown BPM then performing an online lockup for the BPM. We use a API from \citet{echonest:API} to perform lookup with artist name and song title
 
 
 
