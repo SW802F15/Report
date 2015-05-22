@@ -12,5 +12,13 @@ Because this class is responsible for managing so many things, that it was neces
 \Dan{Please rewrite this to make more sense.}
 
 \subsection{MusicPlayerService} 
-This service handles the playing of the music files, this is done with the \texttt{MediaPlayer} \citet{android:MediaPlayer} which is part of the android API. 
-\Dan{Fit this stuff in:} We found that trying to stop the music player while not loaded caused it to skip to next song. It was due to the fact this was an illegal action in that state, as seen in Figure (Android graph over mediaplayer states). We fixed this issue by implementing something, as seen in Listing (Code snipped of interesting code).
+This service handles the playing of the music files, this is done with the \texttt{MediaPlayer} class which is part of the \citet{android:MediaPlayer} API. The service is responsible for setting up event listeners and act as an interface to the \texttt{MediaPlayer}.  
+
+We only used of one the two listeners available for the \texttt{MediaPlayer}, the \texttt{OnCompleteListener}. This listener is called when a files reaches its end. In this event the method attracted to the listener selects the next song in Queue, by a \texttt{nextSong} method. \texttt{OnCompleteListener} is also called when an error occur while the \texttt{MediaPlayer} is playing. In our application a illegal state error could happen if one would call \texttt{stop} while the \texttt{MediaPlayer} was not playing, triggering the \texttt{OnCompleteListener} and changing the song to the next in the queue. This was resolved in \texttt{MusicPlayerService} by ignoring \texttt{stop} or other calls if the \texttt{MediaPlayer} was in the wrong state. The \texttt{MediaPlayer}'s state diagram can be seen in \cref{fig:medaiPlayerState}.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=.33]{Images/mediaplayerStateDiagram.png}
+  \caption{A state diagram taken from \citet{android:MediaPlayer}.}
+  \label{fig:medaiPlayerState}
+\end{figure}
