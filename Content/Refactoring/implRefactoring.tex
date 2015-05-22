@@ -1,14 +1,68 @@
 \section{Implementation of Refactoring}
-After a review of the project's source code, we created a list of the bad smells identified.
-%which example of code? which bad smell corrected?
-%which bad smells did we prioritise?
+After a review of the project's source code, we created a list of the bad smells identified. Of these, the three most frequently occurring were
 \begin{itemize}
 \item Duplicated code
 \item Long method
-\item Shotgun surgery
-\item Inapproriate intimacy
-\item Comments and Todos
+\item Inappropriate intimacy
 \end{itemize}
 
+In the following subsections, concrete examples of how we dealt with them are illustrated. 
+\subsection{Refactoring of Duplicated code}
+The method in \Cref{lst:dupBefore} shows a method which suffered from the duplicated code smell. As can be seen in the sample, the two for-each loops perform identical operations on a list. They both iterate over a list and if an element from that list is contained in another list, it is removed from that list.
+
+\begin{code}{lst:dupBefore}{Example of code before refactoring.}
+\begin{lstlisting}
+ public List<Song> getMatchingSongs(int num, int thresholdBMP){
+    ...
+
+    for (Song song : _prevSongs){
+        if(songs.contains(song)){
+            songs.remove(song);
+        }
+    }
+
+    for (Song song : _nextSongs){
+        if(songs.contains(song)){
+            songs.remove(song);
+        }
+    }
+    ...
+\end{lstlisting}
+\end{code}
+
+\Cref{lst:dup1After} shows the method after method extraction has been performed on it, and two method calls placed in place of the duplicated code.
+% % % % % % % % % % % % % % % % % % % % % %
+
+\begin{code}{lst:dup1After}{Example of code after refactoring.}
+\begin{lstlisting}
+ public List<Song> getMatchingSongs(int num, int thresholdBMP){
+    ..
+    removeDuplicateSongs(_prevSongs, songs);
+    removeDuplicateSongs(_nextSongs, songs);
+    ...
+\end{lstlisting}
+\end{code}
+
+% % % % % % % % % % % % % % % % % % % % %
+
+\begin{code}{lst:dup2After}{Example of extracted method from refactored code.}
+\begin{lstlisting}
+private void removeDuplicateSongs(List<Song> songList, List<Song> songs){
+    for (Song song : songList){
+        if(songs.contains(song)){
+            songs.remove(song);
+        }
+    }
+}
+\end{lstlisting}
+\end{code}
+
+ \Cref{lst:dup2After} shows the extracted method, which performs the same operation as the two identical for-each loops did.
+ 
+ As can be seen, the refactored method is both shorter, and more readable because it not has a method name which explains exactly what the for-each loop does. Thus, both readability and maintainability has been improved.
+\subsection{Refactoring of Long Method}
+%before 
+%after
+\subsection{Refactoring of Inappropriate Intimacy}
 %before 
 %after
