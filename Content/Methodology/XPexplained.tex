@@ -2,18 +2,119 @@
 % 2 XP's: 2000 and 200? - differences.
 % General introduction to XP2k
 Extreme Programming (XP) is a software development methodology created by Kent Beck, and this section is based on his book \textit{Extreme Programming Explained (1999)} \citep{xp:explained}. 
-According to Beck, XP is ``\textit{a lightewight, efficient, low-risk, flexible, predictable, scientific, and fun way to develop software.}''
+Extreme Programming is supposed to be a lightweight, efficient, and fun approach to developing software.
+
+\noindent The methodology consists of the 12 practices:
+
+\begin{tabularx}{\textwidth}{X X X}
+	40-hour Week				 & Coding Standards & Collective Ownership \\
+	Continuous Integration	  & Metaphor         	 & On-site Customer     \\
+	Pair Programming			& Planning Game		& Refactoring          \\
+	Simple Design          		  & Small Releases   	& Testing             
+\end{tabularx}
+
+Some of these practices are more engrained than others. 
+While some supports each other, others may be unrelated. (i.e. coding standards supports collective ownership, but on-site customer and pair programming are unrelated.) The complete map can be seen here:
+\begin{figure}[H]
+	\centering
+	\includegraphics[]{Images/xpPracticeSupport.png}
+		\caption{Map, from page 70 in \textit{Extreme Programming Explained (1999)} \citep{xp:explained}, of the practices and how they support each other. }
+	\label{fig:practiceSupport}
+\end{figure}
 
 
 
-%% What is XP?
-%% What makes it extreme?
-%%%% Transition to pratices
+\subsection{40-hour Week}
+%Why
+This practice is created to ensure the developers are well rested and fresh when they come in to work.
 
-What is the XP methodology?
+%How/What
+As the name suggests, the practice encourages developers not to work more than 40 hours per week. 
+Although this practice is called 40-hour Week, it should not necessarily be specified to 40 hours per week.
+The correct week length will depend on the specific team.
 
-What does Extreme mean? E.g. Review is much more important and useful, so turn it up in comparison to other methodologies.
+%Coherent
+This practice is basis for many of the other practices, as one needs to be well rested to think straight and be creative.
+On the other hand, for this practice to work it is required that there are enough tasks to solve.
+These tasks are created through the Planning Game practice, hence making it a prerequisite for the 40-hour Week practice to work. 
 
-Start of Beck books.
+\subsection{Coding Standards}
+%Why
+When a project is written by many different developers, it is important that the code are easily understood by other developers.
+Otherwise it would waste a lot of time every time a developer has to extend existing code.
 
-% The practices
+%How/What
+The practice is all about writing code in a agreed upon format.
+This ensure the code are consistent and easy for all developers to understand.
+
+%Coherent
+This practice encourages the Collective Ownership, Pair Programming, and Refactoring practice.
+%Collective
+By making it impossible to distinguish between who wrote what code, it eliminates the tendency to say ``I don't understand this, it is not my code”. Instead the developer instantly understands the purpose, as it is written in a format he understands.\\
+%Pair
+Pair Programming in and of itself is challenging enough. If you additionally do not understand each others way of coding, it becomes almost impossible. 
+A mutual Coding Standard helps by eliminating this problem.\\
+%Refactor
+It is much faster to refactor a code snippet when you understand its purpose right away.
+
+\subsection{Collective Ownership}
+%Why
+Extreme Programming strives to be efficient.
+Therefore it has adopted a collective approach to ownership, instead of the individual approach.
+Where the individual approach enforces stable code, it also leads to slow changes and less code understanding.
+In contrast the collective approach enforces rapid changes and high quality, given it is used correctly and does not become ``when everybody is responsible, no one is responsible”.
+
+%How/What
+The Collective Ownership works by allowing everybody the rights to change and extend everything.
+However, before any changes are released it has to pass 100\% of the automated tests.
+If it does not pass, the changes will be discarded, and you try again or let someone else try.
+
+%Coherent
+For this to work, it is highly dependent upon the Testing practice, as it is crucial to have very good tests.
+Otherwise the changes might break the system and this risk increases every time a change is introduced without being tested.
+
+\subsection{Continuous Integration}
+%Why
+To avoid wasting time on developing fragmented versions of the same functionality, it is important to integrate at least once a day, often more frequent.
+
+%How/What
+When a pair is done with a task, they sit down and integrate it.
+They then make sure all unit tests run at 100\%.
+If the unit tests does not reach a 100\%, they know it is their task that caused this.
+It is therefore up to them to fix it or discard their solution and try again.
+
+%Coherent
+It is evident that this practice requires the Testing practice to work.
+
+
+\Alexander{Spørgsmål til Ivan: Hvilken struktur er bedst, den lange eller den korte?}
+
+\paragraph{Metaphor} is used as a shared vision for the project.
+The metaphor is used to standardise the names of variables, methods, and classes. 
+This standardisation should help to intuitively understand the purpose of the variable, method, or class.
+
+\paragraph{On-site Customer} are a integral role in a XP project.
+The on-site customer is responsible for making decisions about priorities and requirements, as well as answering questions.
+
+\paragraph{Pair Programming} is the way to code in a XP project.
+It is when two developers work together on the same computer.
+While one writes the code, the other analyses and comes with suggestions for improvement.
+The development should be seen as a dialogue between the two developers.
+
+\paragraph{Planning Game} is the event where the customer writes user stories, after which, the developers estimates them according to cost.
+
+\paragraph{Refactoring} is the practice used to eradicate bad smells in the code, e.g. duplicate code.
+
+
+\paragraph{Simple Design} is the best design, and is defined as the easiest that work.
+For it to work, it must pass all unit tests and acceptance tests.
+Further the best design should be so simple it never has any duplicate code.
+
+
+\paragraph{Small Releases} are small and frequently versions of the software, which are tested by the customer.
+These releases does incrementally complete the system.
+
+\paragraph{Testing} is a mindset, in which, unit tests are developed before the code (Test-Driven Development).
+Testing also refers to how the stories and releases are not complete before they pass their respective tests.
+
+%http://www.techrepublic.com/article/extreme-programming-do-these-12-practices-make-perfect/
