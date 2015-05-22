@@ -53,7 +53,7 @@ So if, at some point, someone refactors the method which loads a song into the d
 %\end{code}
 
 \subsection{\texttt{Reflection} for private methods}\label{sec:privTest}
-In our case, we deemed it necessary to test private methods. This came to be because we had an exception in a private method, and we decided to write a test to catch this exception. There is some debate as to whether it is good practice to test private methods or not, but ultimately we decided to do it. It could be argued that it is the over-all behaviour of the system, and not the implementation which should explicitly be tested. In that case, testing of the public interface and not private methods should not be done.
+In our case, we deemed it necessary\Kristian{necessary?} to test private methods. This came to be because we had an exception in a private method, and we decided to write a test to catch this exception. There is some debate as to whether it is good practice to test private methods or not, but ultimately we decided to do it. It could be argued that it is the over-all behaviour of the system, and not the implementation which should explicitly be tested. In that case, testing of the public interface and not private methods should not be done.
 %cons
 % client code (test) will break with change to private
 % 
