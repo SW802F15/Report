@@ -1,21 +1,36 @@
-With the basic music plater application completed in the 2nd iteration we outlined the configuration for the 3rd and 4th iterations in the configuration table seen in \ref{table:config1} taken from \citet{essence:config}.
+With the core music player application completed in the 2nd iteration we outlined the configuration for the 3rd and 4th iterations in the configuration table seen in \Cref{table:config1}, which is based on \citet[ch. 3]{essence:config}. The figure should be read vertically, and is meant to provide an overview; each field is explained in more detail in this section. This approach presents the different aspects of the release, including what problem the application should solve and how, and it provides a basis for further development.
 
 
 \input{Content/Iteration/configurationTable1}
 
 \begin{itemize}
-\item Paradigm Focus: The challenge is to improve running experience by matching music beat to pace. The application is supposed to be used while running.
-\item Paradigm Overview: Stakeholder is the user who is using the application.
-\item Paradigm Details: For this release we have a two main scenarios to fulfil. First we want the application to automatically select appropriate (songs with a matching beat) songs to play as the user runs at varying paces. The song pool to select from should be customisable for each device.
-\item Product Focus: The application is first and foremost a running pace, meaning the purpose is to match music beat with steps per minute (pace). It is possible to add an option for interval training so the application no longer adapt music beat based on pace, but encourage the user to adapts his or her pace to predetermined intervals of low and high beat music. Additional training programs could also be added. Further more the application can also server as a step counter not playing any music just recording steps taken and displays steps per minute, and the other way around just playing music without taking steps per second into account.
-\item Product Overview: The application design should be based on a ``familiar music player design'', it should have the expected functionally from a music player and new elements (such as steps per minute) should expand on the familiar design. 
-\Kristian{consider ``familiar music player design''}
-\item Product Details: This configuration consists of 3 components the music player, a library and a step counter. The music player is used to play songs and serve as the primary interface for the user. The music library is one or more folders with MP3 files on the device. The step counter makes use of the device's accelerometer to register steps taken.
-\item Project Focus: The overall vision of the application is as a running pacer which matches the beat of songs to played with running pace.
-\item Project Overview: Grounds are described in \cref{chap:intro}.
-\item Project Details: \Kristian{this seems similar to \textit{Affordance}}
-\item Process Focus: The evaluation is based on benefits to the user(runner).
-\item Process Overview: We evaluate the application as a surrogate customer at iteration end/review. The evaluation is based on the fulfilment of acceptance tests.
-\item Process Details: 
+\item \textbf{Paradigm Focus}: The challenge is to improve the running experience by matching the tempo of the music with the pace of the runner. The application is supposed to be used while running.
 
+\item \textbf{Paradigm Overview}: Stakeholder is the user who is using the application, i.e., the runner.
+
+\item \textbf{Paradigm Details}: For this release there are two main scenarios to fulfil. Firstly the application should automatically select appropriate songs (songs with a matching BPM) to play as the user runs at varying paces. Secondly the song pool to select from should be customisable for each device.
+
+\item \textbf{Product Focus}: The application is first and foremost a running pacer, meaning the purpose is to match music tempo with the user's pace, measured in steps per minute. It is possible to add an option for interval training so the application no longer adapt music beat based on pace, but encourage the user to adapts his or her pace to predetermined intervals of low and high beat music. Additional training programs could also be added. Furthermore the application can also serve as a step counter, not playing any music but just recording steps taken and displaying it as either total steps or steps per minute. Similarly it can just play music without taking SPM into account.
+
+\item \textbf{Product Overview}: The application design should be based on a familiar music player design, and it should have the expected functionally from a music player, but new elements (such as SPM) should expand on the familiar design. The navigation buttons should be placed, so they are easy to use while moving.
+
+\item \textbf{Product Details}: This configuration consists of 3 components: the music player, a music library, and a step counter. The music player is used to play songs and serve as the primary interface for the user. The music library is one or more folders with music files on the device. The step counter makes use of the device's accelerometer to register steps taken.
+
+\item \textbf{Project Focus}: The overall vision of the application is as a running pacer which matches music to the user's running pace.
+
+\item \textbf{Project Overview}: \newline
+\textit{Grounds:} As described in \cref{chap:intro}, music can have an influence on the running experience. Having music that matches your running pace makes sure it does not have a negative impact on the exercise session, and having the application find appropriate music automatically makes the process of finding good running music less tedious. \newline
+\textit{Warrant}: Many people prefer running while listening to music, and it will often result in people trying to match their running pace with the music playing. \newline
+\textit{Qualifier}: It is important that the song playing always, or as much as possible, matches the user's pace, so their running experience is not disrupted. \newline
+\textit{Rebuttal}: The user may change pace in the middle of a song, and this poses a problem. It could be solved by by altering the music's tempo just enough to match the new pace, without distorting the sound of the music too much. Another solution could be to transition to another piece of music, when the new pace is confirmed stable.
+
+\item \textbf{Project Details}: The application should work as a running pacer, a music player, and a step counter.
+
+\item \textbf{Process Focus}: Through an iterative process there will be focus on the most important features as decided by the customer, providing immediate benefits to the user.
+
+\item \textbf{Process Overview}: We evaluate the application from the customer's point of view at the end of each iteration. The evaluation is based on the fulfilment of acceptance tests.
+
+\item \textbf{Process Details}: Many music files do not contain and information about their BPM, and it therefore necessary to find this value elsewhere -- either online, by manual input, or through automatic analysis of the music. \newline
+While running it can be hard to control the application, as there is limited feedback when using a touch screen. Instead it should be possible to use gestures or taps to control the application, giving it a more 
+consistent user experience.
 \end{itemize}
