@@ -10,19 +10,19 @@ As a result of this, our schedule will be fragmented when counting project time.
 We will therefore not be able to use the literal implementation of this practice.
 
 The purpose of this practice was to ensure energetic developers everyday, and not to overwork them to the point of burnout.
-We will implement this purpose by timeboxing the project time.
+We will implement this practice by timeboxing the project time.
 This way we will still be able to ensure rested and energetic developers regardless of courses and other non-project matters.
 
 \subsection{Code Standards}
 Creating a formal code standard is a time consuming task.
-We suppose that creating a formal code standard, when we already have an informal code standard, will be too time consuming compared to the benefits.
-The informal code standard have been created and expanded through our previous experiences of working together.
+We expect that creating a formal code standard, when we already have an informal code standard, will be too time consuming compared to the benefits.
+The informal code standard has been created and expanded through our previous experiences of working together.
 
 \subsection{Collective Ownership}
 This practice supports flexible and quick changes, however some risks still exist.
-The most probable problems to occur in this project are: the lack of expertise, violating private space, and personal pride.
+The problems most likely to occur in this project are: the lack of expertise, violating private space, and personal pride.
 
-The problem with the lack of expertise is based in the scenario, where a problem is just passed on, without anyone having any reel expertise of the overall problem.
+The problem with the lack of expertise is based on the scenario, where a problem is just passed on, without anyone having any reel expertise of the overall problem.
 By using Pair Programming the expertise will be spread to the entire team, ensuring everyone having knowledge about the overall problems.
 
 The problem of violating each others private space, refers to when developers need to access and work in the same document. This can cause developers to stay at their current version and only code there, in order to avoid conflicting documents.
@@ -30,19 +30,18 @@ However, by using Continuous Integration it will be impossible to be stuck on an
 By using the Testing practice, it is ensured the changed will not compromise the existing code.
 
 The problem with personal pride is not directly addressed by XP.
-This problem can occur if a developer becomes proud of his work, and does not want to see it ``ruined'' by others.
-This is a problem we will have to watch out for and to remind ourselves of XP's saying ``Be brave''.
+This problem can occur if a developer becomes proud of their work, and does not want to see it ``ruined'' by others.
+This is a problem we will have to watch out for and to remind ourselves of XP's saying: ``Be brave''.
  
 
 \subsection{Continuous Integration}
 According to XP this practice should be automated through the setup of a dedicated build server.
 Making this an automated task, should ensure the developers working on the current version.
-The integration itself should not be automated, but the build and testing should.
-I.e. when a story is completed, the changes are integrated into the current build.
-The build server then automatically build and tests the build.
-If the tests are not at a 100\%, the developers most fix their code or discard it, to ensure the build always passing 100\% of the tests.
+The integration itself should not be automated, but the build and testing should, i.e., when a story is completed, the changes are integrated into the current build.
+The build server then automatically builds and tests the build.
+If the tests are not at a 100\%, the developers must fix their code or discard it, to ensure the build always passes 100\% of the tests.
 
-Even though finding and setting up a build serve would be the correct way of doing things, we will manually integrate and build the code on a dedicated branch.
+Even though finding and setting up a build server would be the correct way of doing things, we will manually integrate and build the code on a dedicated branch.
 We will do this because, we believe we can achieve the same benefits with the manual approach, without using time on learning to use the build server.
 This is only viable because of the small size of the project, which results in short build times and a limited risk of fragmented versions.
 
@@ -50,13 +49,13 @@ This is only viable because of the small size of the project, which results in s
 The metaphor is an effective way to get a shared vision for the project.
 A meaningful metaphor helps helps creating and naming the correct objects and actions.
 
-We see this project as, a music player that plays music, with a tempo, matching the runners pace.
+We see this project as a music player that plays music with a tempo matching the user's pace.
 This metaphor might change throughout this project.
 
 \subsection{On-site Customer}
 Since this is a semester project, we will not have an actual customer.
 In place of the on-site customer we will acts as our own surrogate customer.
-This would mean that we are responsible for the priority and requirements decisions, when we act as the surrogate customer.
+This means that we are responsible for the priority, requirements decisions, and creating acceptance tests, as well as other tasks normally done by the customer.
 
 \subsection{Pair Programming}
 The practice of Pair Programming is easy to use, but difficult to master.
@@ -68,15 +67,16 @@ According to Beck, Pair Programming is easy to do, but difficult to master.
 \Alexander{Source}
 To shorten the learning curve, we will program all stories, trivial as well as non-trivial, in pairs.
 For us to do so, we require two workstations dedicated to programming.
-We will burrow two monitors, two keyboards, and two mice, which we will connect to two of our laptops.
+We will borrow two monitors, two keyboards, and two mice, which we will connect to two of our laptops.
 
 This practice should create higher quality code than working alone.
-Due to this statement, we will start to pair program on non-trivial stories.
+Because of this, we will start to pair program on non-trivial stories.
 We will then switch partners for each story. 
 
 
 \subsection{Planning Game}
 \Alexander{Dont really know what to write here.}
+\Dan{Me neither.}
 
 
 \subsection{Refactoring}
@@ -92,7 +92,7 @@ If we encounter any bad smells, we will immediately correct them.
 
 \subsection{Small Releases}
 The purpose of this practice is to reduce the risks when or if changes in the use domain occur.
-Although the releases are frequent, it most only contain complete features.
+Although the releases are frequent, it must only contain complete features.
 
 This project contains three major features, which we will try to match to approximately three releases.
 With each release we will have a complete feature, which then will be user tested and the feedback will be implemented in the next release.
@@ -101,7 +101,7 @@ With each release we will have a complete feature, which then will be user teste
 Testing covers both unit testing and acceptance testing, as both are important parts of XP.
 
 Unit tests are created to easy the refactoring process, by ensuring the external behaviour has not been compromised after changed has been made.
-We have as recommended by XP, implemented the Test-Driven Development (TDD) process.
+We will, as recommended by XP, make use of Test-Driven Development (TDD).
 
 Acceptance tests are created to ensure the product satisfies the customers needs.
 Acceptance tests are written by the customer, which we will do ourselves, seeing as we use ourselves as a surrogate customer.

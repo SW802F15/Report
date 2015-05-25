@@ -1,11 +1,21 @@
 \section{Application}
 %Current State:
-An Android application was developed in this project to address the challenges stated in \Cref{chap:intro}.
+An Android application was developed in this project to address the challenges stated in \Cref{chap:intro}. The first challenge was expressed as the following question:
 
 %Q1: 
 \begin{center}
 \textit{How can we provide music with an appropriate tempo, compared to the current pace, to the runner through the use of a smartphone?}
 \end{center}
+
+It was found that it is possible to create an application consisting of several modules working together to achieve the desired result, i.e. an application that plays back music that matches the user's pace:
+
+\begin{itemize}
+\item \textbf{Music Player}: This module is the core of the application, responsible for playing the desired music. Using a GUI it is possible to navigate through a playlist manually.
+\item \textbf{Song Scanner}:
+\item \textbf{Step Counter}:
+\end{itemize}
+
+
 The application can provide music matching a runners pace. This is achieved by registering steps taken and querying a local music library on the device. This solves our problem as we know the tempo of the song in the library.
 
 While the application can play music and has a good (within 10 percent of target) step detections it has shortcomings: 
