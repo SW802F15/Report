@@ -1,13 +1,13 @@
 \section{Implementation}
-The Song Scanner is part of the \texttt{DataAccessLayer} module which consists of three classes \texttt{Song}, \texttt{SongDatabase} and \texttt{SongScanner}. \texttt{Song} hold information regarding songs. \texttt{SongDatabase} is an abstraction to our sqlite database. \texttt{SongScanner} is responsible for keeping the database and MP3 file in selected folders synchronised.
+The Song Scanner is part of the \texttt{DataAccessLayer} module which consists of three classes \texttt{Song}, \texttt{SongDatabase} and \texttt{SongScanner}. \texttt{Song} holds information about songs. \texttt{SongDatabase} is an abstraction of our SQLite database. \texttt{SongScanner} is responsible for keeping the database and MP3 files in selected folders synchronised.
 
 \subsection{Song}
-An instance of \texttt{Song} represents a MP3 file loaded into memory. The \texttt{Song} class consists of relevant data fields such as \texttt{file path} and \texttt{BPM}, as well as constructors for the database and song scanner. 
+An instance of \texttt{Song} represents an MP3 file loaded into memory. The \texttt{Song} class consists of relevant data fields, such as \texttt{file path} and \texttt{BPM}, as well as constructors whose parameters are used for the database and song scanner. 
 
-Most information used to populate the fields of \texttt{Song} is contained within the MP3 file itself in the form of \texttt{ID3 Tags}, an informal standard is specified by \citet{ID3:standard}. The constructor used by \texttt{SongScanner} takes a MP3 file and extracts data (title etc.) from the file.
+Most information used to populate the fields of \texttt{Song} is contained within the MP3 file itself in the form of \texttt{ID3 Tags}. An informal ID3 standard is specified by \citet{ID3:standard}. The constructor used by \texttt{SongScanner} takes an MP3 file as a parameter, and extracts data (title, artist etc.) from the file.
 
 \subsection{SongDatabase}
-The \texttt{SongDatabase} is used to interact with our sqlite database. The database contains a single table for songs. This table is used to store all data for a song, in addition to the data extracted from the file we also store a path to a cover image and beat per minute.
+The \texttt{SongDatabase} is used to interact with our sqlite database. The database contains a single table for songs. This table is used to store all data for a song, in addition to the data extracted from the file, we also store a path to a cover image, and beats per minute.
 
 \texttt{DynamicQueue}, see \cref{sec:dynamicQueue}, relies on \texttt{SongDatabase} to handle queries for songs with a beat per minute in a specific range. In the event a row in the database does not have a corresponding MP3 file the row is deleted, this can happen if a user no longer wish to keep a file in his or her collection and removes it from the selected folders. 
 
