@@ -1,4 +1,14 @@
-\Dan{General stuff about the release here}
-what were done: musicplayer, stepcounter, almost music library 
-what needed to be done: NGUI, online BPM
+The 3rd and final release, a modification of the 2nd release, is outlined in \Cref{table:config2}. Most fields are unchanged, as most requirements did not change. Those that did change are written in bold green text.
+
 \input{Content/Iteration/configurationTable2}
+
+\begin{itemize}
+\item \textbf{Paradigm Details}: Based on the findings from the 2nd release, a new scenario emerged: When the user is running with the screen off, it should still be possible to control the application.
+
+\item \textbf{Product Overview}: The product design should include a way to interact with the application without a graphical interface.
+
+\item \textbf{Project Details}: While the components are the same, a new feature is needed for the music player: A non-graphical user interface, allowing the user to control the application while running and without looking at the screen.
+
+\item \textbf{Process Details}: Without any  feedback, e.g. a vibration, it is hard to determine if the command given in the non-graphical user interface was registered, making it harder to control properly. \newline
+Additionally, it is necessary to take an appropriate action if the user stops running. This could be recording their last stable pace, and keep playing songs matching that tempo.
+\end{itemize}
