@@ -19,11 +19,9 @@ The informal code standard have been created and expanded through our previous e
 \subsection{Continuous Integration}
 According to XP this practice should be automated through the setup of a dedicated build server.
 Making this an automated task, should ensure the developers working on the current version.
-However, because this project is relatively small, the build time is at most a few minutes.
-Further, it should not be of a size where there exists several different versions.
-Due to these assumptions, we will manually integrate and build the code on a dedicated branch.
-
-We will do this because it will be too difficult to setup and maintain a build server for a Android project using the Gradle build tool. 
+Even though finding and setting up a build serve would be the correct way of doing things, we will manually integrate and build the code on a dedicated branch.
+We will do this because, we believe we can achieve the same benefits with the manual approach, without using time on learning to use the build server.
+This is only viable because of the small size of the project, which results in short build times and a limited risk of fragmented versions.
 
 \subsection{Metaphor}
 
@@ -34,7 +32,22 @@ In place of the on-site customer we will acts as our own surrogate customer.
 This would mean that we are responsible for the priority and requirements decisions, when we act as the surrogate customer.
 
 \subsection{Pair Programming}
+According to Beck, Pair Programming is easy to do, but difficult to master.
+\Alexander{Source}
+To shorten the learning curve, we will program all stories, trivial as well as non-trivial, in pairs.
+For us to do so, we require two workstations dedicated to programming.
+We will burrow two monitors, two keyboards, and two mice, which we will connect to two of our laptops.
 
+
+
+
+
+
+
+
+This practice should create higher quality code than working alone.
+Due to this statement, we will start to pair program on non-trivial stories.
+We will then switch partners for each story. 
 
 \subsection{Planning Game}
 
