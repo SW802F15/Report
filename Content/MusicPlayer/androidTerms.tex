@@ -1,14 +1,15 @@
 \section{Android Terminology}
-When explaining the implementation of the modules, some Android specific terms will be used, so a very short description of the terms needed to understand the explanations are listed here. These explanations are based on the Android API Guide Glossary \cite{android:terms}, the Android Fragments guide \cite{android:fragment} and the Sensor Overview \cite{android:sensor}.
+Here is a few Android specific terms that will be used in the implementation sections. These explanations are based on the Android API Guide Glossary \cite{android:terms} and the Sensor Overview \cite{android:sensor}.
 
 \subsection*{Activity}
-A screen in the application implemented as a Java class with layout defined as XML. It can handle UI events and call methods.
+A screen in the application responsible for handles UI events. It is implemented as a Java class with a layout primarily defined in XML.
 
-\subsection*{Fragment}
-A fragment is intended to handle a part of the behaviour and UI of an Activity, especially useful for creating multi-pane UI's and adjusting the application to run on devices with different screen sizes.
+%\subsection*{Fragment}
+%A fragment is intended to handle a part of the behaviour and UI of an Activity, especially useful for creating multi-pane UI's and adjusting the application to run on devices with different screen sizes.
+%\Kristian{No one writes about fragments anyway}
 
 \subsection*{Service}
 A service runs in the background with the purpose of handling long-running, persistent actions, e.g. playing music when the application: is minimised. It does not provide a user interface.
 
 \subsection*{Sensors and Listeners}
-The phone has a number of sensors, e.g. an accelerometer, and these can be accessed by listeners. A listener implements methods like \texttt{onSensorChanged()}, which is called with a value when the sensor receives a new input. Listeners are also used to detect input events like button clicks and touches.
+The device can have a number of sensors, e.g. an accelerometer, and these can be accessed by listeners. A listener implements methods like \texttt{onSensorChanged()}, which is called with a value when the sensor receives a new input. Listeners are also used to detect input events like button clicks and touches.
