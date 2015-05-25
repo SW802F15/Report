@@ -1,26 +1,10 @@
 \section{User Stories}
-The user stories on which the implementation of the non-graphical user interface was based on were
+The user story on which the implementation of the non-graphical user interface was based on were as follows:
 
 \story{Enable navigation with screen turned off}{High}
 {As a user, I, would like to save power by turning off the screen while still being able to navigate songs when the screen is off.
 A screen is turned off when the power button is pressed.}
 {\begin{itemize}
-\item The application can still be controlled after the \texttt{Power} button is pressed.\Christoffer{Hvilken slags kontrol har vi stadig? play pause stop etc.}
-\end{itemize}}
-{\begin{itemize}
-\item Precondition: 
-\subitem $-$ The application must be launched in the MusicPlayer Activity.
-
-\item Procedure:
-\subitem $-$ Press \texttt{Power} button.
-\subitem $-$ Verify screen turns off.
-\subitem $-$ Perform single tap.
-\subitem $-$ Verify application starts playing.
-\subitem $-$ Perform double tap.
-\subitem $-$ Verify playing changed to next song in queue.
-\subitem $-$ Perform triple tap.
-\subitem $-$ Verify playing song changed back to previous played song.
-
-\item Postcondition:
-\subitem $-$ Verify all verifications have passed.
+\item The application can still be controlled after the \texttt{Power} button is pressed.
+\item play, pause, stop, previous and next functionally should still be available with no graphical interface.
 \end{itemize}}
