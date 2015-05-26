@@ -2,9 +2,7 @@
 %\subsection{Turning off the Screen}
 The implementation of when the screen is turned of, is a pseudo-implementation. On stock Android we found that it is not possible to keep the Android listener running, when the screen is turned off by for example the power button. If this functionality should truly have been implemented, the phone would need to be rooted. 
 
-In the current implementation the screen is made to look dark by creating a completely opaque overlay. The NGUI can be activated by pressing the menu button on the Android device. After the overlay is activated, the screen turns dark, and the application starts handling taps in a custom
-\Ivan{Skriv hvorfor vi bruger taps i stedet for gestures.}
-manner as described in \Cref{subsec:handleTaps}. Two classes are involved the in implementation of the NGUI: 
+In the current implementation the screen is made to look dark by creating a completely opaque overlay. The NGUI can be activated by pressing the menu button on the Android device. After the overlay is activated, the screen turns dark, and the application starts handling taps in a custom manner as described in \Cref{subsec:handleTaps}. Taps were chosen over gestures as they are easier to perform while running. Two classes are involved the in implementation of the NGUI: 
 \begin{itemize}
 \item \texttt{ControlInterfaceView}, the dark view responsible for handling touch events.
 \item \texttt{TapCounter}, counts taps and call the corresponding method, e.g. one tap is for \texttt{pause/play}.
@@ -17,9 +15,21 @@ The overlay, and thus our custom handling of taps, can be deactivated by touchin
 %tap listener
 %on click increment
 The detection of taps is done by listeners provided by the Android platform. Two types of taps are handled. The two types are: single tap, which is when the screen is touched for a brief period and long press, which is when the screen is touched for more than 500 ms. Long press is solely used for the \texttt{stop} while single tap used for \texttt{play}, \texttt{pause}, \texttt{next}, and \texttt{previous}. Single tap calls an increment method on the \texttt{TapCounter} class.
-\Ivan{Lav tabel, der viser funktioner i forhold til taps.}{}
+
 %time counter - 500 ms - no standard - decided
-This method does two important things: it increments a global tap counter and it starts a timer. The timer runs in the background which enables new taps to occur. Every time within 500 ms a tap occurs, the global counter is incremented. After the time has passed, a method, \texttt{doTapAction()} is called with the accumulated number of taps as a parameter. The method then decides whether to play, pause etc. and performs the appropriate action. The 500 ms were determined experimentally.
+This method does two important things: it increments a global tap counter and it starts a timer. The timer runs in the background which enables new taps to occur. Every time within 500 ms a tap occurs, the global counter is incremented. After the time has passed, a method, \texttt{doTapAction()} is called with the accumulated number of taps as a parameter. The method then decides whether to play, pause etc. and performs associated action, seen in \Cref{table:tap}. The 500 ms were determined experimentally.
+
+\begin{table}
+\begin{tabular}{|l|l|} \hline
+	\textbf{Action} & \textbf{Response} \\\hline
+	\texttt{Single Tap} & \texttt{Play} if paused or stopped or \texttt{Pause} if playing. \\\hline
+	\texttt{Double Tap} & \texttt{Next}, skips to the next song. \\\hline
+	\texttt{Triple Tap} & \texttt{Previous}, plays previously played song. \\\hline
+	\texttt{Long Press} & \texttt{Stop}, stops the song and reset progress. \\\hline		
+\end{tabular}
+\caption[Table caption text]{Tap actions possible while NGUI is activated.}
+\label{table:tap}
+\end{table}
 
 %reset counter
 %types captured - longpress = ??
