@@ -7,17 +7,13 @@ An instance of \texttt{Song} represents an MP3 file loaded into memory. The \tex
 Most information used to populate the fields of \texttt{Song} is contained within the MP3 file itself in the form of \texttt{ID3 Tags}. An informal ID3 standard is specified by \citet{ID3:standard}. The constructor used by \texttt{SongScanner} takes an MP3 file as a parameter, and extracts data (title, artist etc.) from the file.
 
 \subsection{SongDatabase}
-The \texttt{SongDatabase} is used to interact with our sqlite database. The database contains a single table for songs. This table is used to store all data for a song, in addition to the data extracted from the file, we also store a path to a cover image, and beats per minute.
+The \texttt{SongDatabase} is used to interact with our SQLite database. The database contains a single table for songs. This table is used to store all data for a song. In addition to the data extracted from the file, we also store a path to a cover image, and beats per minute.
 
-\texttt{DynamicQueue}, see \cref{sec:dynamicQueue}, relies on \texttt{SongDatabase} to handle queries for songs with a beat per minute in a specific range. In the event a row in the database does not have a corresponding MP3 file the row is deleted, this can happen if a user no longer wish to keep a file in his or her collection and removes it from the selected folders. 
+\texttt{DynamicQueue}, described in \cref{sec:dynamicQueue}, relies on \texttt{SongDatabase} to handle queries for songs with a beat per minute in a specific range. In the event a row in the database does not have a corresponding MP3 file, the row is deleted. This can happen if a user no longer wish to keep a file in his or her collection, and removes it from the selected folders. 
 
 \subsection{SongScanner} 
-The \texttt{SongScanner} has two tasks to perform; scan for files and find beat per minute online (BPM).
+The \texttt{SongScanner} has two tasks to perform; scan for files and find beats per minute online.
 
-The first task involve a recursive search though selected folders for MP3 files, construct \texttt{Song} objects, then insert them into the database. After the \texttt{Song} object is constructed the \texttt{SongScanner} attempts to extract a cover image from the file and safes the cover in a separate file then adds the cover path to the object. This behaviour reflects the idea that the cover image where supposed to be downloaded online, but that feature failed to emerge as it is common to store album cover in the file.
+The first task involves a recursive search though selected folders for MP3 files, construct \texttt{Song} objects, and then insert them into the database. After the \texttt{Song} object is constructed the \texttt{SongScanner} attempts to extract a cover image from the file, and save the cover in a separate file. It then adds the cover's file path to the object. This behaviour reflects the idea that the cover image was supposed to be downloaded online. This feature was not implemented, as we found out that is common to store album cover in the file.
 
-The second task is finding BPM for songs in the database. This is done by querying for all songs with unknown BPM then performing an online lockup for the BPM. We use a API from \citet{echonest:API} to perform lookup with artist name and song title. This is repeated every application launch for song with no BPM. 
-
-
-
-
+The second task is finding beats per minute for songs in the database. This is done by querying for all songs with an unknown BPM, and then searching online for it. We used an API from \citet{echonest:API} to perform a lookup using the artist name and song title. This is repeated every time the application is launched for songs with no BPM.
