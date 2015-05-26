@@ -3,21 +3,25 @@ The Music Player module consists of a number of classes, where to most notable a
 
 \subsection{DynamicQueue}
 \label{sec:dynamicQueue}
-This class is named based on the fact that it will update dynamically, depending on the runnin speed of the user.
+This class is named based on the fact that it will update dynamically, depending on the pace of the user.
 
 \subsection{MusicPlayerActivity}
-This is the central point of the application, responsible for managing the rest of the application and giving the user a way of interacting with it. Is starts the \texttt{MusicPlayerService}, calls the \texttt{DynamicQueue} for songs to play, attaches listeners to the buttons, making them clickable, and it checks that there are enough songs in the specified folder, sending the user to the settings menu if this is not the case.
+This is the central point of the application, responsible for managing the rest of the application and giving the user a way of interacting with it. It starts the \texttt{MusicPlayerService}, calls the \texttt{DynamicQueue} for songs to play, attaches listeners to the buttons, making them clickable, and it checks that there are enough songs in the specified folder, sending the user to the settings menu if this is not the case.
 
-In order to manage the responsibilities associated with the activity, general initialisation has its own class \texttt{Initializers}. \texttt{Initializers} is responsibility for setting \texttt{OnClickListeners} for the GUI and preparing the first song in the queue and coverflow. 
+In order to manage the responsibilities associated with the activity, general initialisation has its own class \texttt{Initializers}. \texttt{Initializers} is responsible for setting \texttt{onClickListeners} for the GUI and preparing the first song in the queue and coverflow. 
 
 \subsection{MusicPlayerService} 
-This service handles the playing of the music files, this is done with the \texttt{MediaPlayer} class which is part of the \citet{android:MediaPlayer} API. The service is responsible for setting up event listeners and act as an interface to the \texttt{MediaPlayer}.  
+The \texttt{MusicPlayerServce} handles the playing of the music files. This is done with the \texttt{MediaPlayer} class, which is part of the \citet{android:MediaPlayer} API. The service is responsible for setting up event listeners, and acts as an interface to the \texttt{MediaPlayer}.  
 
-We only used of one the two listeners available for the \texttt{MediaPlayer}, the \texttt{OnCompleteListener}. This listener is called when a files reaches its end. In this event the method attracted to the listener selects the next song in Queue, by a \texttt{nextSong} method. \texttt{OnCompleteListener} is also called when an error occur while the \texttt{MediaPlayer} is playing. In our application a illegal state error could happen if one would call \texttt{stop} while the \texttt{MediaPlayer} was not playing, triggering the \texttt{OnCompleteListener} and changing the song to the next in the queue. This was resolved in \texttt{MusicPlayerService} by ignoring \texttt{stop} or other calls if the \texttt{MediaPlayer} was in the wrong state. The \texttt{MediaPlayer}'s state diagram can be seen in \cref{fig:medaiPlayerState}.
+We only used of one the two listeners available for the \texttt{MediaPlayer}, the \texttt{onCompleteListener}. This listener is called when a files reaches its end. In this event the method attached to the listener, selects the next song in Queue, by calling the \texttt{nextSong} method. 
+
+The \texttt{onCompleteListener} is also called when an error occurs while the \texttt{MediaPlayer} is playing. In our application an illegal state error could happen if one calls \texttt{stop} while the \texttt{MediaPlayer} was not playing, triggering the \texttt{onCompleteListener}, and changing the song to the next in the queue. This was handled in the \texttt{MusicPlayerService} by ignoring \texttt{stop} or other calls, if the \texttt{MediaPlayer} was in the wrong state. 
+
+The \texttt{MediaPlayer}'s state diagram can be seen in \cref{fig:medaiPlayerState}. The application ends up in an illegal state every time a method is called from a state which does not have a corresponding transition. An example could be that \texttt{prepare} was called from the \texttt{started} state. One would have to call \texttt{stop} before \texttt{prepare} could be called again.\Christoffer{does the explanation of the state diagram make sense?}
 
 \begin{figure}[h!]
   \centering
     \includegraphics[scale=.33]{Images/mediaplayerStateDiagram.png}
-  \caption{A state diagram taken from \citet{android:MediaPlayer}.}
+  \caption{A state diagram which shows a MediaPlayer object's life cycle. Taken from \citet{android:MediaPlayer}.}
   \label{fig:medaiPlayerState}
 \end{figure}
