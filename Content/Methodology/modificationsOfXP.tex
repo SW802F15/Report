@@ -1,17 +1,17 @@
 \Alexander{When to use task, story, task card, story card, user story, use case?}
 \Alexander{When to use solution, program, project, product?}
 \section{Adaptation of Extreme Programming}
-This project is developed with an education purpose, to which some requirements and restrictions exist.
+This project is developed with an educational purpose, to which some requirements and restrictions exist.
 Partly due to these requirements and restrictions, we made some adaptations to XP for it to fit inside the project parameters.
 
 \subsection{40-hour Week}
-While we are working on this project, we also follow a range of courses as part of our education.
-As a result of this, our schedule will be fragmented when counting project time.
-We will therefore not be able to use the literal implementation of this practice.
+The purpose of this practise is to ensure energetic developers every day, and not to overwork them to the point of burnout \citet[p. 58]{xp:explored}.
+We will implement this practise by timeboxing the project time.
+This way we will still be able to ensure rested and energetic developers, regardless of courses and other non-project matters.
 
-The purpose of this practice was to ensure energetic developers everyday, and not to overwork them to the point of burnout.
-We will implement this practice by timeboxing the project time.
-This way we will still be able to ensure rested and energetic developers regardless of courses and other non-project matters.
+%While we are working on this project, we also follow a range of courses as part of our education.
+%As a result of this, our schedule will be fragmented when counting project time, as opposed to a real world contract, were the schedule would be non-fragmented.
+%We will therefore not be able to use the literal implementation of this practise.
 
 \subsection{Code Standards}
 Creating a formal code standard is a time consuming task.
@@ -19,15 +19,15 @@ We expect that creating a formal code standard, when we already have an informal
 The informal code standard has been created and expanded through our previous experiences of working together.
 
 \subsection{Collective Ownership}
-This practice supports flexible and quick changes, however some risks still exist.
-The problems most likely to occur in this project are: the lack of expertise, violating private space, and personal pride.
+This practise supports flexible and quick changes \citet[p. 54]{xp:explored}, however some risks still exist.
+The problems most likely to occur in this project are: lack of expertise, violating private space, and personal pride.
 
-The problem with the lack of expertise is based on the scenario, where a problem is just passed on, without anyone having any reel expertise of the overall problem.
-By using Pair Programming the expertise will be spread to the entire team, ensuring everyone having knowledge about the overall problems.
+The problem with lack of expertise occurs when a problem is just passed on, without anyone having any expertise in the overall problem.
+By using Pair Programming the expertise will be spread to the entire team, ensuring everyone obtains knowledge about the overall problems.
 
-The problem of violating each others private space, refers to when developers need to access and work in the same document. This can cause developers to stay at their current version and only code there, in order to avoid conflicting documents.
+The problem of violating each others' private space, refers to when developers need to access and work in the same document. This can cause developers to stay at their current version and only code there, in order to avoid conflicting documents.
 However, by using Continuous Integration it will be impossible to be stuck on an old version.
-By using the Testing practice, it is ensured the changed will not compromise the existing code.
+By using the Testing practise, it is ensures changes will not compromise the existing code.
 
 The problem with personal pride is not directly addressed by XP.
 This problem can occur if a developer becomes proud of their work, and does not want to see it ``ruined'' by others.
@@ -35,55 +35,55 @@ This is a problem we will have to watch out for and to remind ourselves of XP's 
  
 
 \subsection{Continuous Integration}
-According to XP this practice should be automated through the setup of a dedicated build server.
+According to XP this practise should be automated through the setup of a dedicated build server\citet[p. 57]{xp:explored}.
 Making this an automated task, should ensure the developers working on the current version.
 The integration itself should not be automated, but the build and testing should, i.e., when a story is completed, the changes are integrated into the current build.
 The build server then automatically builds and tests the build.
-If the tests are not at a 100\%, the developers must fix their code or discard it, to ensure the build always passes 100\% of the tests.
+If the tests are not at a 100\%, the developers must fix their code or discard it, to ensure the build always passes 100\% of the tests. %bahahaha
 
-Even though finding and setting up a build server would be the correct way of doing things, we will manually integrate and build the code on a dedicated branch.
-We will do this because, we believe we can achieve the same benefits with the manual approach, without using time on learning to use the build server.
+Even though finding and setting up a build server would be the correct way of doing things, we will manually integrate and build the code from a dedicated branch.
+We will do this because, we believe we can achieve the same benefits with the manual approach, without using time to set up the build server.
 This is only viable because of the small size of the project, which results in short build times and a limited risk of fragmented versions.
 
 \subsection{Metaphor}
 The metaphor is an effective way to get a shared vision for the project.
-A meaningful metaphor helps helps creating and naming the correct objects and actions.
+A meaningful metaphor helps create and name the correct objects and actions \citet[p. 87]{xp:explored}.
 
 We see this project as a music player that plays music with a tempo matching the user's pace.
 This metaphor might change throughout this project.
 
 \subsection{On-site Customer}
 Since this is a semester project, we will not have an actual customer.
-In place of the on-site customer we will acts as our own surrogate customer.
-This means that we are responsible for the priority, requirements decisions, and creating acceptance tests, as well as other tasks normally done by the customer.
+In place of the on-site customer, we will act as a surrogate customer.
+This means that we are responsible for the priority, requirement decisions, and creation of acceptance tests, as well as other tasks normally done by the customer.
 
 \subsection{Pair Programming}
-To fully utilise the powers of pair programming, we will borrow two sets of monitors, keyboards, and mice.
+To fully utilise pair programming, we will borrow two sets of monitors, keyboards, and mice.
 We will connect these to our laptops to create two workstations ready for pair programming.
 
-There exist several versions of how to best pair program, and it is said that ``pair programming is easy to do, but difficult to master''.
-We will try different methods to experience the advantages and disadvantages of the different versions.
+There exists several versions of how to program in pairs. We will try different methods to experience the advantages, and disadvantages of the different versions.
 
 \subsection{Planning Game}
-Planning is important. It lets you know how fast you work, what to do next,  provides an effective means of communication with the customer, and allows you to quickly respond to changes.
+Planning is important. It lets you know how fast you work, what to do next, provides an effective means of communication with the customer, and allows you to quickly respond to changes \citet[p. todo]{xp:explored}. 
+\Kristian{grep for bad cites?}
 
-In XP planning happens in multiple stages. There is the release planning and the iteration planning.
-The release planning event is where the customer writes all the user stories, he wants the program to cover.
+In XP planning happens in two stages. There is the release planning and the iteration planning.
+The release planning event is where the customer writes all the user stories, he wants the program to cover\citet[p. todo]{xp:explored}.
 The developers then estimate the time it will take to implement the different stories.
 Then the customer prioritises the stories by what should be done first.
-Finally the stories to be done in the release are selected based on project velocity and priority of each story.
+Finally the stories to be done in the release are selected based on project velocity, and priority of each story.
 
-The iteration planning event is where the customer selects which of the stories, from the release plan, he wants to be implemented in the upcoming iteration.
-Usually the highest prioritised stories are chosen, but often these are superseded by what stories that was not completely implemented last iteration.
-The customer is asked to chose a number of stories, based on the project velocity, so the developers are not swarmed with work.
+The iteration planning event is where the customer selects which of the stories, from the release plan, he wants implemented in the upcoming iteration \citet[p. todo]{xp:explored}.
+Usually the highest prioritised stories are chosen, but often these are superseded by the stories not completely implemented last iteration.
+The customer is asked to choose a number of stories, based on the project velocity, so the developers are not overworked.
 
-A story can be estimated individually or collaboratively, and both methods have strengths and weaknesses.
+A story can be estimated individually, or collaboratively. Both methods have strengths and weaknesses.
 We decided to collaboratively estimate stories, as that approach allows us to use our combined experience to find the right estimation.
 
 \subsection{Refactoring}
-XP prescribes refactoring to be done on the spot, when a bad smell is identified, to prevent building on top of bad code.
+XP prescribes refactoring to be done on the spot when a bad smell is identified, to prevent building on top of bad code \citet[p. todo]{xp:explored}.
 Although refactoring is important, we will evaluate each bad smell by severity and time needed to fix, before correcting it.
-We will then decide if it is worthwhile to correct the bad smell, compared to implementing new features.
+We will then decide if it is worthwhile to correct the bad smell, compared to implementing new features. Otherwise it will be created as a task/story.
 
 \subsection{Simple Design}
 To implement a simple design, we will structure our code in modules.
@@ -91,19 +91,17 @@ Each module will contain multiple classes, which all will be short and readable.
 To improve readability we will name methods after their function and only implement features with an immediate purpose. This will prevent having code that is never used.
 
 \subsection{Small Releases}
-The purpose of this practice is to reduce the risks when or if changes in the use domain occur.
-Although the releases are frequent, it must only contain complete features.
+The purpose of this practise is to reduce the risks if changes in the use domain occur\citet[p. todo]{xp:explored}.
+Although releases are frequent, they must only contain complete features.
 
 This project contains three major features, which we will try to match to approximately three releases.
 With each release we will have a complete feature, which then will be user tested and the feedback will be implemented in the next release.
 
 \subsection{Testing}
-Testing covers both unit testing and acceptance testing, as both are important parts of XP.
+Testing covers both unit testing and acceptance testing, both are important parts of XP.
 
-Unit tests are created to ease the refactoring process, by ensuring the external behaviour has not been compromised after changed has been made.
+Unit tests are created to ease the refactoring process, by ensuring the external behaviour has not been compromised after a change has been made.
 We will, as recommended by XP, make use of Test-Driven Development (TDD).
 
 Acceptance tests are created to ensure the product satisfies the customers needs.
 Acceptance tests are written by the customer, which we will do ourselves, seeing as we use ourselves as a surrogate customer.
-
-\Alexander{Find a lot of sources, e.g. Explored}
