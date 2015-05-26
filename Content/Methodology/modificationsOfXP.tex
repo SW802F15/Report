@@ -81,10 +81,14 @@ A story can be estimated individually or collaboratively, and both methods have 
 We decided to collaboratively estimate stories, as that approach allows us to use our combined experience to find the right estimation.
 
 \subsection{Refactoring}
-\Alexander{Needs to be written}
+XP prescribes refactoring to be done on the spot, when a bad smell is identified, to prevent building on top of bad code.
+Although refactoring is important, we will evaluate each bad smell by severity and time needed to fix, before correcting it.
+We will then decide if it is worthwhile to correct the bad smell, compared to implementing new features.
 
 \subsection{Simple Design}
-\Alexander{Needs to be written}
+To implement a simple design, we will structure our code in modules.
+Each module will contain multiple classes, which all will be short and readable.
+To improve readability we will name methods after their function and only implement features with an immediate purpose. This will prevent having code that is never used.
 
 \subsection{Small Releases}
 The purpose of this practice is to reduce the risks when or if changes in the use domain occur.
@@ -96,7 +100,7 @@ With each release we will have a complete feature, which then will be user teste
 \subsection{Testing}
 Testing covers both unit testing and acceptance testing, as both are important parts of XP.
 
-Unit tests are created to easy the refactoring process, by ensuring the external behaviour has not been compromised after changed has been made.
+Unit tests are created to ease the refactoring process, by ensuring the external behaviour has not been compromised after changed has been made.
 We will, as recommended by XP, make use of Test-Driven Development (TDD).
 
 Acceptance tests are created to ensure the product satisfies the customers needs.
