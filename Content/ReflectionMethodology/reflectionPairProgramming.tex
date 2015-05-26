@@ -1,9 +1,121 @@
 \section{Pair Programming}
-Initially, we used Teamviewer for pair programming instead of one shared physical monitor as XP prescribes. We found that this did not work as well as with a single monitor. The main problem was that it did not encourage frequent driver change. This meant that often one person coded and the other person was just looking at it. We experienced a learning curve adopting pair programming, and initially it was difficult for the observer to contribute with input and most work was done by the driver. The driver had to carry the work load.
+Throughout the project we experimented with and observed several interesting things.
+We experimented with things like \textit{workstation setup} and \textit{scheduled partner switches}.
+During the project we made interesting observations about \textit{interpersonal compatibility}, \textit{expertise level}, \textit{roles}, \textit{distractions}, \textit{quality}, and \textit{productivity}.
+
+\subsection{Workstation Setup}
+We have experimented with different kinds of workstation setup.
+%Quick overview
+The first setup we used was by exclusively using our laptops without any peripherals, i.e., two people sharing one laptop.
+%What was the results
+This resulted in difficulties for the co-driver, as it was difficult to see what was happening on the screen, due to their low quality.
+Additionally, due to the size of the laptop, it gave a sense of the driver working on his personal computer while the co-driver just observed quietly in the background, giving little sign of collaboration.
+%Why were the results as they were
+
+%How can we improve the results, possible other solutions
+
+
+%Quick overview
+The second setup we used was a purely digital solution, where we used TeamViewer to share our screens.
+%Why we used this
+We used this setup to counter the bad viewing angles of the screens, by placing each developer in front of his own screen.
+Further it should improve the collaboration, by allowing each developer to take an active roll in the development process.
+%What was the results
+We experienced this as a more comfortable way of working, now that we were not slumping over a single laptop.
+However, it gave rise to the tendency of hiding behind ones screen, even getting distracted and doing non-work related activities, leading to even less collaboration than with the first setup.
+Consequently, working with TeamViewer proved to hinder productivity more than it helped.
+%Why was the results as they were
+
+%How can we improve the results, possible other solutions
+
+
+
+%Quick overview
+The third and last setup we used was two workstations each consisting of a monitor, a keyboard, and a mouse.
+%Why we used this
+This solved some of the problems we encountered with the two other setups: there were no longer problems with bad viewing angles or sitting positions, and the co-driver could no longer hide behind his own screen.
+Additionally it removed the need for one person being forced to work on another's personal laptop, which could have been seen as a personal space violation.
+
+%What was the results
+
+%Why was the results as they were
+
+%How can we improve the results, possible other solutions
+
+Based on our experiences it was clearly the third setup that was the best.
+It provided, by far, the best work environment, which allowed us to focus on some of the other challenges associated with pair programming.
+On top of this it improved the communication between the pair, resulting in better quality code, through instant code review and better collaboration.
+In contrast, a bad work environment, as with the first two setups, makes collaboration harder, which strongly diminishes the benefits from using pair programming.
+
+
+\subsection{Scheduled Partner Switches}
+Switching partners often is an important aspect of pair programming, as it helps getting new eyes on a problem and strengthens the feeling of collective ownership, by having more people work on the same piece of code.
+For this we also experimented with three different approaches.
+
+In the first approach, we changed partners whenever it felt like a good idea, but with no other restrictions than having to try doing it often, it was easy to forget.
+This resulted in the same pair often sticking together for one or even several days, which was even more problematic, especially when one of the pairs was stuck with a problem that could easily be solved by changing partners.
+
+%One such problem could be with how compatible the two programmers work styles are.
+To solve the problem of having too few partner switches, we experimented with having a fixed time of the day, where the switch occurred.
+The change was an improvement in terms of improving the feeling of collective ownership as well as preventing one pair of getting stuck with a difficult problem for too long, but it also resulted in having to split a pair in the middle of finishing a task.
+Being forced to stop working during a good flow often had a negative impact on the pair, causing them to be less useful for their new partners.
+
+The problems connected to switching partners at a fixed time led us to make a small modification to the approach, resulting in the third and final approach: using a fixed time, but allowing each pair to finish their current task.
+This approach definitely reduced the problems from the second approach, but it required some extra care in execution, as it would some times lead to one pair waiting for the other to finish a long task. Ideally no tasks should be long enough to have this be a big problem, but in reality a task can easily prove more difficult than anticipated.
+
+Although the third approach provided the best balance of forcing us to switch partners often while still allowing a good work flow, it is not an ideal approach.
+We are not sure how the ideal approach would look like, but it may depend on the team using it.
+
+%more bullshit here
+
+\subsection{Interpersonal Compatibility}
+Usually teams are created based on the members personality. \Alexander{Source}
+In this project we have not studied each others personality, which have caused some problems.
+One instance where a determinant and decisive person is paired with a cautious and reflective person, caused problems.
+Problems occurred 
+
+
+\subsection{Expertise Level}
+
+
+
+\subsection{Roles}
+
+
+
+\subsection{Distractions}
+
+
+
+\subsection{Quality}
+
+
+
+\subsection{Productivity}
+
+
+
+
+
+
+
+Initially, we used Teamviewer for pair programming instead of one shared physical monitor as XP prescribes.
+\Alexander{Mention we used Teamviewer because we did not have any monitors.}
+We found that this did not work as well as with a single monitor. 
+The main problem was that it did not encourage frequent driver change.
+\Alexander{I do not agree, it was pretty easy to change driver.} 
+This meant that often one person coded and the other person was just looking at it.
+\Alexander{Why were the others ``just looking at it''? The practice explicit states the others do not just ``look''.}
+We experienced a learning curve adopting pair programming, and initially it was difficult for the observer to contribute with input and most work was done by the driver. 
+The driver had to carry the work load.
 
 Another issue was that if the task being worked on was not well understood by the pair, two people ended up not advancing towards a solution. We addressed the issue by temporarily splitting the pair to perform research and experimentation, which could help reach a solution.
+\Alexander{Source saying something about implementing TDD and PairProgramming, where it is wasteful to pair program if both developers no nothing.}
+\Alexander{How did the ``fix'' work? Was it not double the needed time?}
 
-We found that the forced timed pair programming switch did not sit right with us. Multiple times we experienced that we should switch just before the current issue was done. This created overhead and we sometimes forgot to change partners.
+\Alexander{Better segway}
+We found that the forced timed pair programming switch did not sit right with us. Multiple times we experienced that we should switch just before the current issue was done. This created overhead and we sometimes forgot to change partners. \Alexander{What did this mean for the project?}
 We therefore decided to use a task-based approach where switches were only made between issues or between issues estimated to take more than 3 hours. We suspect that this may have hurt the collective ownership, but we found it more productive. We later abandoned the 3 hour switch.
 
 We attempted to reduce the overhead by solving trivial issues alone rather than in pairs. 
+\Alexander{Why, explain}
