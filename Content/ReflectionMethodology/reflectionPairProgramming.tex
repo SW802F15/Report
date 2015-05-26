@@ -66,21 +66,38 @@ This approach definitely reduced the problems from the second approach, but it r
 Although the third approach provided the best balance of forcing us to switch partners often while still allowing a good work flow, it is not an ideal approach.
 We are not sure how the ideal approach would look like, but it may depend on the team using it.
 
-%more bullshit here
-
 \subsection{Interpersonal Compatibility}
-Usually teams are created based on the members personality. \Alexander{Source}
-In this project we have not studied each others personality, which have caused some problems.
-One instance where a determinant and decisive person is paired with a cautious and reflective person, caused problems.
-Problems occurred 
+Pair programming requires tight cooperation between two people, and for that to run smoothly they need good communication and understanding of each other's way of working.
+In other words, their personalities need to be compatible.
+This is not something we have experimented with, but we have made some interesting observations. 
 
+In our team, each person generally got along well, but when two specific members were paired up, some problems were observed.
+The problems did not result in any big problems, but they did have a negative impact on the productivity of that pair.
+One of the persons was decisive and responsive, and the other more cautious and reflective.
+Some times a pair like that can support each other, making up for each other's shortcomings, but in this case their work flow differed in such a way, that they would become frustrated with each other.
+For example, the reflective person may be driving, and they are trying to solve a difficult problem. The driver sits back and starts thinking about how to solve the problem.
+Meanwhile, the decisive person already has three ideas that might work, and he is itching to try them out, quickly jotting down some code and hitting the hotkey to compile the program to see if it worked.
+Eventually the reflective driver takes care to write the right code and slowly moves the cursor to the compile button, to make sure that the solution does indeed work.
+
+Both would likely have solved the problem at the same speed in the end, but now the decisive person is left with a feeling that the process was too slow, and if he had opened his mouth to suggest his ideas, he would have disturbed the reflective person's thoughts, similarly leaving him with a feeling that they were slowed down.
+
+Some of these problems could maybe be alleviated if we had been better at switching roles (i.e., letting the other person drive), but sometimes it can be very difficult to force two conflicting personalities to work together, and we believe it is important to try and make a team where conflicting personalities either are not present, or at least where they are not forced to work together.
+Avoiding a certain combination in a pair may, in conclusion, be preferable to making sure all possible combinations of pairs are used throughout the project.
 
 \subsection{Expertise Level}
 
 
 
 \subsection{Roles}
-
+The pair consists of two roles: a driver and a co-driver.
+The driver takes care of the coding and the co-driver keeps a sense of perspective.
+It is important to have good communication between the two roles to benefit from the cooperation.
+It is imprortant to remember that pair programming takes the full attention of two programmers, who could be working on each their own problem.
+That means the the pair should work together to create more value, in terms of speed and quality combined, than they would have if they were each working on their own.
+%something about our experience
+% some times hard to co-drive without a good overview of the task and code
+% takes confidence to drive
+% keeps the pair working instead of procrastinating
 
 
 \subsection{Distractions}
@@ -98,24 +115,24 @@ Problems occurred
 
 
 
-
-Initially, we used Teamviewer for pair programming instead of one shared physical monitor as XP prescribes.
-\Alexander{Mention we used Teamviewer because we did not have any monitors.}
-We found that this did not work as well as with a single monitor. 
-The main problem was that it did not encourage frequent driver change.
-\Alexander{I do not agree, it was pretty easy to change driver.} 
-This meant that often one person coded and the other person was just looking at it.
-\Alexander{Why were the others ``just looking at it''? The practice explicit states the others do not just ``look''.}
-We experienced a learning curve adopting pair programming, and initially it was difficult for the observer to contribute with input and most work was done by the driver. 
-The driver had to carry the work load.
-
-Another issue was that if the task being worked on was not well understood by the pair, two people ended up not advancing towards a solution. We addressed the issue by temporarily splitting the pair to perform research and experimentation, which could help reach a solution.
-\Alexander{Source saying something about implementing TDD and PairProgramming, where it is wasteful to pair program if both developers no nothing.}
-\Alexander{How did the ``fix'' work? Was it not double the needed time?}
-
-\Alexander{Better segway}
-We found that the forced timed pair programming switch did not sit right with us. Multiple times we experienced that we should switch just before the current issue was done. This created overhead and we sometimes forgot to change partners. \Alexander{What did this mean for the project?}
-We therefore decided to use a task-based approach where switches were only made between issues or between issues estimated to take more than 3 hours. We suspect that this may have hurt the collective ownership, but we found it more productive. We later abandoned the 3 hour switch.
-
-We attempted to reduce the overhead by solving trivial issues alone rather than in pairs. 
-\Alexander{Why, explain}
+%
+%Initially, we used Teamviewer for pair programming instead of one shared physical monitor as XP prescribes.
+%\Alexander{Mention we used Teamviewer because we did not have any monitors.}
+%We found that this did not work as well as with a single monitor. 
+%The main problem was that it did not encourage frequent driver change.
+%\Alexander{I do not agree, it was pretty easy to change driver.} 
+%This meant that often one person coded and the other person was just looking at it.
+%\Alexander{Why were the others ``just looking at it''? The practice explicit states the others do not just ``look''.}
+%We experienced a learning curve adopting pair programming, and initially it was difficult for the observer to contribute with input and most work was done by the driver. 
+%The driver had to carry the work load.
+%
+%Another issue was that if the task being worked on was not well understood by the pair, two people ended up not advancing towards a solution. We addressed the issue by temporarily splitting the pair to perform research and experimentation, which could help reach a solution.
+%\Alexander{Source saying something about implementing TDD and PairProgramming, where it is wasteful to pair program if both developers no nothing.}
+%\Alexander{How did the ``fix'' work? Was it not double the needed time?}
+%
+%\Alexander{Better segway}
+%We found that the forced timed pair programming switch did not sit right with us. Multiple times we experienced that we should switch just before the current issue was done. This created overhead and we sometimes forgot to change partners. \Alexander{What did this mean for the project?}
+%We therefore decided to use a task-based approach where switches were only made between issues or between issues estimated to take more than 3 hours. We suspect that this may have hurt the collective ownership, but we found it more productive. We later abandoned the 3 hour switch.
+%
+%We attempted to reduce the overhead by solving trivial issues alone rather than in pairs. 
+%\Alexander{Why, explain}
