@@ -10,10 +10,22 @@ An Android application was developed in this project to address the challenges s
 It was found that it is possible to create an application consisting of several modules working together to achieve the desired result, i.e. an application that plays back music that matches the user's pace:
 
 \begin{itemize}
-\item \textbf{Music Player}: This module is the core of the application, responsible for playing the desired music. Using a GUI it is possible to navigate through a playlist manually.
-\item \textbf{Song Scanner}:
-\item \textbf{Step Counter}:
+\item \textbf{Music Player}: This module is the core of the application, responsible for playing the desired music. Using a GUI it is possible to navigate through a playlist manually, and with a combination of the build-in dynamic queue and the step counter module, it can automatically play back songs that match the user's running (or walking) pace.
+\item \textbf{Song Scanner}: The song scanner is responsible for locating music on the device and maintaining a music library.
+\item \textbf{Step Counter}: This module uses the device's sensors to calculate the user's steps per minute.
 \end{itemize}
+
+The user is expected to use the application while running, and in addition to the functionality, it would be an advantage to be able to control the application while using for its intended purpose. That requirement led to the second question:
+
+\begin{center}
+\textit{How can a smartphone application be operated without disrupting the runner's form and/or concentration?}
+\end{center}
+
+Se
+
+
+\subsection{Future Work}
+Things to do in the future.
 
 
 The application can provide music matching a runners pace. This is achieved by registering steps taken and querying a local music library on the device. This solves our problem as we know the tempo of the song in the library.
@@ -32,9 +44,7 @@ improvements to the application:
 
 
 %Q2:
-\begin{center}
-\textit{How can a smartphone application be operated without disrupting the runner's form and/or concentration?}
-\end{center}
+
 This is solved by adding a interface, that only relies on touch to be operated. This allows a running people to focus sight on the path ahead instead of a phone. 
 
 
