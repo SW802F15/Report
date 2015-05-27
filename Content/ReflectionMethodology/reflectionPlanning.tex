@@ -25,16 +25,40 @@ Although the product did not end up as what was intended from the get go, it sho
 
 \subsection{Making Estimations}
 To properly plan an iteration, it is important to have precise estimations of the issues at hand.
-It allows the customer to easier prioritise each issue or story, and it allows the developers to have an idea of how many issues they can finish during the iteration.
+It allows the customer to easier prioritise each user story, and it allows the developers to have an idea of how many issues they can finish during the iteration.
 
-Estimating an issue correctly is, however, a difficult task.
-Many variables play a role in how long an issue takes to solve, and it is often impossible to foresee them all.
+Estimating an user story correctly is, however, a difficult task.
+Many variables play a role in how long it takes to implement an user story, and it is often impossible to foresee them all.
 To try to reduce this problem we employed the practice of planning poker, where each member of the team gives their own (anonymous) estimation, and the final estimation is discussed afterwards.
 We found that in the first iterations we underestimated the amount of time needed for the more difficult issues, while we generally estimated correctly when it came to trivial issues.
 
 \subsection{Code Velocity}
 %Velocity and fragmentation
+The code velocity is a metric describing how fast the team can implement features.
+It is an important metric, as it is used to plan what should be implemented next, but also when the customer can expect the product finished.
+Without an approximate velocity, it is nearly impossible to plan an iteration, let alone a release.
+
+The code velocity is measured, as the sum of the units, for all implemented user stories from last iteration.
+That does by definition need some way of tracking how much time is used to implement each user story.
+For the first iteration we manually tracked the implementation time. This method was not anywhere near precise, as we approximated most implementation times, since we forgot to track breaks and the like. This caused us to have difficulty determining the amount of work we could do in an iteration. Therefore we decided to use an automated time tracking tool.
+
+From the second iteration onward, we used the time tracking tool EverHour. 
+This gave us much more precise implementation times, all the way down to the second.
+However, although our implementation times were much more precise, our code velocity was still off.
+We found this to be because of the time units used to measure velocity.
+We had used hours, minutes, and seconds as measurement, e.g. we got an code velocity of 64 hours and 27 minutes.
+Even by rounded off to the nearest hour, our velocity would be way off.
+
+We studied our user stories and found that their implementation times differed slightly in comparison to the estimated times, but the accumulated difference was quite high.
+We determined it was the granularity of the measuring units, which were at fault.
+We implemented the use of half-a-day units instead, and found the code velocity to be quite accurate, now only disrupted by isolated errors of estimation.
 
 \subsection{Summary}
+Doing all of these tasks associated with planning takes a lot of time, but are they really worth it?
+Based on our experiences, the short answer is: yes.
+As mentioned in \Cref{def:planninggame} planning lets you know your velocity, plans for the future, and allows for responding to change rather quickly.
+
+
 %Overhead
 %Flexibility (in terms of changes)
+\Alexander{Check for Planning vs. Planning Game}
