@@ -6,7 +6,7 @@ After a review of the project's source code, we created a list of the bad smells
 \end{itemize}
 
 In the following subsections, concrete examples of how we dealt with them are illustrated. 
-\subsection{Refactoring of Duplicated code}
+\subsection{Refactoring of Duplicated Code}
 The method in \Cref{lst:dupBefore} shows a method which suffered from the duplicated code smell. As can be seen in the sample, the two for-each loops perform identical operations on a list. They both iterate over a list and if an element from that list is contained in another list, it is removed from that list.
 
 \begin{code}{lst:dupBefore}{Example of duplicate code before refactoring.}
