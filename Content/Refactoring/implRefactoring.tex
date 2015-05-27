@@ -1,10 +1,9 @@
 \section{Implementation of Refactoring}
 \Christoffer{Listing texts in the whole section should probably be less general}
-After a review of the project's source code, we created a list of the bad smells identified. Of these, the three most frequently occurring were
+After a review of the project's source code, we created a list of the bad smells identified. Of these, the two most frequently occurring were
 \begin{itemize}
 \item Duplicated code
 \item Long method
-\item Inappropriate intimacy
 \end{itemize}
 
 In the following subsections, concrete examples of how we dealt with them are illustrated. 
@@ -90,8 +89,7 @@ final public void selectNextSong() {
 
        currentSong = nextSongs.get(0);
        nextSongs.remove(0);
-
-       nextSongs.add(getMatchingSongs(1, _BPMDeviation).get(0));
+       nextSongs.add(getMatchingSongs(SINGLE_SONG, _BPMDeviation).get(0));
 }
 \end{lstlisting}
 \end{code}
@@ -143,7 +141,7 @@ private void moveCurrentSongToPrevious() {
 private void updateCurrentSongFromNextSongs() {
     _currentSong = _nextSongs.get(0);
     _nextSongs.remove(0);
-    _nextSongs.add(getMatchingSongs(1, _BPMDeviation).get(0));
+    _nextSongs.add(getMatchingSongs(SINGLE_SONG, _BPMDeviation).get(0));
 }
 \end{lstlisting}
 \end{code}
