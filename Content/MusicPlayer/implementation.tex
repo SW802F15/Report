@@ -15,7 +15,7 @@ In order to manage the responsibilities associated with the activity, general in
 \subsection{MusicPlayerService} 
 The \texttt{MusicPlayerServce} handles the playing of the music files. This is done with the \texttt{MediaPlayer} class, which is part of the \citet{android:MediaPlayer} API. The service is responsible for setting up event listeners, and acts as an interface to the \texttt{MediaPlayer}.  
 
-We only used of one the two listeners available for the \texttt{MediaPlayer}, the \texttt{onCompleteListener}. This listener is called when a file reaches its end. In this event the method attached to the listener, selects the next song in Queue, by calling the \texttt{nextSong} method. 
+We only used one of the two listeners available for the \texttt{MediaPlayer}, the \texttt{onCompleteListener}. This listener is called when a file reaches its end. In this event the method attached to the listener, selects the next song in Queue, by calling the \texttt{nextSong} method. 
 
 The \texttt{onCompleteListener} is also called when an error occurs while the \texttt{MediaPlayer} is playing. In our application an illegal state error could happen if one calls \texttt{stop} while the \texttt{MediaPlayer} was not playing, triggering the \texttt{onCompleteListener}, and changing the song to the next in the queue. This was handled in the \texttt{MusicPlayerService} by ignoring \texttt{stop} or other calls, if the \texttt{MediaPlayer} was in the wrong state. 
 
