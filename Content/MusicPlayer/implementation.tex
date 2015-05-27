@@ -1,5 +1,5 @@
 \section{Implementation}
-The Music Player module consists of a number of classes, where the most notable are \texttt{DynamicQueue}, \texttt{MusicPlayerActivity}, and \texttt{MusicPlayerService}. \texttt{DynamicQueue} handles navigation, and it makes sure the queue of songs matches the user's running speed. \texttt{MusicPlayerActivity} shows a UI on the screen and handles user inputs, including navigation and volume changes. \texttt{MusicPlayerService} handles the actual playback of songs, and because it is implemented as a service, it is possible to keep playing songs in the background, i.e., without requiring \texttt{MusicPlayerActivity} to be visible.
+The Music Player module consists of a number of classes, where the most notable are \texttt{DynamicQueue}, \texttt{MusicPlayerActivity}, and \texttt{MusicPlayerService}. \texttt{DynamicQueue} handles navigation, and it makes sure the queue of songs matches the user's running pace. \texttt{MusicPlayerActivity} shows a UI on the screen and handles user inputs, including navigation and volume changes. \texttt{MusicPlayerService} handles the actual playback of songs, and because it is implemented as a service, it is possible to keep playing songs in the background, i.e., without requiring \texttt{MusicPlayerActivity} to be visible.
 
 \subsection{DynamicQueue}
 \label{sec:dynamicQueue}
