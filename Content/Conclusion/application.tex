@@ -15,7 +15,7 @@ It was found that it is possible to create an application consisting of several 
 \item \textbf{Step Counter}: This module uses the device's sensors to calculate the user's steps per minute.
 \end{itemize}
 
-The user is expected to use the application while running, and in addition to the functionality, it would be an advantage to be able to control the application while using for its intended purpose. That requirement led to the second question:
+The user is expected to use the application while running, and in addition to the functionality, it would be advantageous to be able to control the application while using for its intended purpose. That requirement led to the second question:
 
 \begin{center}
 \textit{How can a smartphone application be operated without disrupting the runner's form and/or concentration?}
@@ -28,13 +28,13 @@ This was achieved by creating a non-graphical user interface, allowing the user 
 In its current state, the application fulfils the requirements stated by the questions, but as with most software there are improvements to make. Some possible improvements are:
 
 \paragraph{Better Flow}
-Because each module was mainly developed on its own, some problems exist with their couplings.
+Because each module was mainly developed on its own, some problems exist with their interfaces.
 For example, the step counter measures the user's pace, but the dynamic queue does not update the queue quickly enough, so the application only works optimally when running at a constant speed.
 Additionally, the application currently starts playing when the play button is clicked, instead of when the user starts running, thereby not matching the music to the running pace immediately.
 These problems could be solved by implementing a smooth transition to a new song when the pace is changed.
 
 \paragraph{Manipulation of Music Tempo}
-To help the application cope with minor changes in pace, the tempo of the song could be changed to match the new pace more precisely. Implementing this change requires a lot of care to not distort the music.
+To help the application cope with minor changes in pace, the tempo of the song could be changed to match the new pace more precisely. Implementing this change requires a lot of knowledge to not distort the music.
 
 \paragraph{GUI Improvements}
 Many improvements can be made for the GUI, as relatively little focus was put on this aspect of the application. One of the most notable things that would benefit from an improvement is button placement. Especially because the application is meant to be used on the go, it would be an advantage to place the buttons in a way that minimises the risk of clicking a button unintentionally.
@@ -54,7 +54,7 @@ Many current features can be improved.
 For example it could be made possible for the user to input the BPM of songs with missing data.
 An idea that would provide more features with minimal programming could be to add an option to use the step counter and music player on their own, i.e., let the step counter output a count of total steps instead of only steps per minute, and allow using the music player with a traditional play list.
 
-
+\Alexander{For example vs. i.e.}
 %\begin{itemize}
 %\item Reading tempo from file, currently it relies solely on a online API to retrieve tempo.
 %\subitem Alternatively analyse music file in order to discover tempo.
