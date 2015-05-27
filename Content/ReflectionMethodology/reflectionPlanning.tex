@@ -36,9 +36,10 @@ This resulted in us beginning to overestimate the harder stories instead, as we 
 As time went on, we got closer to being correct with medium hard stories, but the harder ones kept being estimated either too high or too low.
 
 As a way of trying to simplify the estimation process, we switched from estimating a story to take a number of hours to take a number of units instead, each unit being half a day.
-\Dan{Kan vi huske en kilde på hvor Beck siger det er en god idé?}
 This allowed us to better put the estimation into perspective in terms of development time, which in turn helped giving us a better idea of how long time a given story should get.
-%But did it help?
+Switching to units helped us by making the process of estimating shorter, due to the increased granularity.
+It did not, however, seem to have a big impact on the precision of the estimations - many of the longer stories still took longer than estimated.
+It is had to give a perfect explanation as to why that was the case, but one big influence could come from the short total length of the project not giving us enough experience; we only had time to use units for estimations for a few iterations.
 
 \subsection{Code Velocity}
 %Velocity and fragmentation
@@ -62,10 +63,12 @@ We determined it was the granularity of the measuring units, which were at fault
 We implemented the use of half-a-day units instead, and found the code velocity to be quite accurate, now only disrupted by isolated errors of estimation.
 
 \subsection{Summary}
-Doing all of these tasks associated with planning takes a lot of time, but are they really worth it?
-Based on our experiences, the short answer is: yes.
-As mentioned in \Cref{def:planninggame} planning lets you know your velocity, plans for the future, and allows for responding to change rather quickly.
-
+Doing all of these tasks associated with planning takes a lot of time, and the question remains whether it is worth it or not.
+Based on our experiences, the short answer to that is yes.
+It \textit{does} take a lot of time, and that time could have been spend on developing more features.
+There would, however, be a big risk of ending up developing a large number of features that are no longer desired.
+As mentioned in \Cref{def:planninggame}, planning lets you know your velocity, plans for the future, and allows for responding to change rather quickly.
+This means that with proper planning, it is possible to make sure the customer ends up with a product that fits the needs they have at the end of the project, rather than the ones they had at the beginning.
 
 %Overhead
 %Flexibility (in terms of changes)
