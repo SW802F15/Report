@@ -3,7 +3,9 @@ The Music Player module consists of a number of classes, where the most notable 
 
 \subsection{DynamicQueue}
 \label{sec:dynamicQueue}
-This class is named based on the fact that it will update dynamically, depending on the pace of the user. \texttt{DynamicQueue} uses a lookahead queue and a previous queue to keeps track of the previously played and upcoming songs. The queues have fixed size so only a set numbers of songs will be stored at any given time. The only songs with matching tempo are loaded into the lookahead queue and only songs already played or skipped can be in the previous queue. 
+This class is named based on the fact that it will update dynamically, depending on the pace of the user. \texttt{DynamicQueue} utilises two queues to keep track of previously played and upcoming songs.
+Each queue has a fixed size, so only the desired amount of songs will be stored at any given times, and only songs matching a given tempo are loaded into the queue for upcoming songs. 
+Additionally, to prevent simply replaying the same songs over and over, all the songs in the two queues must be unique.
 
 \subsection{MusicPlayerActivity}
 This is the central point of the application, responsible for managing the rest of the application, and giving the user a way of interacting with it. It starts the \texttt{MusicPlayerService}, calls the \texttt{DynamicQueue} for songs to play, attaches listeners to the buttons, making them clickable. It also checks that there are enough songs in the specified folder, sending the user to the settings menu if this is not the case.
