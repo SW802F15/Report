@@ -1,5 +1,6 @@
 \section{Implementation}
 The Step counter is implemented as a single class extending the \texttt{Service} class in Android. The service is started and bound from the \texttt{MusicPlayerActivity}, meaning in our implementation it is launched and closed together with the \texttt{MusicPlayerActivity}. On its creation the \texttt{StepCounterService} registers the accelerometer sensor in order to read data required for step detection.
+\Alexander{Step counter or Step Counter?}
 
 
 \subsection{Step Detection}\label{sec:stepCnt}
@@ -9,7 +10,7 @@ According to \citet[p. 2]{zhao:pedometer} a step has occurred if there is a nega
 
 As \citet[p. 2]{zhao:pedometer} we assume that a person can either run as fast as five steps per second or walk as slowly as one step every two seconds. This is handled in the implementation by checking the time since the last measurement. If less than 200 milliseconds have passed since the last step, a new step is not detected. If more than 2 seconds have passed the SPM array is updated with a 0 to indicate that the person is not moving (0 steps per minute).
 
-Our implementation utilises an sensitivity limit so measurements which are very close to each other are not detected as a new step, even though they fulfill the requirements mentioned earlier. This is done to filter out small deviations in measurements which might falsely be identified as a new step. The current limit value is 2, and was found experimentally.
+Our implementation utilises a sensitivity limit so measurements which are very close to each other are not detected as a new step, even though they fulfill the requirements mentioned earlier. This is done to filter out small deviations in measurements which might falsely be identified as a new step. The current limit value is 2, and was found experimentally.
 \begin{figure}[h!]
   \centering
     \includegraphics[scale=0.8]{Images/accPlot.png}
