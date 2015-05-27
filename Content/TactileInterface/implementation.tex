@@ -2,7 +2,7 @@
 %\subsection{Turning off the Screen}
 The implementation of when the screen is turned of, is a pseudo-implementation. On stock Android we found that it is not possible to keep the Android listener running, when the screen is turned off by for example the power button. If this functionality should truly have been implemented, the phone would need to be rooted. 
 
-In the current implementation the screen is made to look dark by creating a completely opaque overlay. The NGUI can be activated by pressing the menu button on the Android device. After the overlay is activated, the screen turns dark, and the application starts handling taps in a custom manner as described in \Cref{subsec:handleTaps}. Taps were chosen over gestures as they are easier to perform while running. Two classes are involved the in implementation of the NGUI: 
+In the current implementation the screen is made to look dark by creating a completely opaque overlay. The NGUI can be activated by pressing the menu button on the Android device. After the overlay is activated, the screen turns dark, and the application starts handling taps in a custom manner as described in \Cref{subsec:handleTaps}. Two classes are involved the in implementation of the NGUI: 
 \begin{itemize}
 \item \texttt{ControlInterfaceView}, the dark view responsible for handling touch events.
 \item \texttt{TapCounter}, counts taps and call the corresponding method, e.g. one tap is for \texttt{pause/play}.

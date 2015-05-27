@@ -2,7 +2,7 @@
 To compare algorithms against each other we looked at the precision with which an algorithm could predict the number of steps taken in a data set from a particular task. The algorithm we found to work best was an adaptation of the pedometer in \citet{zhao:pedometer}.
 
 \paragraph{Algorithm Modification}
-The algorithm in \citet{zhao:pedometer} is for a pedometer working directly with the ADXL345 chip. We, however, rely on a sensor listener on the android platform instead. This means a few differences in our measured data:
+The algorithm in \citet{zhao:pedometer} is for a pedometer working directly with the ADXL345 chip. We, however, have to rely on a sensor listener provided by the Android platform instead. This means a few differences in our measured data:
 \begin{itemize}
 \item Our data sampling frequency is significantly lower. 
 \item Our data is filtered for noise.
