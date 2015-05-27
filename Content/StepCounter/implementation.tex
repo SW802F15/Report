@@ -1,7 +1,5 @@
 \section{Implementation}
-The Step counter is implemented as a single class extending the \texttt{Service} class in Android. The service is started and bound from the \texttt{MusicPlayerActivity}, meaning in our implementation it is launched and closed together with the \texttt{MusicPlayerActivity}. On its creation the \texttt{StepCounterService} registers the accelerometer sensor in order to read data required for step detection.
-\Alexander{Step counter or Step Counter?}
-
+The step counter is implemented as a single class extending the \texttt{Service} class in Android. The service is started and bound from the \texttt{MusicPlayerActivity}, meaning in our implementation it is launched and closed together with the \texttt{MusicPlayerActivity}. On its creation the \texttt{StepCounterService} registers the accelerometer sensor in order to read data required for step detection.
 
 \subsection{Step Detection}\label{sec:stepCnt}
 To determine whether a step is taken, the approach taken by \citet{zhao:pedometer} is implemented. Our implementation first calculates a threshold, which corresponds to the threshold line in \Cref{fig:zhaoGraph}. The threshold is calculated by subtracting the minimum accelerometer measurement from maximum measurement, from the array where the measurements are stored.
