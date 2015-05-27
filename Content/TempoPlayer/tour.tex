@@ -1,4 +1,4 @@
-\section{The Tour}
+%\section{The Tour}
 Tempo player is an application for the Android platform, which is able to play and select music from an already existing library of songs, which fits the user's running pace. It uses the accelerometer for calculating the user's running pace. The application's main screen can be seen in \Cref{fig:mainScreen}. 
 
 \begin{figure}[h!]
@@ -8,13 +8,13 @@ Tempo player is an application for the Android platform, which is able to play a
   \label{fig:mainScreen}
 \end{figure}
 
-The \textit{BPM} represent the song's ``Beats Per Minute''. This information is retrieved from a web service and therefore the application initially requires an internet connection to function as intended. After the songs' BPMs are retrieved, they are stored in an SQL Lite database for later use. The \textit{SPM} represent the user's current number steps per minute.
+The \textit{BPM} represent the song's ``Beats Per Minute''. This information is retrieved from a web service and therefore the application initially requires an internet connection to function as intended. After the songs' BPMs are retrieved, they are stored in an SQL Lite database for later use. The \textit{SPM} represent the user's current number of steps per minute.
 
 The Android device should be mounted on the user's arm and when the next button is pressed the BPM of the next songs played will match the user's SPM if possible, otherwise nearest BPM is selected.
 
 When the user stands still for more than 2 seconds, the SPM are set to 0, since no steps are taken. See \Cref{sec:stepCnt} for details. 
 
-When standing still all songs in the library will be available to the user in a shuffled order.
+When standing still all songs in the library will be available to the user in a shuffled order. \Alexander{Sure?}
 
 As shown in \Cref{fig:settings}, the user can adjust some settings of the application. Currently, the only adjustment the user can make is in which directory the application looks for songs. This settings screen is shown in \Cref{fig:settingsPath}. 
 
