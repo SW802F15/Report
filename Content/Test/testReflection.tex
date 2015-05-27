@@ -7,16 +7,3 @@ Boundary testing is for example when a test case for a method uses inputs just b
 We also found that even though unit tests enable regression testing to be performed, the degree of quality assurance provided by the tests, rely wholly on the quality of them. If the unit tests for a particular piece of code were not correct or written thoroughly, an alteration of the code which broke something in the system, might not cause the unit test to fail, even though the behavior of the system has changed.
 
 Even though the tests might take a while to write, we found that they were generally worth the time to write. The reason for this was that some of the time invested in writing them was regained later because the tests caught errors that we would otherwise have spent a lot of time debugging to find.
-
-% % % % % % % % % % % % % % % % % % % %
-%\Christoffer{should the stuff below be moved to methodology reflection?}
-
-Testing also helped enforced other XP practises than refactoring. Namely collective ownership, pair programming, and continuous integration. 
-
-The XP practise of collective ownership was enforced when we wrote tests, since there was less risk that a change made by someone in the group broke the system unnoticed, since the test would detect it. This gave group members courage to change code written by others and thus allowed a feeling of ownership of all the code. 
-
-Test also enforced the pair programming practise. It gave group members a common understanding of the task to be solved. This understanding was achieved by writing test cases together, before the actual implementation of the application itself began.
-
-Likewise, continuous integration was enforced by testing. All test cases could quickly be run after a change was made, so as to be sure nothing had been broken.
-
-% % % % % % % % % % % % % % % % % % % %
