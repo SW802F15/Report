@@ -1,5 +1,5 @@
 \section{Implementation}
-The Song Scanner is part of the \texttt{DataAccessLayer} module which consists of three classes \texttt{Song}, \texttt{SongDatabase} and \texttt{SongScanner}. \texttt{Song} holds information about songs. \texttt{SongDatabase} is an abstraction of our SQLite database. \texttt{SongScanner} is responsible for keeping the database and MP3 files in selected folders synchronised.
+The Song Scanner is part of the \texttt{DataAccessLayer} module, which consists of three classes \texttt{Song}, \texttt{SongDatabase} and \texttt{SongScanner}. \texttt{Song} holds information about songs. \texttt{SongDatabase} is an abstraction of our SQLite database. \texttt{SongScanner} is responsible for keeping the database and MP3 files in selected folders synchronised.
 
 \subsection{Song}
 An instance of \texttt{Song} represents an MP3 file loaded into memory. The \texttt{Song} class consists of relevant data fields, such as \texttt{file path} and \texttt{BPM}, as well as constructors whose parameters are used for the database and song scanner. 
@@ -9,11 +9,11 @@ Most information used to populate the fields of \texttt{Song} is contained withi
 \subsection{SongDatabase}
 The \texttt{SongDatabase} is used to interact with our SQLite database. The database contains a single table for songs. This table is used to store all data for a song. In addition to the data extracted from the file, we also store a path to a cover image, and BPM.
 
-\texttt{DynamicQueue}, described in \cref{sec:dynamicQueue}, relies on \texttt{SongDatabase} to handle queries for songs with a BPM within a specific range. In the event a row in the database does not have a corresponding MP3 file, the row is deleted. This can happen if a user no longer wish to keep a file in his or her collection, and removes it from the selected folders. 
+\texttt{DynamicQueue}, described in \cref{sec:dynamicQueue}, relies on \texttt{SongDatabase} to handle queries for songs with a BPM within a specific range. In the event a row in the database does not have a corresponding MP3 file, the row is deleted. This can happen if a user no longer wishes to keep a file in his or her collection, and removes it from the selected folders. 
 
 \subsection{SongScanner} 
 The \texttt{SongScanner} has two tasks to perform; scan for files and find BPM online.
 
-The first task involves a recursive search though selected folders for MP3 files, construct \texttt{Song} objects, and then insert them into the database. After the \texttt{Song} object is constructed the \texttt{SongScanner} attempts to extract a cover image from the file, and save the cover in a separate file. It then adds the cover's file path to the object. This behaviour reflects the idea that the cover image was supposed to be downloaded online. This feature was not implemented, as we found out that is common to store album cover in the file.
+The first task involves a recursive search though selected folders for MP3 files, constructing \texttt{Song} objects, and then insert them into the database. After the \texttt{Song} object is constructed the \texttt{SongScanner} attempts to extract a cover image from the file, and save the cover in a separate file. It then adds the cover's file path to the object. This behaviour reflects the idea that the cover image was supposed to be downloaded online. This feature was not implemented, as we found out that it is common to store the album cover in the file.
 
-The second task is finding BPM for songs in the database. This is done by querying for all songs with an unknown BPM, and then searching online for it. We used an API from \citet{echonest:API} to perform a lookup using the artist name and song title. This is repeated every time the application is launched for songs with no BPM.
+The second task is finding BPM for songs in the database. This is done by querying for all songs with an unknown BPM, and then searching online for it. We used an API from \citet{echonest:API}, to perform a lookup using the artist name and song title. This is repeated every time the application is launched for songs with associated BPM.
