@@ -10,11 +10,11 @@ Tempo player is an application for the Android platform, which is able to play a
 
 The \textit{BPM} represent the song's ``Beats Per Minute''. This information is retrieved from a web service and therefore the application initially requires an internet connection to function as intended. After the songs' BPMs are retrieved, they are stored in an SQL Lite database for later use. The \textit{SPM} represent the user's current number steps per minute.
 
-The Android device should be mounted on the user's arm and when the next button is pressed the BPM of the next songs played will match the user's SPM with an allowed deviation of 45 BPM.
+The Android device should be mounted on the user's arm and when the next button is pressed the BPM of the next songs played will match the user's SPM if possible, otherwise nearest BPM is selected.
 
 When the user stands still for more than 2 seconds, the SPM are set to 0, since no steps are taken. See \Cref{sec:stepCnt} for details. 
 
-We have chosen that all songs in the library will be  available to the user in a shuffled order.
+When standing still all songs in the library will be available to the user in a shuffled order.
 
 As shown in \Cref{fig:settings}, the user can adjust some settings of the application. Currently, the only adjustment the user can make is in which directory the application looks for songs. This settings screen is shown in \Cref{fig:settingsPath}. 
 
