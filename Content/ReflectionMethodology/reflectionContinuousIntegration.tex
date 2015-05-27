@@ -1,4 +1,9 @@
 \subsection{Continuous Integration}
-Instead of setting up a build server, we ran the entire test suite when pushing to the master branch. This worked well when the test suite was small. When it grew bigger and slower, it took too long to run the entire test suite. This meant that only the relevant test modules were run frequently which meant that the full test suite was run less frequently.
+Instead of setting up a build server, we ran the entire test suite when pushing to the master branch. This worked well when the test suite was small. When it grew bigger and slower, it took too long to run the entire test suite. This meant that only the relevant test modules were run frequently, which meant that the full test suite was run less frequently.
+Midway through the project we discovered a periodic bug, which was not easy to trace because we needed the log a build server could have generated. This could have given information about which commit caused the bug to appear.
 
-Midway through the project we discovered a periodic bug which was not easy to trace because we needed the log a build server could have generated. This could have given information about which commit caused the bug to appear.
+Another benefit of a dedicated build we discovered, is when an addition or change is required to the test set. Our approach was to manually share test data as required by the stories we worked on. This lead to a fragmentation of the test data. This later resulted in surprises when new tests would not run.
+
+One of the purposes of Continuous Integration is to avoid fragmented development branches. This was not achieved for the project, since each task had a branch of it own. In most situations this was not an issue, as we would merge into the master branch when a task was done. The problem arose when a task was big, and it remained isolated on a branch for multiple days.
+
+In order to prevent this problem in the future, we have considered moving day to day work into a single branch. Alternately a similar approach is to force integration more frequently. This would result in more smaller conflicts, but severe fragmentation should not occur.
