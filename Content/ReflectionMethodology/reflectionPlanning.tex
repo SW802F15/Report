@@ -1,14 +1,39 @@
-\section{Planning}
-Planning poker was used for planning. We found planning poker made sure that everybody was heard in regards to planning. It also made sure that we had a common understanding of the task to be planned, e.g. if there was a big difference in the estimates, the group might not agree on what the task entails.
+\section{Planning Game}
+Planning is a useful tool.
+We used it primarily as a tool for measuring our velocity, to get an overview of our progress, and to know if we were falling behind schedule.
+Additionally it helps keep the project progressing as the customer desires, by allowing the customer to continuously create user stories, which should be implemented.
 
-At first, we did planning but we did not prioritise the tasks. This was a mistake because the most important task was not always the first to be finished. We tried different ways of timing the solving of tasks. First, we just looked back in the calendar for the iteration and looked at which days we worked on what. Then we made a rough estimated of how long it took to solve the task. 
+\subsection{The Customer's Role}
+The main responsibilities of the customer, as regard to planning, is to create user stories and prioritise in which order they should be implemented.
+As stated in \Cref{def:onsitecustomer}, we used a surrogate customer, which meant we were responsible for the tasks normally appointed to the customer.
 
-We experienced that it was difficult to get meaningful timing data this way. Later, a tool was found to help us track time. Based on this, we could determine how good we were at estimating tasks in relation to how long it took to solve them. Additionally, we could keep track of how many development hours were used each iteration. 
+%User Stories
+The first task we needed to do, was create the user stories.
+The creation of the user stories went fairly easy, but we later found that these were much larger than desired.
+We would therefore split them into several smaller user stories.
+\Alexander{We really do not have more for user stories?}
 
-A disadvantage of using the tool was that since much weight was put on detailed timing, the tool itself generated overhead. We later moved on to just estimating units.
+%Prioritising
+After the user stories was estimated, it was our responsibility as surrogate customers, to prioritise in what order the user stories should be implemented.
+Usually we prioritised them as we suspect an on-site customer would, according to cost/benefit.
+However, after the basics modules of the program was implemented, we started letting our developer hearts influence the decisions.
+We started to prioritise the user stories by novelty, which essentially means by what we found new and interesting to implement.
+This caused the product to be more of a proof-of-concept product instead of the initial intended usable product.
+Although the product did not end up as what was intended from the get go, it showed us that XP was capable of embrace change.
 
-As a result of our estimate reviews, we found a recurring pattern in our estimates. Trivial tasks were generally easy to estimate accurately. Smaller, one unit, tasks were more likely to exceed their estimate. Lastly, the big tasks, four plus units, were likely to be over-estimated with the exception of a few which grew bigger. We suspect this was because we should have decomposed the tasks further.
 
-Having big tasks with no specific goals, such as ongoing refactoring, did not work well, because they made us unproductive. Refactoring for example was later decomposed into concrete tasks which worked better.
+\subsection{Making Estimations}
+To properly plan an iteration, it is important to have precise estimations of the issues at hand.
+It allows the customer to easier prioritise each issue or story, and it allows the developers to have an idea of how many issues they can finish during the iteration.
 
-\Dan{Mention somewhere: Fragmentation of time.}
+Estimating an issue correctly is, however, a difficult task.
+Many variables play a role in how long an issue takes to solve, and it is often impossible to foresee them all.
+To try to reduce this problem we employed the practice of planning poker, where each member of the team gives their own (anonymous) estimation, and the final estimation is discussed afterwards.
+We found that in the first iterations we underestimated the amount of time needed for the more difficult issues, while we generally estimated correctly when it came to trivial issues.
+
+\subsection{Code Velocity}
+%Velocity and fragmentation
+
+\subsection{Summary}
+%Overhead
+%Flexibility (in terms of changes)
